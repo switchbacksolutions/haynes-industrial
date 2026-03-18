@@ -1,0 +1,43 @@
+---
+/**
+ * FormattedDate.astro
+ * ─────────────────────────────────────────────────────────────────────────────
+ * Renders a <time> element with a human-readable date and a machine-readable
+ * datetime attribute.
+ *
+ * Usage:
+ *   <FormattedDate date={post.data.pubDate} />
+ *   <FormattedDate date={post.data.pubDate} format="short" />
+ */
+
+interface Props {
+  /** The date to format */
+  date: Date;
+  /**
+   * Display format:
+   *   "long"  → "January 15, 2024"        (default)
+   *   "short" → "Jan 15, 2024"
+   *   "numeric" → "01/15/2024"
+   */
+  format?: 'long' | 'short' | 'numeric';
+  /** BCP 47 locale string — defaults to "en-US" */
+  locale?: string;
+}
+
+const { date, format = 'long', locale = 'en-US' } = Astro.props;
+
+const formatOptions: Record<string, Intl.DateTimeFormatOptions> = {
+  long:    { year: 'numeric', month: 'long',  day: 'numeric' },
+  short:   { year: 'numeric', month: 'short', day: 'numeric' },
+  numeric: { year: 'numeric', month: '2-digit', day: '2-digit' },
+};
+
+const formatted = date.toLocaleDateString(locale, formatOptions[format]);
+
+// ISO 8601 string for the datetime attribute
+const iso = date.toISOString();
+---
+
+<time datetime={iso} class="text-gray-500 dark:text-gray-400">
+  {formatted}
+</time>

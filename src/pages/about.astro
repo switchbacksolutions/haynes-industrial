@@ -1,0 +1,90 @@
+---
+/**
+ * src/pages/about.astro — About page
+ */
+
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="About"
+  description="Learn more about this Astro template — what's included and how to use it."
+>
+  <main class="mx-auto max-w-3xl px-4 py-16 sm:px-6">
+    <h1 class="text-4xl font-bold text-gray-900 dark:text-white">About</h1>
+
+    <div class="prose-content mt-8">
+      <p>
+        This is a production-ready Astro template designed to give you a
+        solid foundation for content-driven websites, personal blogs, and
+        documentation sites.
+      </p>
+
+      <h2>Technology Stack</h2>
+      <ul>
+        <li>
+          <strong>Astro</strong> — Static site generator with island
+          architecture and zero-JS by default.
+        </li>
+        <li>
+          <strong>TypeScript</strong> — Full type safety across all components,
+          pages, and content collections.
+        </li>
+        <li>
+          <strong>Tailwind CSS</strong> — Utility-first CSS with dark mode
+          support via the <code>class</code> strategy.
+        </li>
+        <li>
+          <strong>MDX</strong> — Write blog posts in Markdown with the option
+          to embed interactive JSX components.
+        </li>
+        <li>
+          <strong>Content Collections</strong> — Type-safe content with Zod
+          schema validation.
+        </li>
+        <li>
+          <strong>Sitemap</strong> — Auto-generated <code>sitemap.xml</code>{' '}
+          for SEO.
+        </li>
+        <li>
+          <strong>RSS</strong> — Auto-generated RSS feed at{' '}
+          <code>/rss.xml</code>.
+        </li>
+      </ul>
+
+      <h2>Deployment</h2>
+      <p>
+        The template is pre-configured for deployment on{' '}
+        <a href="https://netlify.com" target="_blank" rel="noopener noreferrer">
+          Netlify
+        </a>
+        . Connect your Git repository and Netlify will automatically build and
+        deploy on every push to <code>main</code>.
+      </p>
+      <p>
+        Security headers (X-Frame-Options, X-Content-Type-Options, CSP, etc.)
+        are configured in <code>netlify.toml</code>.
+      </p>
+
+      <h2>CMS Integration</h2>
+      <p>
+        The template includes a <code>cloudcannon.config.yml</code> for
+        <a href="https://cloudcannon.com" target="_blank" rel="noopener noreferrer">
+          CloudCannon
+        </a>
+        CMS, giving editors a visual interface to manage blog posts and pages
+        without touching the code.
+      </p>
+
+      <h2>Getting Started</h2>
+      <ol>
+        <li>Clone or fork the repository.</li>
+        <li>Run <code>npm install</code>.</li>
+        <li>Run <code>npm run dev</code> and open <code>http://localhost:4321</code>.</li>
+        <li>Edit <code>astro.config.mjs</code> and set your <code>site</code> URL.</li>
+        <li>Add blog posts to <code>src/content/blog/</code>.</li>
+        <li>Deploy to Netlify by connecting your Git repo.</li>
+      </ol>
+    </div>
+  </main>
+</BaseLayout>

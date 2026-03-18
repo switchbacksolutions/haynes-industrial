@@ -1,0 +1,140 @@
+# CloudCannon CMS Configuration
+# Docs: https://cloudcannon.com/documentation/
+
+# The base URL of your site — used for live previews
+base_url: https://example.com
+
+# ─── Collections ────────────────────────────────────────────────────────────
+collections_config:
+  # Blog posts — maps to src/content/blog/
+  blog:
+    path: src/content/blog
+    url: /blog/[slug]/
+    output: true
+    name: Blog Posts
+    singular_name: Blog Post
+    icon: edit
+    description: Write and manage blog posts in Markdown or MDX.
+    sort:
+      key: pubDate
+      order: desc
+    filter:
+      base: none
+      include:
+        - '*.md'
+        - '*.mdx'
+    schemas:
+      default:
+        path: .cloudcannon/schemas/blog-post.md
+    _editables:
+      content:
+        bold: true
+        italic: true
+        strike: true
+        underline: true
+        link: true
+        bulletedlist: true
+        numberedlist: true
+        image: true
+        table: true
+        code: true
+        embed: true
+        snippet: true
+
+  # Static pages — maps to src/pages/
+  pages:
+    path: src/pages
+    url: /[slug]/
+    output: true
+    name: Pages
+    singular_name: Page
+    icon: pages
+    description: Manage static pages like About, Contact, etc.
+    filter:
+      base: none
+      include:
+        - '*.astro'
+        - '*.md'
+        - '*.mdx'
+    _enabled_editors:
+      - content
+      - data
+
+# ─── Global _inputs — reused across collections ──────────────────────────────
+_inputs:
+  title:
+    type: text
+    label: Title
+    comment: The page or post title. Used in <title> and OG tags.
+
+  description:
+    type: textarea
+    label: Description
+    comment: Short summary used in SEO meta tags and post listings (150–160 characters recommended).
+    options:
+      rows: 3
+
+  pubDate:
+    type: datetime
+    label: Published Date
+    comment: The date this post was first published.
+    options:
+      timezone: UTC
+      format: YYYY-MM-DD
+
+  updatedDate:
+    type: datetime
+    label: Last Updated Date
+    comment: Leave blank if the post has never been updated.
+    options:
+      timezone: UTC
+      format: YYYY-MM-DD
+
+  heroImage:
+    type: image
+    label: Hero Image
+    comment: Optional banner image displayed at the top of the post.
+    options:
+      width: 1200
+      height: 630
+
+  tags:
+    type: array
+    label: Tags
+    comment: Categorisation tags for this post. Add one tag per item.
+
+  draft:
+    type: checkbox
+    label: Draft
+    comment: When checked, this post is excluded from the build and RSS feed.
+
+# ─── _structures — define how array items are built in the editor ────────────
+_structures:
+  tags:
+    values:
+      - value: ''
+        label: Tag
+        icon: label
+
+# ─── Editor configuration ────────────────────────────────────────────────────
+editor:
+  default_path: /
+
+# ─── Source editor settings ──────────────────────────────────────────────────
+source_editor:
+  tab_size: 2
+  show_gutter: true
+  theme: monokai
+
+# ─── Upload paths ────────────────────────────────────────────────────────────
+paths:
+  uploads: public/images/uploads
+  static: public
+  dam_uploads: public/images/uploads
+
+# ─── Build configuration ─────────────────────────────────────────────────────
+# CloudCannon runs your build command and serves the output.
+# These must match your netlify.toml / CI configuration.
+build:
+  install_command: npm install
+  output_path: dist

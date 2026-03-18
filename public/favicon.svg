@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <!-- Astro-style rocket / star mark -->
+  <rect width="128" height="128" rx="24" fill="#0ea5e9"/>
+  <path
+    d="M64 20 L74 54 H108 L80 74 L90 108 L64 88 L38 108 L48 74 L20 54 H54 Z"
+    fill="white"
+    opacity="0.95"
+  />
+</svg>
