@@ -19,6 +19,7 @@ const recentPosts = allPosts
   title="Astro Template"
   description="A production-ready Astro blog template with Tailwind CSS, MDX, and CloudCannon CMS support."
 >
+  <main>
   <!-- Hero -->
   <section class="bg-gradient-to-br from-brand-50 to-white dark:from-gray-900 dark:to-gray-950">
     <div class="mx-auto max-w-4xl px-4 py-24 sm:px-6 text-center">
@@ -59,7 +60,7 @@ const recentPosts = allPosts
       <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 list-none m-0 p-0">
         {recentPosts.map((post) => (
           <li>
-            <a href={`/blog/${post.slug}`} class="group block card h-full no-underline">
+            <a href={`/blog/${post.id}`} class="group block card h-full no-underline">
               {post.data.heroImage && (
                 <img
                   src={post.data.heroImage}
@@ -121,4 +122,5 @@ const recentPosts = allPosts
       </ul>
     </div>
   </section>
+  </main>
 </BaseLayout>

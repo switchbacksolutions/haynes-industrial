@@ -60,8 +60,8 @@ test.describe('Home page', () => {
 
   test('shows the features / what\'s included section', async ({ page }) => {
     await expect(page.getByText(/what's included/i)).toBeVisible();
-    await expect(page.getByText(/Astro \+ TypeScript/i)).toBeVisible();
-    await expect(page.getByText(/Tailwind CSS/i)).toBeVisible();
+    await expect(page.getByRole('heading', { name: /Astro \+ TypeScript/i })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Tailwind CSS', exact: true })).toBeVisible();
   });
 
   test('has a footer with copyright text', async ({ page }) => {

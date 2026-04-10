@@ -31,8 +31,6 @@ test.describe('Blog listing page (/blog)', () => {
     await expect(list).toBeVisible();
 
     const items = list.getByRole('listitem');
-    await expect(items).toHaveCount({ min: 2 } as never);
-    // Note: Playwright toHaveCount does not accept options; check count >= 2:
     const count = await items.count();
     expect(count).toBeGreaterThanOrEqual(2);
   });

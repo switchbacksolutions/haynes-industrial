@@ -51,7 +51,7 @@ const allTags = [...new Set(posts.flatMap((p) => p.data.tags))].sort();
               <!-- Hero thumbnail -->
               {post.data.heroImage && (
                 <a
-                  href={`/blog/${post.slug}`}
+                  href={`/blog/${post.id}`}
                   class="hidden sm:block flex-shrink-0"
                   tabindex="-1"
                   aria-hidden="true"
@@ -80,7 +80,7 @@ const allTags = [...new Set(posts.flatMap((p) => p.data.tags))].sort();
                 <!-- Title -->
                 <h2 class="text-xl font-semibold">
                   <a
-                    href={`/blog/${post.slug}`}
+                    href={`/blog/${post.id}`}
                     class="text-gray-900 no-underline hover:text-brand-600 dark:text-white dark:hover:text-brand-400 transition-colors"
                   >
                     {post.data.title}
