@@ -79,11 +79,11 @@
   }
 
 
-  /* Primary button */
+  /* Primary button — brand blue fill */
   .btn-primary {
     @apply inline-flex items-center gap-2 bg-brand-600 px-5 py-2.5
-           text-sm font-semibold tracking-wider text-white shadow-sm
-           hover:bg-brand-700 focus:outline-none focus:ring-2
+           text-sm font-semibold tracking-wider text-white shadow-sm no-underline
+           hover:bg-brand-800 hover:no-underline focus:outline-none focus:ring-2
            focus:ring-brand-500 focus:ring-offset-2
            transition-colors duration-150 cursor-pointer;
   }
@@ -91,11 +91,29 @@
   /* Secondary / outline button */
   .btn-secondary {
     @apply inline-flex items-center gap-2 border border-gray-300 bg-white
-           px-5 py-2.5 text-sm font-semibold tracking-wider text-gray-700 shadow-sm
-           hover:bg-gray-50 focus:outline-none focus:ring-2
+           px-5 py-2.5 text-sm font-semibold tracking-wider text-gray-700 shadow-sm no-underline
+           hover:bg-gray-100 hover:no-underline focus:outline-none focus:ring-2
            focus:ring-brand-500 focus:ring-offset-2
            dark:border-gray-600 dark:bg-gray-800 dark:text-gray-200
            dark:hover:bg-gray-700 transition-colors duration-150 cursor-pointer;
+  }
+
+  /* White button — for use on dark/brand backgrounds */
+  .btn-white {
+    @apply inline-flex items-center gap-2 bg-white px-5 py-2.5
+           text-sm font-semibold tracking-wider text-brand-700 shadow-sm no-underline
+           hover:bg-brand-100 hover:no-underline focus:outline-none focus:ring-2
+           focus:ring-white focus:ring-offset-2 focus:ring-offset-brand-700
+           transition-colors duration-150 cursor-pointer;
+  }
+
+  /* Outline white button — for use on dark/brand backgrounds */
+  .btn-outline-white {
+    @apply inline-flex items-center gap-2 border border-brand-400 bg-transparent px-5 py-2.5
+           text-sm font-semibold tracking-wider text-white shadow-sm no-underline
+           hover:bg-brand-700 hover:border-brand-300 hover:no-underline focus:outline-none focus:ring-2
+           focus:ring-brand-400 focus:ring-offset-2
+           transition-colors duration-150 cursor-pointer;
   }
 
   /* Tag / badge pill */
