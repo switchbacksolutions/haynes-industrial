@@ -8,18 +8,26 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 >
   <main>
     <!-- Hero -->
-    <section class="bg-brand-800 dark:bg-brand-900">
-      <div class="section-container py-24 text-center">
+    <section class="relative isolate overflow-hidden">
+      <img
+        src="/images/loaded-truck.avif"
+        alt=""
+        aria-hidden="true"
+        class="absolute inset-0 -z-10 h-full w-full object-cover object-center"
+        fetchpriority="high"
+      />
+      <div class="absolute inset-0 -z-10 bg-gradient-to-r from-brand-900 to-transparent"></div>
+      <div class="section-container py-48">
         <p class="text-sm font-semibold uppercase tracking-widest text-brand-300">
           An Environmental Services Company
         </p>
-        <h1 class="mt-4 text-5xl font-bold tracking-tight text-white text-balance">
+        <h1 class="mt-4 text-5xl font-bold tracking-tight text-white text-balance max-w-2xl">
           Welcome To Haynes Industrial
         </h1>
-        <p class="mx-auto mt-6 max-w-2xl text-xl text-brand-200 text-pretty">
+        <p class="mt-6 max-w-xl text-xl text-brand-200 text-pretty">
           A trusted partner for industrial recycling and universal waste management in Northern California.
         </p>
-        <div class="mt-10 flex flex-wrap justify-center gap-4">
+        <div class="mt-10 flex flex-wrap justify-start gap-4">
           <a href="/about" class="btn-primary">
             Learn More
           </a>

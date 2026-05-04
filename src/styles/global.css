@@ -4,8 +4,9 @@
 @variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-family-sans: 'Poppins', system-ui, sans-serif;
-  --font-family-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-sans: 'Questrial', system-ui, sans-serif;
+  --font-display: 'Montserrat', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
   --color-brand-50: #eef4f8;
   --color-brand-100: #d5e6f0;
@@ -44,12 +45,12 @@
     @apply min-h-screen font-sans;
   }
 
-  h1 { @apply text-4xl font-bold tracking-tight; }
-  h2 { @apply text-3xl font-semibold tracking-tight; }
-  h3 { @apply text-2xl font-semibold; }
-  h4 { @apply text-xl font-semibold; }
-  h5 { @apply text-lg font-medium; }
-  h6 { @apply text-base font-medium; }
+  h1 { @apply text-4xl font-bold tracking-tight font-display; }
+  h2 { @apply text-3xl font-semibold tracking-tight font-display; }
+  h3 { @apply text-2xl font-semibold font-display; }
+  h4 { @apply text-xl font-semibold font-display; }
+  h5 { @apply text-lg font-medium font-display; }
+  h6 { @apply text-base font-medium font-display; }
 
   a {
     @apply text-brand-600 underline-offset-4 hover:underline dark:text-brand-400;
@@ -80,8 +81,8 @@
 
   /* Primary button */
   .btn-primary {
-    @apply inline-flex items-center gap-2 rounded-md bg-brand-600 px-4 py-2
-           text-sm font-medium text-white shadow-sm
+    @apply inline-flex items-center gap-2 bg-brand-600 px-5 py-2.5
+           text-sm font-semibold tracking-wider text-white shadow-sm
            hover:bg-brand-700 focus:outline-none focus:ring-2
            focus:ring-brand-500 focus:ring-offset-2
            transition-colors duration-150 cursor-pointer;
@@ -89,8 +90,8 @@
 
   /* Secondary / outline button */
   .btn-secondary {
-    @apply inline-flex items-center gap-2 rounded-md border border-gray-300 bg-white
-           px-4 py-2 text-sm font-medium text-gray-700 shadow-sm
+    @apply inline-flex items-center gap-2 border border-gray-300 bg-white
+           px-5 py-2.5 text-sm font-semibold tracking-wider text-gray-700 shadow-sm
            hover:bg-gray-50 focus:outline-none focus:ring-2
            focus:ring-brand-500 focus:ring-offset-2
            dark:border-gray-600 dark:bg-gray-800 dark:text-gray-200
