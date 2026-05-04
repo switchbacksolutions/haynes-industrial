@@ -1,0 +1,420 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const customers = [
+  {
+    name: 'Manufacturers',
+    detail: 'Obsolete tooling, raw material overstock, discontinued inventory, packaging, and old production equipment — entire lines, not just the easy pieces.',
+  },
+  {
+    name: 'Commercial & Industrial Facilities',
+    detail: 'Surplus chemicals, lubricants, unused supplies, and retired equipment sitting idle in the back of your plant.',
+  },
+  {
+    name: 'Agricultural Operations',
+    detail: 'Surplus equipment, chemicals, packaging, and fertilizer overstock. We understand the documentation requirements for ag chemicals.',
+  },
+  {
+    name: 'Warehouses & 3PLs',
+    detail: 'Obsolete pallets of stranded inventory, customer-abandoned freight, totes, drums, IBCs, and packaging materials — the stuff nobody claimed.',
+  },
+  {
+    name: 'Construction & Demo',
+    detail: 'Unused materials from completed jobs: surplus fixtures, fittings, electrical, pipe, structural steel, leftover lumber and hardware.',
+  },
+  {
+    name: 'Facilities Closing, Relocating, or Downsizing',
+    detail: 'Full-site cleanouts, from the equipment on the floor to the chemicals on the shelf. We\'re the single call that handles the whole thing.',
+  },
+];
+
+const processSteps = [
+  {
+    step: '01',
+    heading: 'Send Us a List',
+    body: 'Email or call with a description of what you have — photos help but aren\'t required. The rougher the list, the better we can tell you what\'s worth an on-site visit.',
+  },
+  {
+    step: '02',
+    heading: 'We Assess',
+    body: 'For smaller lots we may give you a range on the phone. For larger lots, or anything that needs eyes on it, we come to you. No charge for the visit.',
+  },
+  {
+    step: '03',
+    heading: 'You Get an Offer',
+    body: 'We make an offer based on resale market value, commodity rates, and recycle value. Straight number — no bait-and-switch when we show up.',
+  },
+  {
+    step: '04',
+    heading: 'We Schedule Pickup',
+    body: 'You don\'t move anything. We send the right truck, the right equipment, and the right people to load it. One visit handles the lot.',
+  },
+  {
+    step: '05',
+    heading: 'You Get Paid',
+    body: 'Payment on pickup, plus a disposition receipt for your accounting and compliance records. The space is yours back.',
+  },
+];
+
+const materialCategories = [
+  {
+    category: 'Industrial Equipment',
+    items: [
+      'Machine tools — lathes, mills, presses, grinders',
+      'Pumps, motors, compressors',
+      'Generators and transformers',
+      'Conveyors and material handling equipment',
+      'HVAC units and industrial fans',
+      'Forklifts and powered industrial vehicles',
+    ],
+  },
+  {
+    category: 'Tooling & Fixtures',
+    items: [
+      'Dies and punches',
+      'Injection and compression molds',
+      'Jigs and fixtures',
+      'Custom fabricated tooling',
+      'Precision measurement equipment',
+    ],
+  },
+  {
+    category: 'Surplus Chemicals & Lubricants',
+    items: [
+      'Industrial lubricants — oil, grease, hydraulic fluid',
+      'Solvents and degreasers',
+      'Agricultural chemicals and fertilizers',
+      'Process chemicals (with SDS documentation)',
+      'Aerosols and specialty coatings',
+    ],
+  },
+  {
+    category: 'Raw Materials',
+    items: [
+      'Metal stock — bar, sheet, tube, structural',
+      'Plastic resin and pellets',
+      'Fasteners — bolts, screws, hardware in quantity',
+      'Wire, cable, and electrical conductors',
+      'Pipe, fittings, and valves',
+    ],
+  },
+  {
+    category: 'Packaging & Containers',
+    items: [
+      'Pallets — wood and plastic',
+      'Steel and poly drums (55-gallon)',
+      'IBC totes (intermediate bulk containers)',
+      'Corrugated boxes and dunnage',
+      'Shrink wrap, stretch film, banding material',
+    ],
+  },
+  {
+    category: 'Stranded & Discontinued Inventory',
+    items: [
+      'Discontinued SKUs and product lines',
+      'Customer-abandoned freight',
+      'Short-dated or off-spec product',
+      'Excess retail or distribution overstock',
+      'Salvage from facility closures',
+    ],
+  },
+];
+
+const differentiators = [
+  'We buy your surplus — you don\'t pay us to haul it away like a disposal company',
+  'One partner across material types: chemicals, equipment, and packaging in a single visit',
+  'We handle the resale — no auction management, no vetting buyers, no listing on liquidation sites',
+  'We come to you — no renting a truck or figuring out freight',
+  'Disposition records for every transaction — accounting and compliance have what they need',
+  'Straight pricing: the offer we make on the phone is the check you get at pickup',
+];
+
+const faqs = [
+  {
+    q: 'How do I get started?',
+    a: 'Call or email with a rough description of what you have — a paragraph and a few photos is enough for most jobs. We\'ll tell you if we need an on-site visit or if we can give you a range right away. No paperwork required to get a conversation started.',
+  },
+  {
+    q: 'Do I need to inventory everything before I call?',
+    a: 'No. A rough description by category is fine — "a warehouse bay of old production equipment plus about 30 drums of lubricant." We\'ll ask clarifying questions and come look if we need to. The inventory happens on our side when we assess.',
+  },
+  {
+    q: 'What about partial loads or small quantities?',
+    a: 'We work with partial loads when the material has enough value to justify the trip — typically a pallet or more of commodities, or a single piece of equipment worth recovering. Send us a photo and we\'ll be straight with you about whether it makes sense.',
+  },
+  {
+    q: 'What if I don\'t know exactly what\'s in there?',
+    a: 'That\'s a common situation with older facilities. If you have an area full of "stuff from 2012 that nobody touched," an on-site walk-through is the right call. We\'ll assess it in person and separate what\'s recoverable from what goes a different direction. You don\'t need to sort it ahead of time.',
+  },
+  {
+    q: 'What about chemicals? Do I need special documentation?',
+    a: 'For surplus chemicals we need Safety Data Sheets (SDS) before we can accept them — this is standard for any legitimate buyer and protects both sides. If you have SDS on file, that\'s usually all we need. If documentation is missing for some materials, call us and we\'ll work through it.',
+  },
+  {
+    q: 'What if the material turns out to be worth less than you thought?',
+    a: 'We try to give you an honest range before showing up, not an inflated number to get the job. If something doesn\'t match the description — condition, quantity, contamination — we\'ll tell you on the spot before we load anything. The decision is always yours.',
+  },
+];
+---
+
+<BaseLayout
+  title="Industrial Surplus Buying & Pickup | Haynes Industrial"
+  description="We buy industrial surplus — equipment, chemicals, raw materials, tooling, and stranded inventory. Pickup in Northern & Central California. Turn idle assets into a check."
+>
+  <main>
+
+    <!-- Hero -->
+    <section class="relative isolate overflow-hidden">
+      <img
+        src="/images/forklift-wire-bin.avif"
+        alt=""
+        aria-hidden="true"
+        class="absolute inset-0 -z-10 h-full w-full object-cover object-center"
+        fetchpriority="high"
+      />
+      <div class="absolute inset-0 -z-10 bg-gradient-to-r from-brand-900 via-brand-900/85 to-brand-900/40"></div>
+      <div class="section-container py-40">
+        <p class="text-sm font-semibold uppercase tracking-widest text-brand-300">
+          Industrial Surplus · Northern & Central California
+        </p>
+        <h1 class="mt-4 max-w-2xl text-5xl font-bold tracking-tight text-white text-balance">
+          What's Taking Up Room in Your Warehouse?
+        </h1>
+        <p class="mt-6 max-w-xl text-xl text-brand-200 text-pretty">
+          We buy industrial surplus — equipment, chemicals, raw materials, tooling, and stranded inventory. You send a list, we assess, we pick it up, you get paid. No auction, no vetting buyers, no hauling.
+        </p>
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a href="/contact" class="btn-primary">Get an Offer</a>
+          <a href="#process" class="btn-outline-white">How It Works</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who We Work With -->
+    <section class="py-20">
+      <div class="section-container">
+        <div class="mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Who We Work With</h2>
+          <p class="mt-4 max-w-2xl text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+            Any operation sitting on industrial assets that aren't earning their space. If it's industrial and it's idle, call us.
+          </p>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {customers.map((customer) => (
+            <div class="service-card">
+              <h3 class="text-base font-bold text-brand-700 dark:text-brand-300">{customer.name}</h3>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{customer.detail}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- The Process -->
+    <section id="process" class="bg-brand-800 dark:bg-brand-900 py-20">
+      <div class="section-container">
+        <div class="mb-12 text-center">
+          <h2 class="text-3xl font-bold text-white">How It Works</h2>
+          <p class="mt-4 max-w-2xl mx-auto text-lg text-brand-200">
+            This is a consultative process, not a transactional one. We assess first, make a real offer, then pick up. You don't move anything.
+          </p>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+          {processSteps.map((step) => (
+            <div class="rounded-xl bg-brand-700 p-6">
+              <span class="text-3xl font-bold text-brand-400">{step.step}</span>
+              <h3 class="mt-3 text-base font-bold text-white">{step.heading}</h3>
+              <p class="mt-2 text-sm text-brand-200 leading-relaxed">{step.body}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-10 rounded-xl border border-brand-600 bg-brand-900/40 p-6">
+          <p class="text-brand-200 text-sm leading-relaxed">
+            <span class="font-semibold text-white">No surprise adjustments at the door.</span> We try to give you an honest range before showing up. If something doesn't match what we expected, we tell you before loading anything. The decision is always yours.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Accept -->
+    <section id="materials" class="bg-gray-50 dark:bg-gray-900 py-20">
+      <div class="section-container">
+        <div class="mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white">What We Accept</h2>
+          <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">
+            This is the broadest vertical we work in. If it's industrial and idle, ask — the worst answer is no.
+          </p>
+        </div>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {materialCategories.map((cat) => (
+            <div class="service-card">
+              <h3 class="text-base font-bold text-gray-900 dark:text-white">{cat.category}</h3>
+              <ul class="mt-4 space-y-2.5">
+                {cat.items.map((item) => (
+                  <li class="flex items-start gap-2.5 text-sm text-gray-600 dark:text-gray-400">
+                    <span class="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-500" aria-hidden="true"></span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <!-- Not Accepted -->
+        <div class="mt-6 rounded-xl border border-amber-200 bg-amber-50 p-6 dark:border-amber-800/50 dark:bg-amber-950/20">
+          <h3 class="text-base font-bold text-amber-900 dark:text-amber-300">Requires Prior Review — Call First</h3>
+          <ul class="mt-3 space-y-2">
+            {[
+              'Hazardous waste requiring a manifest — we may still be able to help, but it needs a separate conversation.',
+              'PCBs (polychlorinated biphenyls) — regulated handling required, not part of standard surplus buying.',
+              'Asbestos-containing material — abatement required before any other work.',
+              'Anything explosive or radioactive — full stop.',
+            ].map((item) => (
+              <li class="flex items-start gap-2.5 text-sm text-amber-800 dark:text-amber-300">
+                <span class="mt-0.5 flex-shrink-0 font-bold" aria-hidden="true">—</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+          <p class="mt-4 text-xs text-amber-700 dark:text-amber-400">
+            Surplus chemicals require Safety Data Sheets (SDS) — have documentation ready when you call.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How We Price Surplus -->
+    <section class="py-20">
+      <div class="section-container">
+        <div class="grid gap-12 lg:grid-cols-2 lg:items-start">
+          <div>
+            <p class="text-sm font-semibold uppercase tracking-widest text-brand-500">Transparent Valuation</p>
+            <h2 class="mt-3 text-3xl font-bold text-gray-900 dark:text-white">How We Price Surplus</h2>
+            <p class="mt-4 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+              Every offer is built from two questions: what can we sell it for, and what can we recover from it? Most lots are a mix of both.
+            </p>
+            <div class="mt-8 space-y-6">
+              <div class="rounded-xl border border-gray-200 dark:border-gray-700 p-6">
+                <h3 class="text-base font-bold text-gray-900 dark:text-white">Resale Value</h3>
+                <p class="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                  Working equipment, usable tooling, and serviceable materials get priced against the secondary market — what a buyer in the industrial resale market would pay. This is where you see the best return. A running pump is worth more whole than as scrap metal.
+                </p>
+              </div>
+              <div class="rounded-xl border border-gray-200 dark:border-gray-700 p-6">
+                <h3 class="text-base font-bold text-gray-900 dark:text-white">Commodity / Recycle Value</h3>
+                <p class="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                  End-of-life equipment, scrap metal, and materials with no resale path get valued at commodity rates — copper, steel, aluminum, plastic resin. These prices move with markets, which is why we give you a range and confirm at the visit.
+                </p>
+              </div>
+              <div class="rounded-xl border border-gray-200 dark:border-gray-700 p-6">
+                <h3 class="text-base font-bold text-gray-900 dark:text-white">Mixed Lots</h3>
+                <p class="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">
+                  Most surplus cleanouts are a mix: some equipment worth reselling, some worth scrapping, some packaging worth recovering. We price the whole lot together and give you one number — you're not managing three separate transactions.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Facility Closure -->
+          <div id="facility-closure">
+            <p class="text-sm font-semibold uppercase tracking-widest text-brand-500">Higher-Stakes Situations</p>
+            <h2 class="mt-3 text-3xl font-bold text-gray-900 dark:text-white">Closing a Facility? Downsizing a Line?</h2>
+            <p class="mt-4 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+              Facility closures and plant consolidations are a different category of job. There's a deadline, there are multiple material types, and the cost of getting it wrong — a retained chemical, a missed piece of equipment, a compliance gap — is real.
+            </p>
+            <p class="mt-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+              For closure and relocation work, we do a full walk-through assessment before pricing anything. We look at equipment, chemicals, inventory, packaging, and anything else on the floor, and we come back with a single plan for the whole site — not piecemeal.
+            </p>
+            <ul class="mt-8 space-y-4 list-none m-0 p-0">
+              {[
+                'Single-partner for mixed material types — chemicals, equipment, and inventory in one engagement',
+                'Disposition records for every category — accounting and environmental compliance covered',
+                'Scheduled over multiple visits if needed — we work around your timeline',
+                'We coordinate with your facilities, EHS, and accounting contacts directly',
+                'Honest assessment of what has value and what doesn\'t — no inflated estimates to get the job',
+              ].map((item) => (
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 flex-shrink-0 h-5 w-5 rounded-full bg-brand-600 flex items-center justify-center">
+                    <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  <span class="text-gray-700 dark:text-gray-300 text-sm">{item}</span>
+                </li>
+              ))}
+            </ul>
+            <a href="/contact" class="btn-primary mt-10 inline-flex">Talk to Us About Your Facility</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Haynes Industrial -->
+    <section class="bg-gray-50 dark:bg-gray-900 py-20">
+      <div class="section-container">
+        <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div class="rounded-xl overflow-hidden">
+            <img
+              src="/images/loaded-truck-pipe.avif"
+              alt="Loaded Haynes Industrial truck ready for industrial surplus pickup"
+              class="w-full h-80 object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div>
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Turn Idle Assets into a Check</h2>
+            <p class="mt-4 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+              Disposal companies charge you to haul it away. Liquidation platforms want you to run your own auction. We buy it, pick it up, and handle the resale. You do nothing after the phone call.
+            </p>
+            <ul class="mt-8 space-y-4 list-none m-0 p-0">
+              {differentiators.map((item) => (
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 flex-shrink-0 h-5 w-5 rounded-full bg-brand-600 flex items-center justify-center">
+                    <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  <span class="text-gray-700 dark:text-gray-300">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-20">
+      <div class="section-container">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-12">Common Questions</h2>
+        <div class="grid gap-6 lg:grid-cols-2">
+          {faqs.map((faq) => (
+            <div class="card">
+              <h3 class="text-base font-bold text-gray-900 dark:text-white">{faq.q}</h3>
+              <p class="mt-3 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-brand-700 dark:bg-brand-800 py-16">
+      <div class="section-container text-center">
+        <h2 class="text-3xl font-bold text-white">If It's Industrial and It's Idle, Ask</h2>
+        <p class="mt-4 text-lg text-brand-200">
+          Send a description and photos — we'll tell you what it's worth and whether it makes sense to schedule a pickup.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="/contact" class="btn-white">Get an Offer</a>
+          <a href="tel:9166729417" class="btn-outline-white">916-672-9417</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>
