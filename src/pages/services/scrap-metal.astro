@@ -1,0 +1,273 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const trades = [
+  { name: 'Plumbers', materials: 'Copper and steel piping from renovation and installation jobs' },
+  { name: 'HVAC Installers', materials: 'Refrigerant recovery (EPA 608), unit removal, copper line sets, condenser coils' },
+  { name: 'Electricians', materials: 'Insulated wire, conduit, panel copper' },
+  { name: 'Solar Installers', materials: 'Aluminum racking, copper wiring, end-of-life panels' },
+  { name: 'Telecom Contractors', materials: 'Copper cabling, aluminum enclosures' },
+  { name: 'Sign Installers & CNC Shops', materials: 'Aluminum sheet offcuts, non-ferrous metals' },
+  { name: 'Warehouses & Fleets', materials: 'Forklift batteries, industrial steel' },
+  { name: 'General Industrial', materials: 'Mixed loads, demolition scrap' },
+];
+
+const materialCategories = [
+  {
+    category: 'Ferrous',
+    items: ['Steel piping', 'Structural steel', 'Rebar', 'Sheet steel'],
+  },
+  {
+    category: 'Non-Ferrous',
+    items: ['Copper — bare bright, #1, #2', 'Aluminum — sheet, extrusion, cast', 'Brass', 'Lead', 'Stainless steel'],
+  },
+  {
+    category: 'Specialty',
+    items: ['Refrigerant recovery units (EPA 608)', 'Forklift & industrial batteries', 'Electric motors', 'Transformers', 'Copper wiring — insulated and bare'],
+  },
+];
+
+const differentiators = [
+  'We pick up at your job site — no hauling, no lost half-days at a drop-off yard',
+  'Industrial scale: full truckloads and ongoing contractor account relationships',
+  'EPA 608 certified for refrigerant recovery — most scrap yards aren\'t',
+  'Pricing tied to current commodity spot rates, explained before we load — no surprises',
+  'Sacramento regional focus — real local relationships, same-week scheduling',
+];
+
+const faqs = [
+  {
+    q: 'How fast can you come?',
+    a: 'Same-week pickup in most cases throughout the Sacramento region. Call or email — we schedule within one business day and confirm your window before the truck rolls.',
+  },
+  {
+    q: 'Is there a minimum load?',
+    a: 'No fixed weight minimum, but the load needs to be worth the trip — a full truck bed, a half-pallet of copper, or equivalent bulk. Not sure? Send us a photo and we\'ll give you a straight answer.',
+  },
+  {
+    q: 'Do I need to sort the scrap?',
+    a: 'No. We take mixed loads. That said, separated copper and aluminum commands better rates because it grades directly to market. If you have the time, sorting pays — we\'ll tell you which metals are worth separating.',
+  },
+  {
+    q: 'How do you price?',
+    a: 'We price against current commodity spot rates — not an opaque "yard price" we make up on the spot. You\'ll know the per-pound rate for your material category when we schedule, confirmed on-site before we load.',
+  },
+];
+---
+
+<BaseLayout
+  title="Scrap Metal Pickup | Haynes Industrial"
+  description="Industrial scrap metal pickup for licensed contractors throughout Northern California. Copper, aluminum, steel and more — we come to your job site. Same-week scheduling in the Sacramento region."
+>
+  <main>
+
+    <!-- Hero -->
+    <section class="relative isolate overflow-hidden">
+      <img
+        src="/images/loaded-truck-pipe.avif"
+        alt=""
+        aria-hidden="true"
+        class="absolute inset-0 -z-10 h-full w-full object-cover object-center"
+        fetchpriority="high"
+      />
+      <div class="absolute inset-0 -z-10 bg-gradient-to-r from-brand-900 via-brand-900/85 to-brand-900/40"></div>
+      <div class="section-container py-40">
+        <p class="text-sm font-semibold uppercase tracking-widest text-brand-300">
+          Scrap Metal Pickup · Sacramento Region
+        </p>
+        <h1 class="mt-4 max-w-2xl text-5xl font-bold tracking-tight text-white text-balance">
+          We Come to Your Job Site. You Don't Haul — You Get Paid.
+        </h1>
+        <p class="mt-6 max-w-xl text-xl text-brand-200 text-pretty">
+          Industrial scrap metal pickup for licensed contractors throughout Northern California. Same-week scheduling. Market-rate pricing. No lost half-days at the yard.
+        </p>
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a href="/contact" class="btn-primary">Schedule a Pickup</a>
+          <a href="#materials" class="btn-outline-white">See What We Accept</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Who This Is For -->
+    <section class="py-20">
+      <div class="section-container">
+        <div class="mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Who We Work With</h2>
+          <p class="mt-4 max-w-2xl text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+            If scrap metal is a byproduct of your work, we're the pickup call you should already have in your contacts. We serve licensed contractors and industrial operators across Northern and Central California.
+          </p>
+        </div>
+        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {trades.map((trade) => (
+            <div class="service-card">
+              <h3 class="text-base font-bold text-brand-700 dark:text-brand-300">{trade.name}</h3>
+              <p class="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{trade.materials}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- What We Accept -->
+    <section id="materials" class="bg-gray-50 dark:bg-gray-900 py-20">
+      <div class="section-container">
+        <div class="mb-12">
+          <h2 class="text-3xl font-bold text-gray-900 dark:text-white">What We Accept</h2>
+          <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">
+            Reference for foremen and site leads. If you're unsure about a specific item, call us — we'll tell you straight.
+          </p>
+        </div>
+
+        <div class="grid gap-6 lg:grid-cols-3">
+          {materialCategories.map((cat) => (
+            <div class="service-card">
+              <h3 class="text-lg font-bold text-gray-900 dark:text-white">{cat.category}</h3>
+              <ul class="mt-4 space-y-2.5">
+                {cat.items.map((item) => (
+                  <li class="flex items-start gap-2.5 text-sm text-gray-600 dark:text-gray-400">
+                    <span class="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-500" aria-hidden="true"></span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <!-- Not Accepted callout -->
+        <div class="mt-6 rounded-xl border border-amber-200 bg-amber-50 p-6 dark:border-amber-800/50 dark:bg-amber-950/20">
+          <h3 class="text-base font-bold text-amber-900 dark:text-amber-300">Not Accepted</h3>
+          <ul class="mt-3 space-y-2">
+            {[
+              'Household appliances with refrigerant still charged — refrigerant must be recovered first. We can perform on-site recovery before pickup; call us to arrange.',
+              'Radioactive materials',
+              'Hazardous chemicals — see our universal waste services for regulated material streams.',
+            ].map((item) => (
+              <li class="flex items-start gap-2.5 text-sm text-amber-800 dark:text-amber-300">
+                <span class="mt-0.5 flex-shrink-0 font-bold" aria-hidden="true">—</span>
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Haynes Industrial -->
+    <section class="py-20">
+      <div class="section-container">
+        <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div>
+            <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Industrial Pickup. Industrial Scale. Industrial Pricing.</h2>
+            <p class="mt-4 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+              We're not a consumer drop-off yard. We handle full truckloads, run ongoing contractor accounts, and price at rates tied to the actual commodity market — not whatever feels right that day.
+            </p>
+            <ul class="mt-8 space-y-4 list-none m-0 p-0">
+              {differentiators.map((item) => (
+                <li class="flex items-start gap-3">
+                  <span class="mt-1 flex-shrink-0 h-5 w-5 rounded-full bg-brand-600 flex items-center justify-center">
+                    <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" aria-hidden="true">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  <span class="text-gray-700 dark:text-gray-300">{item}</span>
+                </li>
+              ))}
+            </ul>
+            <a href="/contact" class="btn-primary mt-10 inline-flex">Get a Quote</a>
+          </div>
+          <div class="rounded-xl overflow-hidden">
+            <img
+              src="/images/forklift-wire-bin.avif"
+              alt="Haynes Industrial forklift moving a wire bin of scrap metal"
+              class="w-full h-80 object-cover"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recurring vs One-Time -->
+    <section class="bg-brand-800 dark:bg-brand-900 py-20">
+      <div class="section-container">
+        <h2 class="text-center text-3xl font-bold text-white mb-12">One-Time Pickup or Ongoing Account?</h2>
+        <div class="grid gap-8 lg:grid-cols-2">
+
+          <div class="rounded-xl bg-brand-700 p-8">
+            <div class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand-600">
+              <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white">One-Time Pickup</h3>
+            <p class="mt-3 text-brand-200 leading-relaxed">
+              Wrapping up a demo job, clearing a warehouse, or moving locations? We handle single-load pickups — one call, one truck, one check. Ideal for large accumulated loads or project closeout cleanups.
+            </p>
+            <ul class="mt-6 space-y-2">
+              {['Schedule within the week', 'We load and haul — your crew stays productive', 'Payment at pickup or by invoice'].map((item) => (
+                <li class="flex items-center gap-2.5 text-sm text-brand-200">
+                  <span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-400" aria-hidden="true"></span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <a href="/contact" class="btn-white mt-8 inline-flex">Schedule a Pickup</a>
+          </div>
+
+          <div class="rounded-xl bg-brand-700 p-8">
+            <div class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand-600">
+              <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white">Recurring Account</h3>
+            <p class="mt-3 text-brand-200 leading-relaxed">
+              If you generate scrap regularly — weekly, monthly, or job-by-job — we set up an ongoing arrangement. You call when you're ready, we come. No renegotiating rates every visit, no new-vendor hassle each time.
+            </p>
+            <ul class="mt-6 space-y-2">
+              {['Priority scheduling for active accounts', 'Consistent pricing tied to market rates', 'One local contact who knows your site and materials'].map((item) => (
+                <li class="flex items-center gap-2.5 text-sm text-brand-200">
+                  <span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-400" aria-hidden="true"></span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+            <a href="/contact" class="btn-white mt-8 inline-flex">Set Up an Account</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="bg-gray-50 dark:bg-gray-900 py-20">
+      <div class="section-container">
+        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-12">Common Questions</h2>
+        <div class="grid gap-6 lg:grid-cols-2">
+          {faqs.map((faq) => (
+            <div class="card">
+              <h3 class="text-base font-bold text-gray-900 dark:text-white">{faq.q}</h3>
+              <p class="mt-3 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-brand-700 dark:bg-brand-800 py-16">
+      <div class="section-container text-center">
+        <h2 class="text-3xl font-bold text-white">Turn End-of-Job Scrap Into a Check</h2>
+        <p class="mt-4 text-lg text-brand-200">
+          Call us or send a message — we'll schedule a pickup and let you get back to work.
+        </p>
+        <div class="mt-8 flex flex-wrap justify-center gap-4">
+          <a href="/contact" class="btn-white">Schedule a Pickup</a>
+          <a href="tel:9166729417" class="btn-outline-white">916-672-9417</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>
