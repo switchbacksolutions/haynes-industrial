@@ -4,10 +4,12 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 const services = [
   {
     id: 'universal-waste',
+    eyebrow: 'Service Category 01',
     title: 'Universal Waste Management',
     image: '/images/ewaste.avif',
     imageAlt: 'Electronic waste staged for processing',
     description: 'Complete solutions for universal waste — safe handling, regulatory compliance, and maximum recovery of reusable materials. Our services reduce environmental risks and make waste management seamless for our clients.',
+    dark: false,
     subservices: [
       {
         title: 'HVAC Recycling',
@@ -41,10 +43,12 @@ const services = [
   },
   {
     id: 'demolition',
+    eyebrow: 'Service Category 02',
     title: 'Demolition Services',
     image: '/images/dumpster-material.avif',
     imageAlt: 'Dumpster filled with demolition materials',
     description: 'C-21 Licensed contractor offering professional structural and selective demolition services with a strong commitment to safety and material recycling.',
+    dark: true,
     subservices: [
       {
         title: 'Structural Demolition',
@@ -66,10 +70,12 @@ const services = [
   },
   {
     id: 'industrial-cleaning',
+    eyebrow: 'Service Category 03',
     title: 'Industrial Cleaning & Pressure Washing',
     image: '/images/loaded-truck-pipe.avif',
     imageAlt: 'Industrial truck loaded with pipe on job site',
     description: 'Specialized industrial cleaning services using advanced techniques to address the most demanding cleaning challenges in commercial and industrial facilities.',
+    dark: false,
     subservices: [
       {
         title: 'Combustible Dust Removal',
@@ -101,62 +107,130 @@ const services = [
   description="Haynes Industrial offers universal waste management, demolition services, and industrial cleaning across Northern and Central California."
 >
   <main>
-    <!-- Page hero -->
-    <section class="bg-brand-800 dark:bg-brand-900 py-20">
-      <div class="section-container text-center">
-        <h1 class="text-5xl font-bold text-white">Our Services</h1>
-        <p class="mx-auto mt-6 max-w-2xl text-xl text-brand-200">
-          Turning Waste Into Value — Recycling, Waste Disposal, and Compliance Made Simple.
-        </p>
+
+    <!-- ─── Hero ─────────────────────────────────────────────────────────── -->
+    <section class="relative isolate overflow-hidden min-h-[60vh] flex items-end">
+      <img
+        src="/images/dumpster-material.avif"
+        alt=""
+        aria-hidden="true"
+        class="absolute inset-0 -z-10 h-full w-full object-cover object-center"
+        fetchpriority="high"
+      />
+      <div class="absolute inset-0 -z-10 bg-gradient-to-r from-brand-900 via-brand-900/80 to-brand-900/20"></div>
+      <div class="absolute inset-0 -z-10 bg-gradient-to-t from-brand-900/95 via-brand-900/40 to-transparent"></div>
+      <div class="w-full">
+        <div class="section-container pb-20 pt-48">
+          <p class="text-xs font-bold uppercase tracking-[0.25em] text-brand-300">
+            Comprehensive Industrial Services
+          </p>
+          <h1 class="mt-5 text-5xl font-bold tracking-tight text-white leading-none md:text-6xl max-w-2xl">
+            Our Services
+          </h1>
+          <p class="mt-6 max-w-xl text-xl text-brand-200 leading-relaxed">
+            Turning Waste Into Value — Recycling, Waste Disposal, and Compliance Made Simple.
+          </p>
+        </div>
       </div>
     </section>
 
-    <!-- Services -->
-    {services.map((service, i) => (
-      <section id={service.id} class:list={['py-20', i % 2 === 1 ? 'bg-gray-50 dark:bg-gray-900' : '']}>
+    <!-- ─── Service Categories ────────────────────────────────────────────── -->
+    {services.map((service) => (
+      <section
+        id={service.id}
+        class:list={[
+          'py-24 lg:py-32',
+          service.dark ? 'bg-brand-900' : '',
+        ]}
+      >
         <div class="section-container">
-          <div class="mb-10">
-            <div class:list={['grid gap-8 lg:items-center', service.image ? 'lg:grid-cols-2' : '']}>
-              <div>
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white">{service.title}</h2>
-                <p class="mt-4 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-                  {service.description}
-                </p>
-              </div>
-              {service.image && (
-                <div class="rounded-xl overflow-hidden">
-                  <img src={service.image} alt={service.imageAlt} class="w-full h-64 object-cover" loading="lazy" />
-                </div>
-              )}
+
+          <!-- Category header + image -->
+          <div class:list={[
+            'grid gap-16 mb-16',
+            service.image ? 'lg:grid-cols-2 lg:items-center' : '',
+          ]}>
+            <div>
+              <p class:list={[
+                'text-xs font-bold uppercase tracking-[0.2em]',
+                service.dark ? 'text-brand-400' : 'text-brand-500',
+              ]}>{service.eyebrow}</p>
+              <h2 class:list={[
+                'mt-3 text-4xl font-bold leading-tight',
+                service.dark ? 'text-white' : 'text-gray-900',
+              ]}>{service.title}</h2>
+              <div class:list={[
+                'mt-3 h-1 w-10',
+                service.dark ? 'bg-brand-500' : 'bg-brand-600',
+              ]}></div>
+              <p class:list={[
+                'mt-6 text-lg leading-relaxed max-w-xl',
+                service.dark ? 'text-brand-300' : 'text-gray-600',
+              ]}>{service.description}</p>
             </div>
+            {service.image && (
+              <div class="overflow-hidden">
+                <img
+                  src={service.image}
+                  alt={service.imageAlt}
+                  class="w-full h-72 object-cover"
+                  loading="lazy"
+                />
+              </div>
+            )}
           </div>
 
-          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {service.subservices.map((sub) => (
-              <div class="service-card overflow-hidden">
-                {sub.image && (
-                  <div class="-mx-8 -mt-8 mb-6">
-                    <img src={sub.image} alt={sub.imageAlt} class="w-full h-40 object-cover" loading="lazy" />
-                  </div>
-                )}
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">{sub.title}</h3>
-                <p class="mt-3 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{sub.description}</p>
-              </div>
-            ))}
-          </div>
+          <!-- Sub-service cards -->
+          {service.dark ? (
+            <div class="grid gap-px bg-brand-700 sm:grid-cols-2 lg:grid-cols-3">
+              {service.subservices.map((sub) => (
+                <div class="bg-brand-800 hover:bg-brand-700/80 transition-colors p-8 flex flex-col">
+                  {sub.image && (
+                    <div class="overflow-hidden mb-6 -mx-8 -mt-8">
+                      <img src={sub.image} alt={sub.imageAlt} class="w-full h-40 object-cover" loading="lazy" />
+                    </div>
+                  )}
+                  <h3 class="text-base font-bold text-white">{sub.title}</h3>
+                  <p class="mt-3 text-sm text-brand-300 leading-relaxed flex-1">{sub.description}</p>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+              {service.subservices.map((sub) => (
+                <div class="service-card overflow-hidden">
+                  {sub.image && (
+                    <div class="-mx-8 -mt-8 mb-6">
+                      <img src={sub.image} alt={sub.imageAlt} class="w-full h-40 object-cover" loading="lazy" />
+                    </div>
+                  )}
+                  <h3 class="text-base font-bold text-gray-900">{sub.title}</h3>
+                  <p class="mt-3 text-sm text-gray-600 leading-relaxed">{sub.description}</p>
+                </div>
+              ))}
+            </div>
+          )}
+
         </div>
       </section>
     ))}
 
-    <!-- CTA -->
-    <section class="bg-brand-700 dark:bg-brand-800 py-16">
-      <div class="section-container text-center">
-        <h2 class="text-3xl font-bold text-white">Have a Project in Mind?</h2>
-        <p class="mt-4 text-lg text-brand-200">
-          Contact us for a consultation and custom quote for your waste management needs.
-        </p>
-        <a href="/contact" class="btn-white mt-8">Get In Touch</a>
+    <!-- ─── CTA ───────────────────────────────────────────────────────────── -->
+    <section class="bg-brand-800 py-20">
+      <div class="section-container">
+        <div class="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <h2 class="text-3xl font-bold text-white lg:text-4xl">Have a Project in Mind?</h2>
+            <p class="mt-3 text-lg text-brand-200">
+              Contact us for a consultation and custom quote for your waste management needs.
+            </p>
+          </div>
+          <div class="flex-shrink-0">
+            <a href="/contact" class="btn-white px-8 py-4 text-sm">Get In Touch</a>
+          </div>
+        </div>
       </div>
     </section>
+
   </main>
 </BaseLayout>
