@@ -145,6 +145,147 @@ haynes-industrial/
 
 ---
 
+## Design system (variant A — "Modern Heavy Industry")
+
+The site uses a design language modeled on established demolition and industrial
+contractor sites (Brandenburg, Veit, D.H. Griffin, Kiewit). The register is
+**"modern but unmistakably heavy industry"** — confident, structured, generous whitespace
+anchored by heavy type.
+
+### Typography
+
+| Role | Family | Notes |
+|------|--------|-------|
+| Display (headings) | **Inter** | Replaced Montserrat — more neutral/workhorse feel |
+| Body | **Inter** | Replaced Questrial — single family throughout |
+| Mono | JetBrains Mono / Fira Code | Code only |
+
+Google Fonts load string: `Inter:wght@400;500;600;700;800`
+
+### Section header pattern
+
+Every section uses a three-part header stack (eyebrow → heading → accent bar):
+
+```html
+<p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-500">Eyebrow label</p>
+<h2 class="mt-3 text-4xl font-bold text-gray-900 leading-tight">Section Heading</h2>
+<div class="mt-3 h-1 w-10 bg-brand-600"></div>
+```
+
+On dark (`bg-brand-900`) sections, change `text-brand-500` → `text-brand-400` and
+`text-gray-900` → `text-white`, `bg-brand-600` → `bg-brand-500`.
+
+### Hero patterns
+
+| Context | Class | Notes |
+|---------|-------|-------|
+| Homepage | `min-h-screen flex items-end` | Full viewport, text anchored to bottom-left |
+| Interior pages | `min-h-[60vh] flex items-end` | Compact photo hero |
+| Service sub-pages | `min-h-[70vh] flex items-end` | Medium photo hero |
+
+All heroes use two layered gradients:
+```html
+<div class="absolute inset-0 -z-10 bg-gradient-to-r from-brand-900 via-brand-900/80 to-brand-900/20"></div>
+<div class="absolute inset-0 -z-10 bg-gradient-to-t from-brand-900/95 via-brand-900/40 to-transparent"></div>
+```
+
+Text sits inside `<div class="w-full"><div class="section-container pb-20 pt-48">`.
+
+### Section rhythm
+
+Alternate backgrounds between major page sections:
+```
+white → bg-brand-900 (dark navy) → white → bg-gray-50
+```
+Section padding: `py-24 lg:py-32` for main sections.
+
+### Containers
+
+`.section-container` = `max-w-6xl` (1152 px) centered with responsive padding.
+Hero content uses inline `max-w-6xl` + `pb-20 pt-48` (not `.section-container`).
+
+### Corners: sharp throughout
+
+The industrial register uses sharp (zero-radius) corners on:
+- Cards (`.service-card`, `.card`) — no `rounded-*`
+- Images — no `rounded-*` wrappers
+- Dark feature panels — no `rounded-*`
+- Buttons already have no radius (existing behavior)
+
+### Bullet / checklist items
+
+```html
+<li class="flex items-start gap-4 border-b border-gray-100 pb-5 last:border-0 last:pb-0">
+  <span class="mt-0.5 flex-shrink-0 h-5 w-5 bg-brand-600 flex items-center justify-center">
+    <svg class="h-3 w-3 text-white" ...><path d="M5 13l4 4L19 7" /></svg>
+  </span>
+  <span class="text-base text-gray-700 leading-snug">Item text</span>
+</li>
+```
+
+Key: `bg-brand-600` square (no `rounded-full`), list items separated by `divide-y divide-gray-100`.
+
+### Service card grid (dark sections)
+
+Use `gap-px bg-brand-700 grid sm:grid-cols-N` — the gap color becomes the visible divider:
+
+```html
+<div class="grid gap-px bg-brand-700 sm:grid-cols-3">
+  <div class="bg-brand-800 hover:bg-brand-700/80 transition-colors p-8 flex flex-col">
+    ...
+  </div>
+</div>
+```
+
+### Callout boxes
+
+"Not Accepted" / warning callouts use a left-border instead of a rounded box:
+```html
+<div class="border-l-4 border-amber-400 bg-amber-50 p-6">
+```
+
+### CTA sections
+
+All page-ending CTAs use `bg-brand-800 py-20` with horizontal flex layout:
+```html
+<section class="bg-brand-800 py-20">
+  <div class="section-container">
+    <div class="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+      <div>
+        <h2 class="text-3xl font-bold text-white lg:text-4xl">CTA Headline</h2>
+        <p class="mt-3 text-lg text-brand-200">Supporting copy.</p>
+      </div>
+      <div class="flex-shrink-0">
+        <a href="/contact" class="btn-white px-8 py-4 text-sm">CTA Button</a>
+      </div>
+    </div>
+  </div>
+</section>
+```
+
+### Decorative corner accent (featured images)
+
+Applied to the primary image in two-column sections:
+```html
+<div class="relative">
+  <img class="w-full h-96 object-cover" ... />
+  <div class="absolute -bottom-4 -right-4 h-20 w-20 border-b-4 border-r-4 border-brand-600 hidden lg:block" aria-hidden="true"></div>
+</div>
+```
+
+### Credential strip (hero)
+
+Used in the homepage hero below CTAs:
+```html
+<div class="mt-14 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-brand-700/60 pt-8">
+  <span class="text-xs font-semibold uppercase tracking-widest text-brand-400">Licensed · Bonded · Insured</span>
+  <span class="hidden sm:block h-4 w-px bg-brand-700"></span>
+  <span class="text-xs font-semibold uppercase tracking-widest text-brand-400">Regulatory Compliant</span>
+</div>
+```
+
+---
+
 ## Brand colors
 
 The custom `brand` palette (defined in `src/styles/global.css`) maps to Haynes

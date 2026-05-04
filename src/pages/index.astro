@@ -1,5 +1,37 @@
 ---
 import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const services = [
+  {
+    number: '01',
+    title: 'Universal Waste Management',
+    image: '/images/waste-bins.avif',
+    imageAlt: 'Industrial waste bins ready for collection',
+    description: 'Complete solutions for universal waste — safe handling, regulatory compliance, and maximum recovery of reusable materials. Our services reduce environmental risks and make waste management seamless.',
+  },
+  {
+    number: '02',
+    title: 'Medical & Lab Equipment Disposal',
+    image: '/images/lab-equipment.avif',
+    imageAlt: 'Laboratory equipment staged for disposal',
+    description: 'Secure, compliant disposal of medical and laboratory equipment, including decontamination, dismantling, and responsible recycling. Our processes meet regulatory requirements and ensure sensitive materials are handled with care.',
+  },
+  {
+    number: '03',
+    title: 'HVAC & Appliance Recycling',
+    image: '/images/hvac.avif',
+    imageAlt: 'HVAC unit ready for recycling',
+    description: 'Comprehensive HVAC and appliance recycling, including certified refrigerant recovery and responsible dismantling. We ensure regulatory compliance while making end-of-life equipment management simple and efficient.',
+  },
+];
+
+const whyUs = [
+  'Full-service partner for industrial recycling, e-waste, and equipment decommissioning',
+  'Licensed, bonded, and insured',
+  'Proven expertise across diverse industrial sectors',
+  'Commitment to safety, sustainability, and compliance',
+  'Customized solutions that save time, reduce costs, and maximize value',
+];
 ---
 
 <BaseLayout
@@ -7,136 +39,166 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   description="A trusted partner for industrial recycling and universal waste management in Northern California. Turning waste into value."
 >
   <main>
-    <!-- Hero -->
-    <section class="relative isolate overflow-hidden">
+
+    <!-- ─── Hero ─────────────────────────────────────────────────────────── -->
+    <section class="relative isolate overflow-hidden min-h-screen flex items-end">
+      <!-- Full-bleed stock photo: industrial worker cutting metal / heavy equipment -->
       <img
-        src="/images/loaded-truck.avif"
+        src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1920&q=85"
         alt=""
         aria-hidden="true"
         class="absolute inset-0 -z-10 h-full w-full object-cover object-center"
         fetchpriority="high"
       />
-      <div class="absolute inset-0 -z-10 bg-gradient-to-r from-brand-900 via-brand-900/80 to-transparent"></div>
-      <div class="section-container py-48">
-        <p class="text-sm font-semibold uppercase tracking-widest text-brand-300">
-          An Environmental Services Company
-        </p>
-        <h1 class="mt-4 text-5xl font-bold tracking-tight text-white text-balance max-w-2xl">
-          Welcome To Haynes Industrial
-        </h1>
-        <p class="mt-6 max-w-xl text-xl text-brand-200 text-pretty">
-          A trusted partner for industrial recycling and universal waste management in Northern California.
-        </p>
-        <div class="mt-10 flex flex-wrap justify-start gap-4">
-          <a href="/about" class="btn-primary">
-            Learn More
-          </a>
-          <a href="/contact" class="btn-outline-white">
-            Get In Touch
-          </a>
+      <!-- Layered gradients: heavy left + bottom pour -->
+      <div class="absolute inset-0 -z-10 bg-gradient-to-r from-brand-900 via-brand-900/80 to-brand-900/20"></div>
+      <div class="absolute inset-0 -z-10 bg-gradient-to-t from-brand-900/95 via-brand-900/40 to-transparent"></div>
+
+      <div class="w-full">
+        <div class="mx-auto max-w-6xl px-4 sm:px-6 pb-24 pt-48">
+          <!-- Eyebrow -->
+          <p class="text-xs font-bold uppercase tracking-[0.25em] text-brand-300">
+            Northern &amp; Central California
+          </p>
+
+          <!-- Headline — rewritten to be tighter and more commanding -->
+          <h1 class="mt-5 text-5xl font-bold tracking-tight text-white leading-none text-balance md:text-6xl lg:text-7xl max-w-3xl">
+            Industrial Waste,<br />Handled Right.
+          </h1>
+
+          <!-- Body — kept exactly as written -->
+          <p class="mt-8 max-w-xl text-xl text-brand-200 leading-relaxed">
+            A trusted partner for industrial recycling and universal waste management in Northern California.
+          </p>
+
+          <!-- CTAs -->
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a href="/contact" class="btn-primary px-7 py-3.5 text-sm">
+              Get In Touch
+            </a>
+            <a href="/services" class="btn-outline-white px-7 py-3.5 text-sm">
+              Our Services
+            </a>
+          </div>
+
+          <!-- Credential strip -->
+          <div class="mt-14 flex flex-wrap items-center gap-x-6 gap-y-2 border-t border-brand-700/60 pt-8">
+            <span class="text-xs font-semibold uppercase tracking-widest text-brand-400">Licensed · Bonded · Insured</span>
+            <span class="hidden sm:block h-4 w-px bg-brand-700"></span>
+            <span class="text-xs font-semibold uppercase tracking-widest text-brand-400">Regulatory Compliant</span>
+            <span class="hidden sm:block h-4 w-px bg-brand-700"></span>
+            <span class="text-xs font-semibold uppercase tracking-widest text-brand-400">Industrial Specialists</span>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- About -->
-    <section class="py-20">
+    <!-- ─── About ─────────────────────────────────────────────────────────── -->
+    <section class="py-24 lg:py-32">
       <div class="section-container">
-        <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div class="grid gap-16 lg:grid-cols-2 lg:items-center">
+
+          <!-- Copy -->
           <div>
-            <h2 class="text-3xl font-bold text-gray-900 dark:text-white">About Us</h2>
-            <p class="mt-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-500">About Haynes Industrial</p>
+            <h2 class="mt-3 text-4xl font-bold text-gray-900 leading-tight">
+              Who We Are
+            </h2>
+            <div class="mt-3 h-1 w-10 bg-brand-600"></div>
+            <p class="mt-8 text-lg text-gray-600 leading-relaxed">
               Haynes Industrial provides integrated recycling and waste management services to industrial and commercial sectors across Northern and Central California. We are committed to advancing sustainability through regulatory compliance, operational efficiency, and resource recovery.
             </p>
-            <p class="mt-4 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p class="mt-4 text-lg text-gray-600 leading-relaxed">
               Our team brings deep expertise in handling complex waste streams and delivering scalable, cost-effective solutions that align with industry best practices and environmental standards.
             </p>
-            <a href="/about" class="btn-primary mt-8 inline-flex">
+            <a href="/about" class="btn-primary mt-10 inline-flex">
               Learn More
             </a>
           </div>
-          <div class="rounded-xl overflow-hidden">
+
+          <!-- Image -->
+          <div class="relative">
             <img
-              src="/images/loaded-truck.avif"
-              alt="Haynes Industrial truck ready for pickup"
-              class="w-full h-72 lg:h-full object-cover"
+              src="/images/forklift-wire-bin.avif"
+              alt="Haynes Industrial forklift moving material bins"
+              class="w-full h-80 lg:h-[480px] object-cover"
               loading="lazy"
             />
+            <!-- Corner accent -->
+            <div class="absolute -bottom-4 -right-4 h-20 w-20 border-b-4 border-r-4 border-brand-600 hidden lg:block" aria-hidden="true"></div>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Core Services -->
-    <section class="bg-gray-50 dark:bg-gray-900 py-20">
+    <!-- ─── Core Services ──────────────────────────────────────────────────── -->
+    <section class="bg-brand-900 py-24 lg:py-32">
       <div class="section-container">
-        <div class="text-center mb-14">
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Core Services</h2>
-          <p class="mt-4 text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+
+        <!-- Section header -->
+        <div class="mb-14">
+          <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-400">What We Do</p>
+          <h2 class="mt-3 text-4xl font-bold text-white leading-tight">
+            Core Services
+          </h2>
+          <div class="mt-3 h-1 w-10 bg-brand-500"></div>
+          <p class="mt-6 text-lg text-brand-300 max-w-2xl leading-relaxed">
             Comprehensive recycling, waste management, and industrial services tailored to your needs.
           </p>
         </div>
 
-        <div class="grid gap-8 sm:grid-cols-3">
-          {[
-            {
-              number: '01',
-              title: 'Universal Waste Management',
-              image: '/images/waste-bins.avif',
-              imageAlt: 'Industrial waste bins ready for collection',
-              description: 'Complete solutions for universal waste — safe handling, regulatory compliance, and maximum recovery of reusable materials. Our services reduce environmental risks and make waste management seamless.',
-            },
-            {
-              number: '02',
-              title: 'Medical & Lab Equipment Disposal',
-              image: '/images/lab-equipment.avif',
-              imageAlt: 'Laboratory equipment staged for disposal',
-              description: 'Secure, compliant disposal of medical and laboratory equipment, including decontamination, dismantling, and responsible recycling. Our processes meet regulatory requirements and ensure sensitive materials are handled with care.',
-            },
-            {
-              number: '03',
-              title: 'HVAC & Appliance Recycling',
-              image: '/images/hvac.avif',
-              imageAlt: 'HVAC unit ready for recycling',
-              description: 'Comprehensive HVAC and appliance recycling, including certified refrigerant recovery and responsible dismantling. We ensure regulatory compliance while making end-of-life equipment management simple and efficient.',
-            },
-          ].map(({ number, title, image, imageAlt, description }) => (
-            <div class="service-card overflow-hidden">
-              <div class="-mx-8 -mt-8 mb-6">
-                <img src={image} alt={imageAlt} class="w-full h-44 object-cover" loading="lazy" />
+        <!-- Cards: gap-px with bg-brand-700 creates the divider lines -->
+        <div class="grid gap-px bg-brand-700 sm:grid-cols-3">
+          {services.map(({ number, title, image, imageAlt, description }) => (
+            <div class="bg-brand-800 hover:bg-brand-700/80 transition-colors flex flex-col">
+              <div class="overflow-hidden">
+                <img
+                  src={image}
+                  alt={imageAlt}
+                  class="w-full h-52 object-cover opacity-90 hover:opacity-100 transition-opacity"
+                  loading="lazy"
+                />
               </div>
-              <p class="text-4xl font-bold text-brand-200 dark:text-brand-800">{number}</p>
-              <h3 class="mt-4 text-xl font-semibold text-gray-900 dark:text-white">{title}</h3>
-              <p class="mt-3 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{description}</p>
-              <a href="/services" class="mt-6 inline-flex text-sm font-medium text-brand-600 no-underline hover:underline dark:text-brand-400">
-                Learn More →
-              </a>
+              <div class="p-8 flex flex-col flex-1">
+                <p class="text-4xl font-bold text-brand-600/70">{number}</p>
+                <h3 class="mt-4 text-xl font-bold text-white leading-snug">{title}</h3>
+                <p class="mt-4 text-sm text-brand-300 leading-relaxed flex-1">{description}</p>
+                <a href="/services" class="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-400 no-underline hover:text-brand-200 transition-colors">
+                  Learn More
+                  <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                  </svg>
+                </a>
+              </div>
             </div>
           ))}
         </div>
+
       </div>
     </section>
 
-    <!-- Why Choose Us -->
-    <section class="py-20">
+    <!-- ─── Why Choose / Mission ───────────────────────────────────────────── -->
+    <section class="py-24 lg:py-32">
       <div class="section-container">
-        <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div class="grid gap-14 lg:grid-cols-2 lg:items-start">
+
+          <!-- Left: Why choose -->
           <div>
-            <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Why Choose Haynes Industrial</h2>
-            <ul class="mt-8 space-y-4 list-none m-0 p-0">
-              {[
-                'Full-service partner for industrial recycling, e-waste, and equipment decommissioning',
-                'Licensed, bonded, and insured',
-                'Proven expertise across diverse industrial sectors',
-                'Commitment to safety, sustainability, and compliance',
-                'Customized solutions that save time, reduce costs, and maximize value',
-              ].map((item) => (
-                <li class="flex items-start gap-3">
-                  <span class="mt-1 flex-shrink-0 h-5 w-5 rounded-full bg-brand-600 flex items-center justify-center">
-                    <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" aria-hidden="true">
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-500">Our Commitment</p>
+            <h2 class="mt-3 text-4xl font-bold text-gray-900 leading-tight">
+              Why Haynes Industrial
+            </h2>
+            <div class="mt-3 h-1 w-10 bg-brand-600"></div>
+            <ul class="mt-10 space-y-0 list-none m-0 p-0 divide-y divide-gray-100">
+              {whyUs.map((item) => (
+                <li class="flex items-start gap-4 py-5">
+                  <span class="mt-0.5 flex-shrink-0 h-5 w-5 bg-brand-600 flex items-center justify-center" aria-hidden="true">
+                    <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3.5">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                   </span>
-                  <span class="text-gray-700 dark:text-gray-300">{item}</span>
+                  <span class="text-base text-gray-700 leading-snug">{item}</span>
                 </li>
               ))}
             </ul>
@@ -144,96 +206,123 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
               View All Services
             </a>
           </div>
-          <div class="rounded-xl bg-brand-800 p-10 text-white">
-            <h3 class="text-2xl font-bold">Our Mission</h3>
-            <p class="mt-4 leading-relaxed text-brand-200">
+
+          <!-- Right: Mission panel -->
+          <div class="bg-brand-800 p-10 lg:p-12">
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-400">Our Mission</p>
+            <h3 class="mt-4 text-2xl font-bold text-white">Turning Waste Into Value</h3>
+            <div class="mt-2 h-0.5 w-8 bg-brand-500"></div>
+            <p class="mt-6 leading-relaxed text-brand-200">
               At Haynes Industrial, our mission is to provide safe, reliable, and sustainable recycling and waste management solutions that help businesses reduce environmental impact, stay compliant, and recover valuable resources.
             </p>
             <p class="mt-4 leading-relaxed text-brand-200">
               We are committed to supporting our clients, our communities, and the planet through responsible practices and innovative services.
             </p>
+            <a href="/contact" class="btn-white mt-10 inline-flex">
+              Get In Touch
+            </a>
           </div>
+
         </div>
       </div>
     </section>
 
-    <!-- Testimonials Carousel -->
-    <section class="bg-gray-50 dark:bg-gray-900 py-20">
+    <!-- ─── Testimonials ───────────────────────────────────────────────────── -->
+    <section class="bg-gray-50 py-24 lg:py-32">
       <div class="section-container">
-        <h2 class="text-center text-3xl font-bold text-gray-900 dark:text-white mb-12">What Clients Say</h2>
+
+        <!-- Section header -->
+        <div class="mb-14">
+          <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-500">Client Testimonials</p>
+          <h2 class="mt-3 text-4xl font-bold text-gray-900">What Clients Say</h2>
+          <div class="mt-3 h-1 w-10 bg-brand-600"></div>
+        </div>
+
+        <!-- Carousel -->
         <div class="relative mx-auto max-w-2xl" id="testimonial-carousel" aria-roledescription="carousel" aria-label="Client testimonials">
-          <!-- Slides -->
           <div class="overflow-hidden">
             <div id="testimonial-track" class="flex transition-transform duration-500 ease-in-out">
 
               <!-- Slide 1 -->
               <div class="w-full flex-shrink-0" role="group" aria-roledescription="slide" aria-label="1 of 3">
-                <div class="card text-center">
-                  <img
-                    src="/images/contractor-profile.avif"
-                    alt="John A., General Contractor"
-                    class="mx-auto h-20 w-20 rounded-full object-cover"
-                    loading="lazy"
-                  />
-                  <svg class="mx-auto mt-6 h-8 w-8 text-brand-400" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <div class="bg-white border border-gray-200 p-10">
+                  <svg class="h-7 w-7 text-brand-600" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                   </svg>
-                  <blockquote class="mt-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed italic">
+                  <blockquote class="mt-6 text-lg text-gray-700 leading-relaxed italic">
                     "Haynes Industrial is our go-to for e-waste, batteries, lightbulbs, and appliances. They make the tough jobs simple and always find a way to handle the recycling and waste removal parts smoothly."
                   </blockquote>
-                  <p class="mt-6 font-semibold text-gray-900 dark:text-white">John A.</p>
-                  <p class="text-sm text-gray-500 dark:text-gray-400">General Contractor</p>
+                  <div class="mt-8 flex items-center gap-4 border-t border-gray-100 pt-6">
+                    <img
+                      src="/images/contractor-profile.avif"
+                      alt="John A., General Contractor"
+                      class="h-12 w-12 object-cover"
+                      loading="lazy"
+                    />
+                    <div>
+                      <p class="font-bold text-gray-900 text-sm">John A.</p>
+                      <p class="text-xs text-gray-500 mt-0.5">General Contractor</p>
+                    </div>
+                  </div>
                 </div>
               </div>
 
               <!-- Slide 2 -->
               <div class="w-full flex-shrink-0" role="group" aria-roledescription="slide" aria-label="2 of 3">
-                <div class="card text-center">
-                  <img
-                    src="/images/warehouse-sup-profile.avif"
-                    alt="Brad R., Warehouse Supervisor"
-                    class="mx-auto h-20 w-20 rounded-full object-cover"
-                    loading="lazy"
-                  />
-                  <svg class="mx-auto mt-6 h-8 w-8 text-brand-400" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <div class="bg-white border border-gray-200 p-10">
+                  <svg class="h-7 w-7 text-brand-600" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                   </svg>
-                  <blockquote class="mt-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed italic">
+                  <blockquote class="mt-6 text-lg text-gray-700 leading-relaxed italic">
                     "We do electrical, HVAC, and solar, and Haynes Industrial is the only company we trust with all our waste. They take care of everything from solar panels and light bulbs to old HVAC units. It's a relief to have one reliable partner who does it all."
                   </blockquote>
-                  <p class="mt-6 font-semibold text-gray-900 dark:text-white">Brad R.</p>
-                  <p class="text-sm text-gray-500 dark:text-gray-400">Warehouse Supervisor</p>
+                  <div class="mt-8 flex items-center gap-4 border-t border-gray-100 pt-6">
+                    <img
+                      src="/images/warehouse-sup-profile.avif"
+                      alt="Brad R., Warehouse Supervisor"
+                      class="h-12 w-12 object-cover"
+                      loading="lazy"
+                    />
+                    <div>
+                      <p class="font-bold text-gray-900 text-sm">Brad R.</p>
+                      <p class="text-xs text-gray-500 mt-0.5">Warehouse Supervisor</p>
+                    </div>
+                  </div>
                 </div>
               </div>
 
               <!-- Slide 3 -->
               <div class="w-full flex-shrink-0" role="group" aria-roledescription="slide" aria-label="3 of 3">
-                <div class="card text-center">
-                  <img
-                    src="/images/project-manager-profile.avif"
-                    alt="Jeff G., Electrical Utilities Project Manager"
-                    class="mx-auto h-20 w-20 rounded-full object-cover"
-                    loading="lazy"
-                  />
-                  <svg class="mx-auto mt-6 h-8 w-8 text-brand-400" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <div class="bg-white border border-gray-200 p-10">
+                  <svg class="h-7 w-7 text-brand-600" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
                   </svg>
-                  <blockquote class="mt-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed italic">
+                  <blockquote class="mt-6 text-lg text-gray-700 leading-relaxed italic">
                     "When we had to replace more than 1,200 traffic lights for a city project, Haynes Industrial stepped in and made it easy. Their recycling solutions saved us time, money, and a lot of stress."
                   </blockquote>
-                  <p class="mt-6 font-semibold text-gray-900 dark:text-white">Jeff G.</p>
-                  <p class="text-sm text-gray-500 dark:text-gray-400">Electrical Utilities Project Manager</p>
+                  <div class="mt-8 flex items-center gap-4 border-t border-gray-100 pt-6">
+                    <img
+                      src="/images/project-manager-profile.avif"
+                      alt="Jeff G., Electrical Utilities Project Manager"
+                      class="h-12 w-12 object-cover"
+                      loading="lazy"
+                    />
+                    <div>
+                      <p class="font-bold text-gray-900 text-sm">Jeff G.</p>
+                      <p class="text-xs text-gray-500 mt-0.5">Electrical Utilities Project Manager</p>
+                    </div>
+                  </div>
                 </div>
               </div>
 
             </div>
           </div>
 
-          <!-- Prev / Next buttons -->
+          <!-- Prev / Next -->
           <button
             id="testimonial-prev"
             aria-label="Previous testimonial"
-            class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md text-brand-700 hover:bg-brand-50 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-600"
+            class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 flex h-10 w-10 items-center justify-center bg-white shadow-md text-brand-700 hover:bg-brand-50 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-600"
           >
             <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
@@ -242,56 +331,67 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
           <button
             id="testimonial-next"
             aria-label="Next testimonial"
-            class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 flex h-10 w-10 items-center justify-center rounded-full bg-white shadow-md text-brand-700 hover:bg-brand-50 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-600"
+            class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 flex h-10 w-10 items-center justify-center bg-white shadow-md text-brand-700 hover:bg-brand-50 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-600"
           >
             <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
             </svg>
           </button>
 
-          <!-- Dot indicators -->
-          <div class="mt-8 flex justify-center gap-3" role="tablist" aria-label="Testimonial slides">
-            <button role="tab" aria-selected="true" aria-label="Slide 1" data-index="0" class="testimonial-dot h-2.5 w-2.5 rounded-full bg-brand-600 transition-all"></button>
-            <button role="tab" aria-selected="false" aria-label="Slide 2" data-index="1" class="testimonial-dot h-2.5 w-2.5 rounded-full bg-brand-200 transition-all hover:bg-brand-400"></button>
-            <button role="tab" aria-selected="false" aria-label="Slide 3" data-index="2" class="testimonial-dot h-2.5 w-2.5 rounded-full bg-brand-200 transition-all hover:bg-brand-400"></button>
+          <!-- Dot indicators — active dot is a pill, inactive are squares -->
+          <div class="mt-10 flex justify-center gap-2.5" role="tablist" aria-label="Testimonial slides">
+            <button role="tab" aria-selected="true"  aria-label="Slide 1" data-index="0" class="testimonial-dot h-2 w-8 bg-brand-600 transition-all duration-300"></button>
+            <button role="tab" aria-selected="false" aria-label="Slide 2" data-index="1" class="testimonial-dot h-2 w-2 bg-brand-200 transition-all duration-300 hover:bg-brand-400"></button>
+            <button role="tab" aria-selected="false" aria-label="Slide 3" data-index="2" class="testimonial-dot h-2 w-2 bg-brand-200 transition-all duration-300 hover:bg-brand-400"></button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ─── CTA Banner ────────────────────────────────────────────────────── -->
+    <section class="bg-brand-800 py-20">
+      <div class="section-container">
+        <div class="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <h2 class="text-3xl font-bold text-white lg:text-4xl">Put Us to Work</h2>
+            <p class="mt-3 text-lg text-brand-200">
+              Contact us today to discuss your recycling and waste management needs.
+            </p>
+          </div>
+          <div class="flex-shrink-0">
+            <a href="/contact" class="btn-white px-8 py-4 text-sm">
+              Contact Us
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <script>
-      const track = document.getElementById('testimonial-track') as HTMLElement;
-      const dots = document.querySelectorAll<HTMLButtonElement>('.testimonial-dot');
-      const total = 3;
-      let current = 0;
-
-      function goTo(index: number) {
-        current = (index + total) % total;
-        track.style.transform = `translateX(-${current * 100}%)`;
-        dots.forEach((d, i) => {
-          const active = i === current;
-          d.classList.toggle('bg-brand-600', active);
-          d.classList.toggle('bg-brand-200', !active);
-          d.setAttribute('aria-selected', String(active));
-        });
-      }
-
-      document.getElementById('testimonial-prev')?.addEventListener('click', () => goTo(current - 1));
-      document.getElementById('testimonial-next')?.addEventListener('click', () => goTo(current + 1));
-      dots.forEach((dot) => dot.addEventListener('click', () => goTo(Number(dot.dataset.index))));
-    </script>
-
-    <!-- CTA Banner -->
-    <section class="bg-brand-700 dark:bg-brand-800 py-16">
-      <div class="section-container text-center">
-        <h2 class="text-3xl font-bold text-white">Ready to Get Started?</h2>
-        <p class="mt-4 text-lg text-brand-200">
-          Contact us today to discuss your recycling and waste management needs.
-        </p>
-        <a href="/contact" class="btn-white mt-8">
-          Contact Us
-        </a>
-      </div>
-    </section>
   </main>
+
+  <script>
+    const track = document.getElementById('testimonial-track') as HTMLElement;
+    const dots  = document.querySelectorAll<HTMLButtonElement>('.testimonial-dot');
+    const total = 3;
+    let current = 0;
+
+    function goTo(index: number) {
+      current = (index + total) % total;
+      track.style.transform = `translateX(-${current * 100}%)`;
+      dots.forEach((d, i) => {
+        const active = i === current;
+        d.classList.toggle('bg-brand-600', active);
+        d.classList.toggle('w-8',          active);
+        d.classList.toggle('bg-brand-200', !active);
+        d.classList.toggle('w-2',          !active);
+        d.setAttribute('aria-selected', String(active));
+      });
+    }
+
+    document.getElementById('testimonial-prev')?.addEventListener('click', () => goTo(current - 1));
+    document.getElementById('testimonial-next')?.addEventListener('click', () => goTo(current + 1));
+    dots.forEach((dot) => dot.addEventListener('click', () => goTo(Number(dot.dataset.index))));
+  </script>
+
 </BaseLayout>
