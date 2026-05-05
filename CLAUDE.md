@@ -7,8 +7,10 @@ working on this codebase. Read it before writing any code.
 
 ## Project overview
 
-The **Haynes Industrial** website — a business site for an environmental services company
-based in Northern & Central California specializing in recycling logistics, universal waste management, and recycling. Built on Astro.js.
+The **Haynes Industrial** website — a business site for a recycling logistics company based in
+Northern & Central California. Haynes Industrial arranges transportation (licensed freight broker),
+finds the right buyers and recyclers, and handles compliance so industrial and commercial clients
+get maximum value — or pay the least — for their end-of-life and surplus material. Built on Astro.js.
 
 - **Live URL**: `https://www.haynesindustrial.com`
 - **Static output** — no server runtime; every page is pre-rendered HTML
@@ -32,14 +34,17 @@ based in Northern & Central California specializing in recycling logistics, univ
 | Tagline | "Turning Waste Into Value" |
 
 **Credentials & certifications:**
+- Licensed freight broker (can arrange transportation from any carrier, not just company trucks)
 - Licensed, bonded, and insured
 - EPA 608 certified for refrigerant recovery
 - R2v3 and e-Stewards standards (certification in process)
 
+**Positioning:** Recycling logistics — not just a recycler. Haynes Industrial handles the full logistics problem: arranging transportation, finding the right buyers/recyclers, and managing compliance documentation. Clients don't need to figure out regulations, find carriers, or identify downstream buyers themselves.
+
 **Business model:** B2B only — not a consumer drop-off site. Clients are licensed contractors, manufacturers, IT departments, environmental compliance companies, property managers, schools, municipalities, and healthcare organizations.
 
 **Pricing approach:**
-- Scrap metal: priced against current commodity spot rates (per-pound, explained before loading)
+- Metal recycling: priced against current commodity spot rates (per-pound, explained before loading)
 - E-waste: buy-back for gold-bearing components; no-charge haul for end-of-life material
 - Industrial surplus: offer based on resale market value + commodity/recycle value; no-charge site visit for large lots
 - Same-week scheduling throughout the Sacramento region; recurring accounts available
