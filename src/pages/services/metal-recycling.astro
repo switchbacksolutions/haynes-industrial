@@ -61,8 +61,8 @@ const faqs = [
 >
   <main>
 
-    <!-- Hero -->
-    <section class="relative isolate overflow-hidden">
+    <!-- ─── Hero ─────────────────────────────────────────────────────────── -->
+    <section class="relative isolate overflow-hidden min-h-[70vh] flex items-end">
       <img
         src="/images/loaded-truck-pipe.avif"
         alt=""
@@ -70,62 +70,65 @@ const faqs = [
         class="absolute inset-0 -z-10 h-full w-full object-cover object-center"
         fetchpriority="high"
       />
-      <div class="absolute inset-0 -z-10 bg-gradient-to-r from-brand-900 via-brand-900/85 to-brand-900/40"></div>
-      <div class="section-container py-40">
-        <p class="text-sm font-semibold uppercase tracking-widest text-brand-300">
-          Metal Recycling · Sacramento Region
-        </p>
-        <h1 class="mt-4 max-w-2xl text-5xl font-bold tracking-tight text-white text-balance">
-          We Come to Your Job Site. You Don't Haul — You Get Paid.
-        </h1>
-        <p class="mt-6 max-w-xl text-xl text-brand-200 text-pretty">
-          Industrial metal recycling pickup for licensed contractors throughout Northern California. Same-week scheduling. Market-rate pricing. No lost half-days at the yard.
-        </p>
-        <div class="mt-10 flex flex-wrap gap-4">
-          <a href="/contact" class="btn-primary">Schedule a Pickup</a>
-          <a href="#materials" class="btn-outline-white">See What We Accept</a>
+      <div class="absolute inset-0 -z-10 bg-gradient-to-r from-brand-900 via-brand-900/80 to-brand-900/20"></div>
+      <div class="absolute inset-0 -z-10 bg-gradient-to-t from-brand-900/95 via-brand-900/40 to-transparent"></div>
+      <div class="w-full">
+        <div class="section-container pb-20 pt-48">
+          <p class="text-xs font-bold uppercase tracking-[0.25em] text-brand-300">
+            Metal Recycling · Sacramento Region
+          </p>
+          <h1 class="mt-5 text-5xl font-bold tracking-tight text-white leading-none text-balance md:text-6xl max-w-2xl">
+            We Come to Your Job Site. You Don't Haul — You Get Paid.
+          </h1>
+          <p class="mt-8 max-w-xl text-xl text-brand-200 leading-relaxed">
+            Industrial metal recycling pickup for licensed contractors throughout Northern California. Same-week scheduling. Market-rate pricing. No lost half-days at the yard.
+          </p>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a href="/contact" class="btn-primary px-7 py-3.5 text-sm">Schedule a Pickup</a>
+            <a href="#materials" class="btn-outline-white px-7 py-3.5 text-sm">See What We Accept</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Who This Is For -->
-    <section class="py-20">
+    <!-- ─── Who We Work With ──────────────────────────────────────────────── -->
+    <section class="py-24 lg:py-32">
       <div class="section-container">
-        <div class="mb-12">
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Who We Work With</h2>
-          <p class="mt-4 max-w-2xl text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
-            If metal recycling is part of your work, we're the pickup call you should already have in your contacts. We serve licensed contractors and industrial operators across Northern and Central California.
-          </p>
-        </div>
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-500">Serving Licensed Contractors</p>
+        <h2 class="mt-3 text-4xl font-bold text-gray-900 leading-tight">Who We Work With</h2>
+        <div class="mt-3 h-1 w-10 bg-brand-600"></div>
+        <p class="mt-6 max-w-2xl text-lg text-gray-600 leading-relaxed">
+          If metal recycling is part of your work, we're the pickup call you should already have in your contacts. We serve licensed contractors and industrial operators across Northern and Central California.
+        </p>
+        <div class="mt-12 grid gap-px bg-gray-200 sm:grid-cols-2 lg:grid-cols-4">
           {trades.map((trade) => (
-            <div class="service-card">
-              <h3 class="text-base font-bold text-brand-700 dark:text-brand-300">{trade.name}</h3>
-              <p class="mt-2 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{trade.materials}</p>
+            <div class="bg-white p-6">
+              <h3 class="text-sm font-bold text-brand-700">{trade.name}</h3>
+              <p class="mt-2 text-sm text-gray-600 leading-relaxed">{trade.materials}</p>
             </div>
           ))}
         </div>
       </div>
     </section>
 
-    <!-- What We Accept -->
-    <section id="materials" class="bg-gray-50 dark:bg-gray-900 py-20">
+    <!-- ─── What We Accept ────────────────────────────────────────────────── -->
+    <section id="materials" class="bg-gray-50 py-24 lg:py-32">
       <div class="section-container">
-        <div class="mb-12">
-          <h2 class="text-3xl font-bold text-gray-900 dark:text-white">What We Accept</h2>
-          <p class="mt-4 text-lg text-gray-600 dark:text-gray-400">
-            Reference for foremen and site leads. If you're unsure about a specific item, call us — we'll tell you straight.
-          </p>
-        </div>
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-500">Material Reference</p>
+        <h2 class="mt-3 text-4xl font-bold text-gray-900 leading-tight">What We Accept</h2>
+        <div class="mt-3 h-1 w-10 bg-brand-600"></div>
+        <p class="mt-6 text-lg text-gray-600">
+          Reference for foremen and site leads. If you're unsure about a specific item, call us — we'll tell you straight.
+        </p>
 
-        <div class="grid gap-6 lg:grid-cols-3">
+        <div class="mt-12 grid gap-6 lg:grid-cols-3">
           {materialCategories.map((cat) => (
             <div class="service-card">
-              <h3 class="text-lg font-bold text-gray-900 dark:text-white">{cat.category}</h3>
-              <ul class="mt-4 space-y-2.5">
+              <h3 class="text-lg font-bold text-gray-900">{cat.category}</h3>
+              <ul class="mt-5 space-y-3">
                 {cat.items.map((item) => (
-                  <li class="flex items-start gap-2.5 text-sm text-gray-600 dark:text-gray-400">
-                    <span class="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-500" aria-hidden="true"></span>
+                  <li class="flex items-start gap-3 text-sm text-gray-600">
+                    <span class="mt-1.5 h-1.5 w-1.5 flex-shrink-0 bg-brand-500" aria-hidden="true"></span>
                     {item}
                   </li>
                 ))}
@@ -134,16 +137,15 @@ const faqs = [
           ))}
         </div>
 
-        <!-- Not Accepted callout -->
-        <div class="mt-6 rounded-xl border border-amber-200 bg-amber-50 p-6 dark:border-amber-800/50 dark:bg-amber-950/20">
-          <h3 class="text-base font-bold text-amber-900 dark:text-amber-300">Not Accepted</h3>
+        <div class="mt-6 border-l-4 border-amber-400 bg-amber-50 p-6">
+          <h3 class="text-sm font-bold text-amber-900">Not Accepted</h3>
           <ul class="mt-3 space-y-2">
             {[
               'Household appliances with refrigerant still charged — refrigerant must be recovered first. We can perform on-site recovery before pickup; call us to arrange.',
               'Radioactive materials',
               'Hazardous chemicals — see our universal waste services for regulated material streams.',
             ].map((item) => (
-              <li class="flex items-start gap-2.5 text-sm text-amber-800 dark:text-amber-300">
+              <li class="flex items-start gap-3 text-sm text-amber-800">
                 <span class="mt-0.5 flex-shrink-0 font-bold" aria-hidden="true">—</span>
                 {item}
               </li>
@@ -153,34 +155,36 @@ const faqs = [
       </div>
     </section>
 
-    <!-- Why Haynes Industrial -->
-    <section class="py-20">
+    <!-- ─── Why Haynes Industrial ─────────────────────────────────────────── -->
+    <section class="py-24 lg:py-32">
       <div class="section-container">
-        <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+        <div class="grid gap-16 lg:grid-cols-2 lg:items-center">
           <div>
-            <h2 class="text-3xl font-bold text-gray-900 dark:text-white">Industrial Pickup. Industrial Scale. Industrial Pricing.</h2>
-            <p class="mt-4 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-500">Industrial Scale</p>
+            <h2 class="mt-3 text-4xl font-bold text-gray-900 leading-tight">Industrial Pickup. Industrial Scale. Industrial Pricing.</h2>
+            <div class="mt-3 h-1 w-10 bg-brand-600"></div>
+            <p class="mt-6 text-lg text-gray-600 leading-relaxed">
               We're not a consumer drop-off yard. We handle full truckloads, run ongoing contractor accounts, and price at rates tied to the actual commodity market — not whatever feels right that day.
             </p>
-            <ul class="mt-8 space-y-4 list-none m-0 p-0">
+            <ul class="mt-8 space-y-0 list-none m-0 p-0 divide-y divide-gray-100">
               {differentiators.map((item) => (
-                <li class="flex items-start gap-3">
-                  <span class="mt-1 flex-shrink-0 h-5 w-5 rounded-full bg-brand-600 flex items-center justify-center">
-                    <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3" aria-hidden="true">
+                <li class="flex items-start gap-4 py-5">
+                  <span class="mt-0.5 flex-shrink-0 h-5 w-5 bg-brand-600 flex items-center justify-center" aria-hidden="true">
+                    <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3.5">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                     </svg>
                   </span>
-                  <span class="text-gray-700 dark:text-gray-300">{item}</span>
+                  <span class="text-base text-gray-700 leading-snug">{item}</span>
                 </li>
               ))}
             </ul>
-            <a href="/contact" class="btn-primary mt-10 inline-flex">Get a Quote</a>
+            <a href="/contact" class="btn-primary mt-10 inline-flex px-7 py-3.5 text-sm">Get a Quote</a>
           </div>
-          <div class="rounded-xl overflow-hidden">
+          <div class="overflow-hidden">
             <img
               src="/images/forklift-wire-bin.avif"
               alt="Haynes Industrial forklift moving a wire bin of metal for recycling"
-              class="w-full h-80 object-cover"
+              class="w-full h-96 object-cover"
               loading="lazy"
             />
           </div>
@@ -188,83 +192,91 @@ const faqs = [
       </div>
     </section>
 
-    <!-- Recurring vs One-Time -->
-    <section class="bg-brand-800 dark:bg-brand-900 py-20">
+    <!-- ─── One-Time vs Recurring ─────────────────────────────────────────── -->
+    <section class="bg-brand-900 py-24 lg:py-32">
       <div class="section-container">
-        <h2 class="text-center text-3xl font-bold text-white mb-12">One-Time Pickup or Ongoing Account?</h2>
-        <div class="grid gap-8 lg:grid-cols-2">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-400">Flexible Arrangements</p>
+        <h2 class="mt-3 text-4xl font-bold text-white leading-tight">One-Time Pickup or Ongoing Account?</h2>
+        <div class="mt-3 h-1 w-10 bg-brand-500"></div>
+        <div class="mt-14 grid gap-px bg-brand-700 lg:grid-cols-2">
 
-          <div class="rounded-xl bg-brand-700 p-8">
-            <div class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand-600">
+          <div class="bg-brand-800 p-10">
+            <div class="mb-5 flex h-12 w-12 items-center justify-center bg-brand-600">
               <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 18.75a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h6m-9 0H3.375a1.125 1.125 0 01-1.125-1.125V14.25m17.25 4.5a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m3 0h1.125c.621 0 1.129-.504 1.09-1.124a17.902 17.902 0 00-3.213-9.193 2.056 2.056 0 00-1.58-.86H14.25M16.5 18.75h-2.25m0-11.177v-.958c0-.568-.422-1.048-.987-1.106a48.554 48.554 0 00-10.026 0 1.106 1.106 0 00-.987 1.106v7.635m12-6.677v6.677m0 4.5v-4.5m0 0h-12" />
               </svg>
             </div>
             <h3 class="text-xl font-bold text-white">One-Time Pickup</h3>
-            <p class="mt-3 text-brand-200 leading-relaxed">
+            <p class="mt-4 text-brand-200 leading-relaxed">
               Wrapping up a demo job, clearing a warehouse, or moving locations? We handle single-load pickups — one call, one truck, one check. Ideal for large accumulated loads or project closeout cleanups.
             </p>
-            <ul class="mt-6 space-y-2">
+            <ul class="mt-6 space-y-3">
               {['Schedule within the week', 'We load and haul — your crew stays productive', 'Payment at pickup or by invoice'].map((item) => (
-                <li class="flex items-center gap-2.5 text-sm text-brand-200">
-                  <span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-400" aria-hidden="true"></span>
+                <li class="flex items-center gap-3 text-sm text-brand-200">
+                  <span class="h-1.5 w-1.5 flex-shrink-0 bg-brand-400" aria-hidden="true"></span>
                   {item}
                 </li>
               ))}
             </ul>
-            <a href="/contact" class="btn-white mt-8 inline-flex">Schedule a Pickup</a>
+            <a href="/contact" class="btn-white mt-8 inline-flex px-7 py-3 text-sm">Schedule a Pickup</a>
           </div>
 
-          <div class="rounded-xl bg-brand-700 p-8">
-            <div class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand-600">
+          <div class="bg-brand-800 p-10">
+            <div class="mb-5 flex h-12 w-12 items-center justify-center bg-brand-600">
               <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
               </svg>
             </div>
             <h3 class="text-xl font-bold text-white">Recurring Account</h3>
-            <p class="mt-3 text-brand-200 leading-relaxed">
+            <p class="mt-4 text-brand-200 leading-relaxed">
               If you generate scrap regularly — weekly, monthly, or job-by-job — we set up an ongoing arrangement. You call when you're ready, we come. No renegotiating rates every visit, no new-vendor hassle each time.
             </p>
-            <ul class="mt-6 space-y-2">
+            <ul class="mt-6 space-y-3">
               {['Priority scheduling for active accounts', 'Consistent pricing tied to market rates', 'One local contact who knows your site and materials'].map((item) => (
-                <li class="flex items-center gap-2.5 text-sm text-brand-200">
-                  <span class="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-400" aria-hidden="true"></span>
+                <li class="flex items-center gap-3 text-sm text-brand-200">
+                  <span class="h-1.5 w-1.5 flex-shrink-0 bg-brand-400" aria-hidden="true"></span>
                   {item}
                 </li>
               ))}
             </ul>
-            <a href="/contact" class="btn-white mt-8 inline-flex">Set Up an Account</a>
+            <a href="/contact" class="btn-white mt-8 inline-flex px-7 py-3 text-sm">Set Up an Account</a>
           </div>
 
         </div>
       </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="bg-gray-50 dark:bg-gray-900 py-20">
+    <!-- ─── FAQ ───────────────────────────────────────────────────────────── -->
+    <section class="bg-gray-50 py-24 lg:py-32">
       <div class="section-container">
-        <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-12">Common Questions</h2>
-        <div class="grid gap-6 lg:grid-cols-2">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-500">Straight Answers</p>
+        <h2 class="mt-3 text-4xl font-bold text-gray-900 leading-tight">Common Questions</h2>
+        <div class="mt-3 h-1 w-10 bg-brand-600"></div>
+        <div class="mt-12 grid gap-6 lg:grid-cols-2">
           {faqs.map((faq) => (
             <div class="card">
-              <h3 class="text-base font-bold text-gray-900 dark:text-white">{faq.q}</h3>
-              <p class="mt-3 text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{faq.a}</p>
+              <h3 class="text-base font-bold text-gray-900">{faq.q}</h3>
+              <p class="mt-3 text-sm text-gray-600 leading-relaxed">{faq.a}</p>
             </div>
           ))}
         </div>
       </div>
     </section>
 
-    <!-- CTA -->
-    <section class="bg-brand-700 dark:bg-brand-800 py-16">
-      <div class="section-container text-center">
-        <h2 class="text-3xl font-bold text-white">Turn End-of-Job Scrap Into a Check</h2>
-        <p class="mt-4 text-lg text-brand-200">
-          Call us or send a message — we'll schedule a pickup and let you get back to work.
-        </p>
-        <div class="mt-8 flex flex-wrap justify-center gap-4">
-          <a href="/contact" class="btn-white">Schedule a Pickup</a>
-          <a href="tel:9166729417" class="btn-outline-white">916-672-9417</a>
+    <!-- ─── CTA ───────────────────────────────────────────────────────────── -->
+    <section class="bg-brand-800 py-20">
+      <div class="section-container">
+        <div class="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <h2 class="text-3xl font-bold text-white lg:text-4xl">Turn End-of-Job Scrap Into a Check</h2>
+            <p class="mt-3 text-lg text-brand-200">
+              Call us or send a message — we'll schedule a pickup and let you get back to work.
+            </p>
+          </div>
+          <div class="flex flex-shrink-0 flex-wrap gap-4">
+            <a href="/contact" class="btn-white px-7 py-3.5 text-sm">Schedule a Pickup</a>
+            <a href="tel:9166729417" class="btn-outline-white px-7 py-3.5 text-sm">916-672-9417</a>
+          </div>
         </div>
       </div>
     </section>
