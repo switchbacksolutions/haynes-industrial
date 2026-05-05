@@ -8,8 +8,7 @@ working on this codebase. Read it before writing any code.
 ## Project overview
 
 The **Haynes Industrial** website — a business site for an environmental services company
-based in Northern & Central California specializing in industrial waste management,
-recycling, demolition, and industrial cleaning. Built on Astro.js.
+based in Northern & Central California specializing in recycling logistics, universal waste management, and recycling. Built on Astro.js.
 
 - **Live URL**: `https://www.haynesindustrial.com`
 - **Static output** — no server runtime; every page is pre-rendered HTML
@@ -27,10 +26,23 @@ recycling, demolition, and industrial cleaning. Built on Astro.js.
 | Contact | Jon Haynes |
 | Email | `jon@haynesindustrial.com` |
 | Phone | `916-672-9417` |
-| Service area | Northern & Central California |
+| Service area | Sacramento, CA: Northern & Central California |
 | Instagram | `https://www.instagram.com/haynesindustrial` |
 | LinkedIn | `https://www.linkedin.com/in/jon-haynes-63a396aa/` |
 | Tagline | "Turning Waste Into Value" |
+
+**Credentials & certifications:**
+- Licensed, bonded, and insured
+- EPA 608 certified for refrigerant recovery
+- R2v3 and e-Stewards standards (certification in process)
+
+**Business model:** B2B only — not a consumer drop-off site. Clients are licensed contractors, manufacturers, IT departments, environmental compliance companies, property managers, schools, municipalities, and healthcare organizations.
+
+**Pricing approach:**
+- Scrap metal: priced against current commodity spot rates (per-pound, explained before loading)
+- E-waste: buy-back for gold-bearing components; no-charge haul for end-of-life material
+- Industrial surplus: offer based on resale market value + commodity/recycle value; no-charge site visit for large lots
+- Same-week scheduling throughout the Sacramento region; recurring accounts available
 
 ---
 
@@ -40,7 +52,10 @@ recycling, demolition, and industrial cleaning. Built on Astro.js.
 |------|-----|------|-------------|
 | Home | `/` | `src/pages/index.astro` | Hero, about intro, core services (3 cards), why choose us, testimonial, CTA |
 | About | `/about` | `src/pages/about.astro` | Company overview, team, mission/vision, why choose us |
-| Services | `/services` | `src/pages/services.astro` | Three service categories with sub-services |
+| Services | `/services` | `src/pages/services.astro` | Overview of all three service categories with sub-service cards |
+| Metal Recycling | `/services/metal-recycling` | `src/pages/services/metal-recycling.astro` | Detailed metal recycling pickup page for contractors |
+| E-Waste | `/services/ewaste` | `src/pages/services/ewaste.astro` | Detailed e-waste recycling page with compliance/data-destruction info |
+| Industrial Surplus | `/services/industrial-surplus` | `src/pages/services/industrial-surplus.astro` | Detailed industrial surplus buying page |
 | Contact | `/contact` | `src/pages/contact.astro` | Contact form (Netlify Forms) + contact info |
 | Blog listing | `/blog` | `src/pages/blog/index.astro` | All published posts sorted newest-first |
 | Blog post | `/blog/<slug>` | `src/pages/blog/[...slug].astro` | Individual post (getStaticPaths) |
@@ -49,27 +64,51 @@ recycling, demolition, and industrial cleaning. Built on Astro.js.
 
 ### Services offered
 
-The `/services` page covers three main categories, each with sub-services:
+The `/services` page (`services.astro`) is an overview with anchor links to three categories. Each category also has a dedicated sub-page with full detail.
 
-**Universal Waste Management**
-- HVAC & Appliance Recycling
-- E-Waste / Electronics Recycling
-- Battery Recycling
-- Lightbulb & Lamp Recycling
-- Industrial Resale
+**Universal Waste Management** (`/services#universal-waste`)
+- HVAC Recycling — unit decommissioning; recovers copper, aluminum, steel; handles rooftop units; refrigerant recovery (EPA 608)
+- Electronic Waste (E-Waste) Management — certified data destruction, hazardous component handling, material recovery
+- Battery Recycling — consumer and industrial; lithium, lead, cadmium containment; metal recovery
+- Lightbulb & Lamp Recycling — fluorescent, LED, HID; mercury mitigation; bulk collection programs
+- Industrial Resale — asset valuation and resale for surplus equipment
 
-**Demolition Services**
-- Structural Demolition
-- Interior / Selective Demolition
-- Material Recycling
-- Site Clearing
+---
 
-**Industrial Cleaning & Pressure Washing**
-- Combustible Dust Removal
-- High-Reach Vacuuming
-- Dry Ice Blasting
-- Drain Jetting
-- Wastewater Management
+### Detailed service sub-pages
+
+**Metal Recycling** (`/services/metal-recycling`)
+Serves licensed contractors (plumbers, HVAC installers, electricians, solar installers, telecom contractors, sign/CNC shops, warehouses, general industrial). Accepts:
+- Ferrous: steel piping, structural steel, rebar, sheet steel
+- Non-Ferrous: copper (bare bright, #1, #2), aluminum (sheet/extrusion/cast), brass, lead, stainless
+- Specialty: refrigerant recovery units (EPA 608), forklift & industrial batteries, electric motors, transformers, copper wiring
+- NOT accepted: appliances with charged refrigerant (must recover first), radioactive materials, hazardous chemicals
+Offers one-time pickup and recurring contractor accounts.
+
+**E-Waste / Electronics Recycling** (`/services/ewaste`)
+B2B only. Serves IT departments, ITAD providers, repair shops, property managers, schools, municipalities, healthcare. Accepts:
+- Computing: desktops, laptops, servers, monitors (LCD and CRT), all-in-ones
+- Components: motherboards, CPUs, RAM, GPUs, hard drives, power supplies, network cards, telecom boards
+- Mobile & batteries: smartphones, tablets, Li-ion/Li-poly packs
+- Networking: routers, switches, UPS units, patch panels, PDUs, rack enclosures
+- Peripherals: keyboards, printers (toner removed), scanners, docking stations, VoIP phones
+- Specialty/gold-bearing: CPU pins, RAM fingers, telecom switch cards, server blades, industrial control boards
+- NOT accepted: residential TVs, large appliances, items with active refrigerant, biologically/chemically contaminated items
+Data destruction: physical shredding or DOD 5220.22-M wipe — certificate issued per device by serial number.
+Pays for gold-bearing and refurbish-quality material; hauls the rest for free.
+
+**Industrial Surplus Buying** (`/services/industrial-surplus`)
+Buys surplus from manufacturers, commercial/industrial facilities, ag operations, warehouses, construction/demo sites, and facilities closing/relocating. Accepts:
+- Industrial equipment: machine tools, pumps, motors, compressors, generators, conveyors, HVAC units, forklifts
+- Tooling & fixtures: dies, molds, jigs, precision measurement equipment
+- Surplus chemicals & lubricants: oils, greases, hydraulic fluids, solvents, ag chemicals, aerosols (SDS required)
+- Raw materials: metal stock, plastic resin, fasteners, wire, pipe/fittings
+- Packaging: pallets, drums, IBC totes, corrugated, stretch film
+- Stranded/discontinued inventory: obsolete SKUs, customer-abandoned freight, off-spec product, salvage
+- Requires prior review: hazardous waste manifests, PCBs, asbestos-containing material, explosives/radioactive
+Process: send list/photos → assessment (on-site visit for large lots, free) → offer → scheduled pickup → payment + disposition receipt.
+Handles full facility closures as a single-partner engagement.
+
 
 ---
 
@@ -174,8 +213,7 @@ Use `bg-brand-600` for primary buttons and key interactive elements.
 1. Home → `/`
 2. About → `/about`
 3. Services → `/services`
-4. Contact → `/contact`
-5. CTA button: "Get In Touch" → `/contact`
+4. CTA button: "Get In Touch" → `/contact`
 
 **Footer nav** (defined in `FOOTER_LINKS` in `src/components/Footer.astro`): same four links.
 
@@ -205,7 +243,7 @@ Fields:
 
 Project type options: Universal Waste Management, E-Waste / Electronics Recycling,
 Battery Recycling, HVAC & Appliance Recycling, Medical & Lab Equipment Disposal,
-Lightbulb & Lamp Recycling, Industrial Resale, Demolition Services, Industrial Cleaning, Other.
+Lightbulb & Lamp Recycling, Industrial Resale, Other.
 
 Netlify form submissions appear in the Netlify dashboard under **Forms**.
 No backend code or environment variables are required.

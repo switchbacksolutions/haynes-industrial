@@ -44,11 +44,11 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
-# Redirects — add your custom redirects below
-# [[redirects]]
-#   from = "/old-path"
-#   to = "/new-path"
-#   status = 301
+# Redirects
+[[redirects]]
+  from = "/services/scrap-metal"
+  to = "/services/metal-recycling"
+  status = 301
 
 # SPA-style fallback — uncomment if using client-side routing
 # [[redirects]]
