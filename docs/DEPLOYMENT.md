@@ -65,6 +65,28 @@ Security headers are configured in `netlify.toml` and apply to all routes:
 
 Adjust the CSP header in `netlify.toml` if you add third-party scripts or fonts.
 
+### Instagram Feed Environment Variables
+
+The `InstagramFeed` component fetches recent posts from Instagram at build time using the
+Instagram Graph API. Two environment variables must be present in Netlify for it to work:
+
+| Variable | Description |
+|----------|-------------|
+| `INSTAGRAM_ACCESS_TOKEN` | Long-lived Instagram User Access Token (~60-day TTL) |
+| `INSTAGRAM_BUSINESS_ACCOUNT_ID` | Numeric ID of the Instagram Business Account |
+
+Set both in **Site settings → Environment variables** in the Netlify dashboard.
+
+If either variable is missing or the token has expired, the `InstagramFeed` component renders
+a graceful fallback CTA linking to the Instagram profile — the build does **not** fail.
+Check the build logs for a `[astro-instagram-feed]` warning line to diagnose the issue.
+
+Tokens expire approximately every 60 days and must be refreshed. See
+`docs/INSTAGRAM_API_SETUP.md` for the full setup process and the manual refresh command.
+Token refresh can also be automated via the `netlify/functions/refresh-instagram-token.ts`
+scheduled function included in this repo (requires additional Netlify env vars — see
+`netlify/functions/README.md`).
+
 ### Redirects
 
 Add redirects in `netlify.toml`:
