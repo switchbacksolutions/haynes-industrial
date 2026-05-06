@@ -1,0 +1,309 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const capabilities = [
+  {
+    title: 'Licensed Freight Brokerage',
+    description: 'As a licensed freight broker, we arrange transportation from any qualified carrier — not just company trucks. That means more options, faster scheduling, and the right equipment for the job, every time.',
+  },
+  {
+    title: 'Warehouse Storage',
+    description: 'Short- and mid-term storage in the Sacramento region. We hold freight between legs of a move, stage material before a facility opens, or buffer inventory while your receiving dock catches up.',
+  },
+  {
+    title: 'Port-to-Warehouse Transport',
+    description: 'We coordinate full container moves from California ports to your warehouse or distribution point. One call handles drayage, scheduling, and delivery confirmation.',
+  },
+  {
+    title: 'Complex Material Handling',
+    description: 'Regulated materials, end-of-life product, mixed loads, and anything standard carriers won\'t touch — we figure out what it takes and get it moved legally and on time.',
+  },
+  {
+    title: 'Facility Transition Logistics',
+    description: 'Relocating, closing, or consolidating a facility? We coordinate inbound and outbound freight, surplus removal, and material disposition so you\'re not managing five vendors at once.',
+  },
+  {
+    title: 'Recurring Freight Accounts',
+    description: 'If you move freight regularly, we set up an ongoing account. One point of contact, consistent pricing, and a partner who knows your freight profile and preferred carriers.',
+  },
+];
+
+const clientTypes = [
+  { name: 'Manufacturers & Distributors', detail: 'Inbound materials, outbound product, and everything in between' },
+  { name: 'Importers & Exporters', detail: 'Port coordination, inland drayage, and cross-dock logistics' },
+  { name: 'Facilities & Property Managers', detail: 'Material removal, surplus disposition, and site-clearing transport' },
+  { name: 'Operations & Procurement Teams', detail: 'Complex or one-off freight problems that standard 3PLs won\'t take' },
+  { name: 'Regulated Industry Operations', detail: 'Beverage, chemical, pharmaceutical, and other compliance-sensitive loads' },
+  { name: 'Construction & Demo Projects', detail: 'Stage-gate material movement throughout active job sites' },
+];
+
+const differentiators = [
+  'Licensed freight broker — we source from the full carrier market, not a single fleet',
+  'Problem-solvers first: if it\'s complicated, call us before you assume it\'s impossible',
+  'Sacramento region focus — real relationships with local carriers, warehouses, and facilities',
+  'Single point of contact for multi-step logistics problems — we coordinate so you don\'t have to',
+  'Deep compliance knowledge for regulated materials: beverages, chemicals, e-waste, refrigerants',
+  'Same-week scheduling for most Sacramento region freight; recurring account priority available',
+];
+
+const process = [
+  {
+    step: '01',
+    title: 'Tell Us the Problem',
+    detail: 'Call or email with your freight challenge — load type, origin, destination, timeline, and any regulatory flags. If you\'re not sure what you have, describe it and we\'ll ask the right questions.',
+  },
+  {
+    step: '02',
+    title: 'We Map the Solution',
+    detail: 'We identify the right carrier, equipment, permits, and compliance steps. For complex material, we research the regulatory path before quoting so there are no surprises at the pickup.',
+  },
+  {
+    step: '03',
+    title: 'You Get a Clear Quote',
+    detail: 'Flat-rate or line-item quote, depending on complexity. We explain what\'s included and flag anything that could change the price — before you commit.',
+  },
+  {
+    step: '04',
+    title: 'We Execute',
+    detail: 'We coordinate pickup, transport, and delivery. You get confirmation at each stage. For multi-leg moves, we manage hand-offs so nothing sits unaccounted.',
+  },
+];
+
+const faqs = [
+  {
+    q: 'What makes you different from a standard 3PL or freight broker?',
+    a: 'Most brokers are optimized for high-volume, straightforward freight — standard pallets, predictable lanes. We specialize in the moves others decline or get wrong: regulated materials, unusual loads, complex compliance, and one-off situations that don\'t fit a standard quote form. If your freight problem has a footnote, we\'re the right call.',
+  },
+  {
+    q: 'Can you handle regulated or legally complex freight?',
+    a: 'Yes. Our background in waste logistics means we\'re familiar with the regulatory frameworks around beverages, chemicals, hazardous materials, and other compliance-sensitive freight. We research the legal path before accepting the job so you\'re not left holding liability.',
+  },
+  {
+    q: 'Do you only operate in Sacramento?',
+    a: 'Our core service area is Northern and Central California, with Sacramento as our home base. We have strong carrier relationships throughout California and can broker loads to and from most major markets. Call us with your specific lanes and we\'ll tell you straight if we\'re the right fit.',
+  },
+  {
+    q: 'How fast can you move?',
+    a: 'Most Sacramento region freight can be quoted same-day and scheduled within the week. Complex loads requiring permits or regulatory research take longer — we\'ll give you a realistic timeline upfront rather than quote fast and apologize later.',
+  },
+  {
+    q: 'What if I don\'t know exactly what I need?',
+    a: 'Start with the problem, not the solution. Tell us what material you have, where it is, and where it needs to go (or that it needs to disappear). We\'ll scope the logistics from there.',
+  },
+];
+---
+
+<BaseLayout
+  title="General Logistics | Haynes Industrial"
+  description="Licensed freight brokerage, warehouse storage, and complex material handling for B2B clients throughout Northern and Central California. When the load is regulated, complicated, or just won't fit a standard quote, call Haynes Industrial."
+>
+  <main>
+
+    <!-- ─── Hero ─────────────────────────────────────────────────────────── -->
+    <section class="relative isolate overflow-hidden min-h-[70vh] flex items-end">
+      <img
+        src="/images/loaded-truck.avif"
+        alt=""
+        aria-hidden="true"
+        class="absolute inset-0 -z-10 h-full w-full object-cover object-center"
+        fetchpriority="high"
+      />
+      <div class="absolute inset-0 -z-10 bg-gradient-to-r from-brand-900 via-brand-900/80 to-brand-900/20"></div>
+      <div class="absolute inset-0 -z-10 bg-gradient-to-t from-brand-900/95 via-brand-900/40 to-transparent"></div>
+      <div class="w-full">
+        <div class="section-container pb-20 pt-48">
+          <p class="text-xs font-bold uppercase tracking-[0.25em] text-brand-300">
+            General Logistics · Sacramento Region
+          </p>
+          <h1 class="mt-5 text-5xl font-bold tracking-tight text-white leading-none text-balance md:text-6xl max-w-2xl">
+            When the Load Is Complicated, One Call Solves It.
+          </h1>
+          <p class="mt-8 max-w-xl text-xl text-brand-200 leading-relaxed">
+            Licensed freight brokerage, warehouse storage, and complex material handling for B2B clients throughout Northern and Central California. We take on the moves others decline.
+          </p>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a href="/contact" class="btn-primary px-7 py-3.5 text-sm">Get a Quote</a>
+            <a href="#how-it-works" class="btn-outline-white px-7 py-3.5 text-sm">How It Works</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Core Capabilities ────────────────────────────────────────────── -->
+    <section class="py-24 lg:py-32">
+      <div class="section-container">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-500">What We Do</p>
+        <h2 class="mt-3 text-4xl font-bold text-gray-900 leading-tight">Logistics Services</h2>
+        <div class="mt-3 h-1 w-10 bg-brand-600"></div>
+        <p class="mt-6 max-w-2xl text-lg text-gray-600 leading-relaxed">
+          We're a licensed freight broker with the equipment, carrier relationships, and regulatory knowledge to move material that doesn't fit a standard pallet quote. Freight brokerage, warehousing, port transport, and complex material logistics — all under one roof.
+        </p>
+        <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {capabilities.map((cap) => (
+            <div class="service-card">
+              <h3 class="text-base font-bold text-gray-900">{cap.title}</h3>
+              <p class="mt-3 text-sm text-gray-600 leading-relaxed">{cap.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Case Study ───────────────────────────────────────────────────── -->
+    <section class="bg-brand-900 py-24 lg:py-32">
+      <div class="section-container">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-400">Case Study</p>
+        <h2 class="mt-3 text-4xl font-bold text-white leading-tight">The Problem Others Turned Down</h2>
+        <div class="mt-3 h-1 w-10 bg-brand-500"></div>
+
+        <div class="mt-14 grid gap-px bg-brand-700 lg:grid-cols-3">
+
+          <div class="bg-brand-800 p-10">
+            <div class="mb-5 text-brand-400 text-xs font-bold uppercase tracking-widest">The Situation</div>
+            <h3 class="text-lg font-bold text-white">68–77 Cases of Alcoholic Seltzer. No Legal Way to Dispose.</h3>
+            <p class="mt-4 text-brand-200 text-sm leading-relaxed">
+              A client had surplus hard seltzer in a warehouse that needed to go away. Legal disposal of packaged alcoholic beverages is complicated — strict regulations govern how it can be handled, transported, and destroyed. Standard junk removal companies couldn't touch it. Demolition crews wouldn't take it.
+            </p>
+          </div>
+
+          <div class="bg-brand-800 p-10">
+            <div class="mb-5 text-brand-400 text-xs font-bold uppercase tracking-widest">The Challenge</div>
+            <h3 class="text-lg font-bold text-white">Regulations Most Logistics Operators Don't Know — or Won't Navigate</h3>
+            <p class="mt-4 text-brand-200 text-sm leading-relaxed">
+              State and federal rules around alcohol disposal aren't posted on any freight carrier's website. The path involves understanding who can legally transport it, how it must be destroyed, what documentation is required, and which facilities are licensed to receive it. Most operators say "we don't do that" and move on.
+            </p>
+          </div>
+
+          <div class="bg-brand-800 p-10">
+            <div class="mb-5 text-brand-400 text-xs font-bold uppercase tracking-widest">The Solution</div>
+            <h3 class="text-lg font-bold text-white">We Figured It Out and Got It Done</h3>
+            <p class="mt-4 text-brand-200 text-sm leading-relaxed">
+              Haynes Industrial researched the full compliance path, identified a licensed facility, arranged compliant transport, and handled the material from warehouse to final disposition. The client received documentation and a clear disposition receipt. The problem was gone — legally, completely, and without the client having to manage any of it.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="mt-8 border-l-4 border-brand-500 pl-6">
+          <p class="text-brand-200 text-base leading-relaxed italic max-w-2xl">
+            "The moves that look impossible are usually just ones nobody has bothered to figure out. We figure them out."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Who We Work With ──────────────────────────────────────────────── -->
+    <section class="py-24 lg:py-32">
+      <div class="section-container">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-500">B2B Clients</p>
+        <h2 class="mt-3 text-4xl font-bold text-gray-900 leading-tight">Who We Work With</h2>
+        <div class="mt-3 h-1 w-10 bg-brand-600"></div>
+        <p class="mt-6 max-w-2xl text-lg text-gray-600 leading-relaxed">
+          We serve businesses with real freight problems — not consumer moves, not standard LTL that any broker can handle. If your freight has a complication, a regulation, or a timeline that others push back on, we want the call.
+        </p>
+        <div class="mt-12 grid gap-px bg-gray-200 sm:grid-cols-2 lg:grid-cols-3">
+          {clientTypes.map((client) => (
+            <div class="bg-white p-6">
+              <h3 class="text-sm font-bold text-brand-700">{client.name}</h3>
+              <p class="mt-2 text-sm text-gray-600 leading-relaxed">{client.detail}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Why Haynes Industrial ─────────────────────────────────────────── -->
+    <section class="bg-gray-50 py-24 lg:py-32">
+      <div class="section-container">
+        <div class="grid gap-16 lg:grid-cols-2 lg:items-center">
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-500">Why Haynes Industrial</p>
+            <h2 class="mt-3 text-4xl font-bold text-gray-900 leading-tight">A Freight Broker Who Solves Problems, Not Just Books Trucks</h2>
+            <div class="mt-3 h-1 w-10 bg-brand-600"></div>
+            <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+              Our roots in recycling logistics mean we've spent years navigating regulated material, complex compliance, and freight situations that most operators won't quote. That institutional knowledge is what separates us from a commodity broker.
+            </p>
+            <ul class="mt-8 space-y-0 list-none m-0 p-0 divide-y divide-gray-100">
+              {differentiators.map((item) => (
+                <li class="flex items-start gap-4 py-5">
+                  <span class="mt-0.5 flex-shrink-0 h-5 w-5 bg-brand-600 flex items-center justify-center" aria-hidden="true">
+                    <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  <span class="text-base text-gray-700 leading-snug">{item}</span>
+                </li>
+              ))}
+            </ul>
+            <a href="/contact" class="btn-primary mt-10 inline-flex px-7 py-3.5 text-sm">Talk to Us About Your Freight</a>
+          </div>
+          <div class="overflow-hidden">
+            <img
+              src="/images/forklift-wire-bin.avif"
+              alt="Haynes Industrial forklift operating in a warehouse"
+              class="w-full h-96 object-cover"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── How It Works ─────────────────────────────────────────────────── -->
+    <section id="how-it-works" class="py-24 lg:py-32">
+      <div class="section-container">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-500">The Process</p>
+        <h2 class="mt-3 text-4xl font-bold text-gray-900 leading-tight">How It Works</h2>
+        <div class="mt-3 h-1 w-10 bg-brand-600"></div>
+        <p class="mt-6 max-w-2xl text-lg text-gray-600 leading-relaxed">
+          No intake forms, no automated quote generators. Every job starts with a real conversation and ends with a documented outcome.
+        </p>
+        <div class="mt-14 grid gap-px bg-gray-200 sm:grid-cols-2 lg:grid-cols-4">
+          {process.map((step) => (
+            <div class="bg-white p-8">
+              <div class="text-3xl font-bold text-brand-200 leading-none">{step.step}</div>
+              <h3 class="mt-4 text-base font-bold text-gray-900">{step.title}</h3>
+              <p class="mt-3 text-sm text-gray-600 leading-relaxed">{step.detail}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FAQ ───────────────────────────────────────────────────────────── -->
+    <section class="bg-gray-50 py-24 lg:py-32">
+      <div class="section-container">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-500">Straight Answers</p>
+        <h2 class="mt-3 text-4xl font-bold text-gray-900 leading-tight">Common Questions</h2>
+        <div class="mt-3 h-1 w-10 bg-brand-600"></div>
+        <div class="mt-12 grid gap-6 lg:grid-cols-2">
+          {faqs.map((faq) => (
+            <div class="card">
+              <h3 class="text-base font-bold text-gray-900">{faq.q}</h3>
+              <p class="mt-3 text-sm text-gray-600 leading-relaxed">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CTA ───────────────────────────────────────────────────────────── -->
+    <section class="bg-brand-800 py-20">
+      <div class="section-container">
+        <div class="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <h2 class="text-3xl font-bold text-white lg:text-4xl">Have a Freight Problem You Can't Solve?</h2>
+            <p class="mt-3 text-lg text-brand-200">
+              Call us or send a message. If we can solve it, we'll tell you how and what it costs — straight.
+            </p>
+          </div>
+          <div class="flex flex-shrink-0 flex-wrap gap-4">
+            <a href="/contact" class="btn-white px-7 py-3.5 text-sm">Get In Touch</a>
+            <a href="tel:9166729417" class="btn-outline-white px-7 py-3.5 text-sm">916-672-9417</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>
