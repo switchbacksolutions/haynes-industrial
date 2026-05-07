@@ -1,0 +1,352 @@
+[
+  {
+    "path": "images/batteries.avif",
+    "alt": "Industrial and consumer batteries staged for recycling",
+    "subjects": ["batteries", "industrial batteries", "recycling"],
+    "mood": ["industrial", "organized"],
+    "orientation": "landscape",
+    "dominant_colors": ["gray", "black", "yellow"],
+    "suggested_uses": ["battery recycling page", "universal waste section", "services card"],
+    "keywords": ["battery recycling", "lithium-ion", "lead-acid", "universal waste", "battery disposal"]
+  },
+  {
+    "path": "images/computer-chip-ewaste.gif",
+    "alt": "Hand holding a gold ceramic CPU chip with a green motherboard visible in the background",
+    "subjects": ["CPU chip", "motherboard", "gold contacts", "hand"],
+    "mood": ["technical", "value-focused"],
+    "orientation": "portrait",
+    "dominant_colors": ["gold", "green", "dark gray"],
+    "suggested_uses": ["e-waste page hero", "gold recovery section", "component value illustration"],
+    "keywords": ["gold-bearing components", "CPU recycling", "e-waste value", "precious metals recovery", "electronic scrap"]
+  },
+  {
+    "path": "images/computer-components-ewaste.jpeg",
+    "alt": "Assortment of gold-bearing PCBs, pins, connectors, and electronic components spread on cardboard",
+    "subjects": ["PCBs", "gold pins", "connectors", "electronic components"],
+    "mood": ["technical", "industrial"],
+    "orientation": "landscape",
+    "dominant_colors": ["gold", "green", "brown", "silver"],
+    "suggested_uses": ["e-waste page", "gold recovery section", "precious metals illustration"],
+    "keywords": ["gold-bearing components", "circuit boards", "electronic scrap", "precious metals recovery", "ITAD"]
+  },
+  {
+    "path": "images/contractor-profile.avif",
+    "alt": "John A., General Contractor — Haynes Industrial client testimonial",
+    "subjects": ["contractor", "testimonial", "profile photo"],
+    "mood": ["professional", "trustworthy"],
+    "orientation": "square",
+    "dominant_colors": ["neutral"],
+    "suggested_uses": ["testimonial section", "client story"],
+    "keywords": ["general contractor", "testimonial", "client profile"]
+  },
+  {
+    "path": "images/copper-bin-metal.gif",
+    "alt": "Overhead view of a bin overflowing with bare bright copper wire coils",
+    "subjects": ["copper wire", "scrap bin", "recycling material"],
+    "mood": ["industrial", "abundant"],
+    "orientation": "portrait",
+    "dominant_colors": ["copper", "amber", "gray"],
+    "suggested_uses": ["metal recycling page", "copper recycling section", "service card"],
+    "keywords": ["bare bright copper", "copper wire", "scrap metal", "non-ferrous recycling", "metal pickup"]
+  },
+  {
+    "path": "images/copper-pipe-etal.jpeg",
+    "alt": "Inside view of a dump trailer bed loaded with dark scrap metal pipe under a blue sky",
+    "subjects": ["metal pipe", "dump trailer", "scrap metal"],
+    "mood": ["industrial", "working"],
+    "orientation": "portrait",
+    "dominant_colors": ["dark gray", "black", "blue sky"],
+    "suggested_uses": ["metal recycling page", "contractor services", "logistics section"],
+    "keywords": ["metal pipe", "scrap pipe", "ferrous metal", "metal recycling pickup", "contractor scrap"]
+  },
+  {
+    "path": "images/dump-trailer-haynes-industrial-logo.gif",
+    "alt": "Haynes Industrial branded white roll-off dumpster container parked at an industrial facility",
+    "subjects": ["roll-off container", "Haynes Industrial logo", "industrial facility"],
+    "mood": ["professional", "branded"],
+    "orientation": "landscape",
+    "dominant_colors": ["white", "dark blue", "gray", "concrete"],
+    "suggested_uses": ["brand identity", "about page", "logistics section", "homepage hero"],
+    "keywords": ["Haynes Industrial", "roll-off container", "recycling logistics", "branded equipment"]
+  },
+  {
+    "path": "images/dumpster-material.avif",
+    "alt": "Mixed recyclable industrial material loaded in a dumpster",
+    "subjects": ["dumpster", "recyclable material", "industrial waste"],
+    "mood": ["industrial", "working"],
+    "orientation": "landscape",
+    "dominant_colors": ["gray", "mixed metals", "rust"],
+    "suggested_uses": ["services page", "about page", "universal waste section"],
+    "keywords": ["dumpster", "recyclable material", "industrial waste", "mixed metals", "scrap"]
+  },
+  {
+    "path": "images/ewaste.avif",
+    "alt": "Pile of electronic waste and computer components ready for certified recycling",
+    "subjects": ["e-waste", "electronics", "computer equipment"],
+    "mood": ["industrial", "volume-focused"],
+    "orientation": "landscape",
+    "dominant_colors": ["gray", "green", "black", "silver"],
+    "suggested_uses": ["e-waste page hero", "services card", "IT disposal illustration"],
+    "keywords": ["e-waste", "electronics recycling", "computer disposal", "IT asset disposal", "certified recycling"]
+  },
+  {
+    "path": "images/flatbed-semi-loaded.HEIC",
+    "alt": "Haynes Industrial flatbed semi-truck loaded with industrial material at a pickup site",
+    "subjects": ["flatbed semi", "Haynes Industrial", "loaded truck", "industrial material"],
+    "mood": ["industrial", "logistics", "professional"],
+    "orientation": "landscape",
+    "dominant_colors": ["white", "blue sky", "industrial tones"],
+    "suggested_uses": ["hero image", "logistics section", "about page", "fleet photos"],
+    "keywords": ["flatbed truck", "recycling logistics", "recycling pickup", "freight broker", "California recycling"]
+  },
+  {
+    "path": "images/flourescent-tubes.avif",
+    "alt": "Fluorescent tube lamps staged for compliant recycling",
+    "subjects": ["fluorescent tubes", "lamps", "universal waste"],
+    "mood": ["technical", "organized"],
+    "orientation": "portrait",
+    "dominant_colors": ["white", "green", "gray"],
+    "suggested_uses": ["lamp recycling section", "universal waste page", "services card"],
+    "keywords": ["fluorescent tubes", "lamp recycling", "mercury lamp disposal", "universal waste", "bulb recycling"]
+  },
+  {
+    "path": "images/flourescent-tubes.gif",
+    "alt": "Hand holding a black fluorescent tube in front of hundreds of bundled fluorescent tubes with green end caps in a warehouse",
+    "subjects": ["fluorescent tube", "hand", "bundled lamps", "warehouse"],
+    "mood": ["technical", "organized", "large-scale"],
+    "orientation": "portrait",
+    "dominant_colors": ["white", "green", "gray", "black"],
+    "suggested_uses": ["universal waste page", "lamp recycling section", "lightbulb recycling hero"],
+    "keywords": ["fluorescent tubes", "lamp recycling", "mercury lamp", "universal waste", "bulk lamp collection"]
+  },
+  {
+    "path": "images/forklift-wire-bin.avif",
+    "alt": "Forklift moving a wire bin loaded with industrial surplus material in a yard",
+    "subjects": ["forklift", "wire bin", "industrial material", "yard"],
+    "mood": ["industrial", "operational"],
+    "orientation": "landscape",
+    "dominant_colors": ["yellow", "blue", "gray"],
+    "suggested_uses": ["about page", "homepage about section", "services page", "operations photo"],
+    "keywords": ["forklift", "wire bin", "industrial surplus", "material handling", "recycling operations"]
+  },
+  {
+    "path": "images/haynes-industrial-truck-closed.png",
+    "alt": "Haynes Industrial specialty recycling box truck parked inside a warehouse, showing branding and phone number",
+    "subjects": ["box truck", "Haynes Industrial logo", "warehouse", "branding"],
+    "mood": ["professional", "branded", "clean"],
+    "orientation": "landscape",
+    "dominant_colors": ["white", "navy blue", "dark gray"],
+    "suggested_uses": ["homepage hero", "about page", "brand story section", "fleet photos"],
+    "keywords": ["Haynes Industrial", "specialty recycling", "box truck", "Sacramento recycling", "916-672-9417"]
+  },
+  {
+    "path": "images/haynes-industrial-truck-loaded.jpeg",
+    "alt": "White Haynes Industrial flatbed stakebed truck loaded with material at a sunny California industrial lot",
+    "subjects": ["flatbed truck", "Haynes Industrial", "California industrial yard", "loaded truck"],
+    "mood": ["working", "professional", "active"],
+    "orientation": "landscape",
+    "dominant_colors": ["white", "tan", "blue sky"],
+    "suggested_uses": ["homepage hero", "logistics section", "about page", "metal recycling page"],
+    "keywords": ["Haynes Industrial", "stakebed truck", "recycling pickup", "Sacramento logistics", "California recycling"]
+  },
+  {
+    "path": "images/hvac-crane-removal.avif",
+    "alt": "Commercial rooftop HVAC unit being hoisted by crane for removal and recycling",
+    "subjects": ["HVAC unit", "crane", "rooftop", "removal"],
+    "mood": ["industrial", "large-scale", "technical"],
+    "orientation": "landscape",
+    "dominant_colors": ["blue sky", "gray", "white", "steel"],
+    "suggested_uses": ["HVAC recycling page hero", "services page", "rooftop unit removal section"],
+    "keywords": ["HVAC removal", "crane removal", "rooftop unit recycling", "commercial HVAC", "EPA 608"]
+  },
+  {
+    "path": "images/hvac-radiators-metal.jpeg",
+    "alt": "Yellow forklift lifting a tall stack of HVAC radiator coil assemblies at an outdoor industrial yard",
+    "subjects": ["forklift", "HVAC coils", "radiators", "industrial yard"],
+    "mood": ["industrial", "large-scale"],
+    "orientation": "portrait",
+    "dominant_colors": ["yellow", "silver", "gray", "overcast sky"],
+    "suggested_uses": ["HVAC recycling page", "metal recycling hero", "services page"],
+    "keywords": ["HVAC recycling", "air handler coils", "aluminum recycling", "forklift", "rooftop unit removal"]
+  },
+  {
+    "path": "images/hvac.avif",
+    "alt": "Commercial HVAC units staged for recycling and metal recovery",
+    "subjects": ["HVAC units", "commercial equipment", "recycling"],
+    "mood": ["industrial", "organized"],
+    "orientation": "landscape",
+    "dominant_colors": ["white", "silver", "gray"],
+    "suggested_uses": ["HVAC service card", "services page", "universal waste section"],
+    "keywords": ["HVAC recycling", "commercial HVAC", "rooftop unit", "EPA 608", "refrigerant recovery"]
+  },
+  {
+    "path": "images/jon_blowtorch.jpg",
+    "alt": "Worker wearing a welding visor standing near an industrial lathe and machinery outdoors",
+    "subjects": ["worker", "welding visor", "industrial lathe", "machinery"],
+    "mood": ["hands-on", "industrial", "authentic"],
+    "orientation": "landscape",
+    "dominant_colors": ["green", "tan", "gray", "outdoor"],
+    "suggested_uses": ["about page", "team section", "operations photo", "founder story"],
+    "keywords": ["industrial worker", "welding", "equipment handling", "recycling operations", "Jon Haynes"]
+  },
+  {
+    "path": "images/jon-dumpster-profile.gif",
+    "alt": "Jon Haynes in a navy Haynes Industrial shirt smiling in front of a large white roll-off dumpster",
+    "subjects": ["Jon Haynes", "roll-off dumpster", "Haynes Industrial", "founder"],
+    "mood": ["approachable", "authentic", "professional"],
+    "orientation": "landscape",
+    "dominant_colors": ["white", "navy blue", "blue sky", "concrete"],
+    "suggested_uses": ["about page", "team section", "founder profile", "contact page"],
+    "keywords": ["Jon Haynes", "Haynes Industrial", "founder", "team photo", "recycling logistics", "Sacramento"]
+  },
+  {
+    "path": "images/lab-equipment.avif",
+    "alt": "Laboratory and scientific instruments staged for industrial surplus sale",
+    "subjects": ["lab equipment", "scientific instruments", "industrial surplus"],
+    "mood": ["technical", "professional"],
+    "orientation": "landscape",
+    "dominant_colors": ["white", "silver", "gray"],
+    "suggested_uses": ["industrial surplus page", "lab equipment section", "surplus buying page"],
+    "keywords": ["lab equipment", "scientific instruments", "industrial surplus", "surplus buying", "equipment resale"]
+  },
+  {
+    "path": "images/loaded-truck-pipe.avif",
+    "alt": "Industrial truck loaded with scrap metal pipe at a job site",
+    "subjects": ["truck", "metal pipe", "recycling load", "job site"],
+    "mood": ["industrial", "working"],
+    "orientation": "landscape",
+    "dominant_colors": ["gray", "silver", "blue sky"],
+    "suggested_uses": ["metal recycling service card", "contractor services", "homepage services section"],
+    "keywords": ["metal pipe", "metal recycling pickup", "contractor scrap", "ferrous metal", "recycling logistics"]
+  },
+  {
+    "path": "images/loaded-truck.avif",
+    "alt": "Haynes Industrial truck loaded with material at a recycling pickup site",
+    "subjects": ["truck", "recycled material", "pickup site"],
+    "mood": ["industrial", "working"],
+    "orientation": "landscape",
+    "dominant_colors": ["blue sky", "gray", "industrial tones"],
+    "suggested_uses": ["hero image", "about page", "metal recycling page", "logistics section"],
+    "keywords": ["recycling pickup", "truck logistics", "material transport", "Sacramento recycling", "Haynes Industrial"]
+  },
+  {
+    "path": "images/monitors-ewaste.jpeg",
+    "alt": "Box trailer interior packed with stacked discarded flat-screen and CRT monitors",
+    "subjects": ["monitors", "flat-screen displays", "CRT monitors", "e-waste", "box trailer"],
+    "mood": ["industrial", "volume-focused"],
+    "orientation": "portrait",
+    "dominant_colors": ["black", "dark gray", "white"],
+    "suggested_uses": ["e-waste page", "monitor recycling section", "bulk disposal illustration"],
+    "keywords": ["monitor recycling", "CRT disposal", "e-waste pickup", "IT asset disposal", "bulk electronics recycling"]
+  },
+  {
+    "path": "images/motherboards-ewaste.jpeg",
+    "alt": "Several computer motherboards and PCBs of various sizes arranged on a concrete floor",
+    "subjects": ["motherboards", "PCBs", "computer components"],
+    "mood": ["technical", "industrial"],
+    "orientation": "portrait",
+    "dominant_colors": ["green", "dark gray", "red", "silver"],
+    "suggested_uses": ["e-waste page", "component recycling section", "IT disposal illustration"],
+    "keywords": ["motherboard recycling", "circuit board", "e-waste", "IT asset disposal", "component value", "ITAD"]
+  },
+  {
+    "path": "images/project-manager-profile.avif",
+    "alt": "Jeff G., Electrical Utilities Project Manager — Haynes Industrial client testimonial",
+    "subjects": ["project manager", "testimonial", "profile photo"],
+    "mood": ["professional", "trustworthy"],
+    "orientation": "square",
+    "dominant_colors": ["neutral"],
+    "suggested_uses": ["testimonial section", "client story"],
+    "keywords": ["project manager", "electrical utilities", "testimonial", "municipal client", "client profile"]
+  },
+  {
+    "path": "images/tires-logistics.gif",
+    "alt": "Black dump trailer with rear gates open, loaded with a pile of scrap tires at a tire yard",
+    "subjects": ["scrap tires", "dump trailer", "tire yard"],
+    "mood": ["industrial", "logistics"],
+    "orientation": "portrait",
+    "dominant_colors": ["black", "gray", "blue sky"],
+    "suggested_uses": ["logistics page", "industrial surplus section", "waste management illustration"],
+    "keywords": ["tire recycling", "scrap tires", "waste logistics", "dump trailer", "industrial pickup"]
+  },
+  {
+    "path": "images/traffic-lights-logistics.jpeg",
+    "alt": "Worker smiling among a large pile of disassembled traffic light housings at a recycling facility",
+    "subjects": ["traffic lights", "worker", "recycling facility", "large-scale project"],
+    "mood": ["enthusiastic", "industrial", "large-scale"],
+    "orientation": "portrait",
+    "dominant_colors": ["black", "gray", "blue sky"],
+    "suggested_uses": ["case study", "about page", "testimonial page", "municipal services section"],
+    "keywords": ["traffic light recycling", "municipal project", "large-scale recycling", "infrastructure materials", "Jon Haynes"]
+  },
+  {
+    "path": "images/trailer-hvac.jpeg",
+    "alt": "Dump trailer loaded with multiple commercial rooftop HVAC air handler units ready for recycling",
+    "subjects": ["HVAC units", "dump trailer", "rooftop air handlers", "commercial equipment"],
+    "mood": ["industrial", "logistics"],
+    "orientation": "portrait",
+    "dominant_colors": ["white", "silver", "blue sky"],
+    "suggested_uses": ["HVAC recycling page", "services page hero", "rooftop unit removal section"],
+    "keywords": ["HVAC recycling", "rooftop unit removal", "commercial HVAC", "air handler recycling", "metal recovery"]
+  },
+  {
+    "path": "images/warehouse-sup-profile.avif",
+    "alt": "Brad R., Warehouse Supervisor — Haynes Industrial client testimonial",
+    "subjects": ["warehouse supervisor", "testimonial", "profile photo"],
+    "mood": ["professional", "trustworthy"],
+    "orientation": "square",
+    "dominant_colors": ["neutral"],
+    "suggested_uses": ["testimonial section", "client story"],
+    "keywords": ["warehouse supervisor", "testimonial", "logistics client", "client profile"]
+  },
+  {
+    "path": "images/waste-bins.avif",
+    "alt": "Industrial waste bins staged at a recycling facility",
+    "subjects": ["waste bins", "industrial containers", "recycling material"],
+    "mood": ["industrial", "organized"],
+    "orientation": "landscape",
+    "dominant_colors": ["blue", "gray", "yellow"],
+    "suggested_uses": ["services page", "about page", "waste management section"],
+    "keywords": ["waste bins", "industrial containers", "recycling staging", "universal waste management", "material sorting"]
+  },
+  {
+    "path": "images/window-frames-metal.gif",
+    "alt": "Roll-off container filled with aluminum window frame and profile sections for metal recycling",
+    "subjects": ["aluminum window frames", "roll-off container", "scrap metal"],
+    "mood": ["industrial", "construction waste"],
+    "orientation": "portrait",
+    "dominant_colors": ["silver", "aluminum", "rust", "gray sky"],
+    "suggested_uses": ["metal recycling page", "construction materials section", "aluminum recycling illustration"],
+    "keywords": ["aluminum window frames", "construction waste", "aluminum scrap", "renovation material", "metal recycling"]
+  },
+  {
+    "path": "images/wire-bins-ewaste.gif",
+    "alt": "Row of industrial IBC bins filled with sorted insulated wire and copper cable in a warehouse",
+    "subjects": ["wire bins", "insulated wire", "copper cable", "warehouse", "sorted material"],
+    "mood": ["organized", "operational", "industrial"],
+    "orientation": "portrait",
+    "dominant_colors": ["yellow", "blue", "white", "copper", "red"],
+    "suggested_uses": ["metal recycling page", "operations photo", "wire recycling section", "about page"],
+    "keywords": ["insulated wire", "copper cable", "wire recycling", "sorted material", "metal recycling operations"]
+  },
+  {
+    "path": "images/wire-ewaste.avif",
+    "alt": "Wire and electronic components ready for e-waste recycling and copper recovery",
+    "subjects": ["wire", "e-waste", "electronic components", "copper"],
+    "mood": ["industrial", "technical"],
+    "orientation": "landscape",
+    "dominant_colors": ["copper", "gray", "silver", "black"],
+    "suggested_uses": ["e-waste service card", "wire recycling section", "homepage services"],
+    "keywords": ["wire recycling", "e-waste", "electronic scrap", "copper recovery", "ITAD"]
+  },
+  {
+    "path": "images/worker-loading-trailer.gif",
+    "alt": "Worker in an orange shirt standing in a dump trailer bed with copper wire, electrical transmission towers visible in the background",
+    "subjects": ["worker", "dump trailer", "copper wire", "power transmission towers"],
+    "mood": ["working", "industrial", "authentic"],
+    "orientation": "portrait",
+    "dominant_colors": ["orange", "gray", "blue sky", "copper"],
+    "suggested_uses": ["metal recycling page", "contractor services", "team photo", "operations hero"],
+    "keywords": ["copper wire pickup", "contractor recycling", "electrical wire", "metal recycling pickup", "Sacramento"]
+  }
+]

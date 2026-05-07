@@ -43,13 +43,15 @@ const whyUs = [
     <!-- ─── Hero ─────────────────────────────────────────────────────────── -->
     <section class="relative isolate overflow-hidden h-[calc(100vh-6.5rem)] flex items-end">
       <!-- Full-bleed stock photo: industrial worker cutting metal / heavy equipment -->
-      <img
-        src="/images/loaded-truck.avif"
-        alt=""
-        aria-hidden="true"
-        class="absolute inset-0 -z-10 h-full w-full object-cover object-center"
-        fetchpriority="high"
-      />
+      <div class="absolute inset-0 -z-10 overflow-hidden" aria-hidden="true">
+        <img
+          src="/images/haynes-industrial-truck-closed.png"
+          alt=""
+          class="absolute inset-0 h-full w-full object-cover"
+          style="transform: scale(1.1) translateX(6%);"
+          fetchpriority="high"
+        />
+      </div>
       <!-- Layered gradients: heavy left + bottom pour -->
       <div class="absolute inset-0 -z-10 bg-gradient-to-r from-brand-900 via-brand-900/80 to-brand-900/20"></div>
       <div class="absolute inset-0 -z-10 bg-gradient-to-t from-brand-900/95 via-brand-900/40 to-transparent"></div>
@@ -118,8 +120,8 @@ const whyUs = [
           <!-- Image -->
           <div class="relative">
             <img
-              src="/images/forklift-wire-bin.avif"
-              alt="Haynes Industrial forklift moving material bins"
+              src="/images/dump-trailer-haynes-industrial-logo.gif"
+              alt="Haynes Industrial branded roll-off dumpster container at an industrial facility"
               class="w-full h-80 lg:h-[480px] object-cover"
               loading="lazy"
             />
