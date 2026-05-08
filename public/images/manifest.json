@@ -90,6 +90,26 @@
     "keywords": ["e-waste", "electronics recycling", "computer disposal", "IT asset disposal", "certified recycling"]
   },
   {
+    "path": "images/styrofoam-forklift-surplus.jpeg",
+    "alt": "Yellow forklift loading large blocks of surplus Styrofoam onto a flatbed trailer at an industrial facility",
+    "subjects": ["forklift", "styrofoam blocks", "flatbed trailer", "worker", "industrial facility"],
+    "mood": ["industrial", "operational", "active"],
+    "orientation": "landscape",
+    "dominant_colors": ["white", "yellow", "blue sky", "gray concrete"],
+    "suggested_uses": ["industrial surplus page", "logistics section", "operations photo", "packaging materials section"],
+    "keywords": ["styrofoam surplus", "industrial surplus", "flatbed truck", "forklift loading", "surplus packaging", "bulk material pickup"]
+  },
+  {
+    "path": "images/styrofoam-surplus.jpeg",
+    "alt": "Semi-truck flatbed trailer fully loaded with large surplus Styrofoam blocks secured with straps at an industrial lot",
+    "subjects": ["semi-truck", "flatbed trailer", "styrofoam blocks", "industrial lot"],
+    "mood": ["industrial", "logistics", "large-scale"],
+    "orientation": "landscape",
+    "dominant_colors": ["white", "blue", "overcast sky", "gray concrete"],
+    "suggested_uses": ["industrial surplus page", "logistics section", "packaging materials section", "freight section"],
+    "keywords": ["styrofoam surplus", "industrial surplus buying", "flatbed logistics", "bulk packaging", "surplus removal", "California recycling logistics"]
+  },
+  {
     "path": "images/flatbed-semi-loaded.HEIC",
     "alt": "Haynes Industrial flatbed semi-truck loaded with industrial material at a pickup site",
     "subjects": ["flatbed semi", "Haynes Industrial", "loaded truck", "industrial material"],
