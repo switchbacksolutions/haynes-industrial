@@ -7,21 +7,40 @@ const services = [
     title: 'Metal Recycling',
     image: '/images/loaded-truck-pipe.avif',
     imageAlt: 'Industrial truck loaded with metal pipe for recycling',
-    description: 'Industrial metal recycling pickup for licensed contractors throughout Northern California. Copper, aluminum, steel, and more — we come to your job site. Same-week scheduling in the Sacramento region.',
+    description: 'Pickup for licensed contractors throughout Northern California. Copper, aluminum, steel — we come to your job site, price against spot rates, and pay at pickup.',
+    href: '/services/metal-recycling',
   },
   {
     number: '02',
-    title: 'E-Waste / Electronics Recycling',
-    image: '/images/wire-ewaste.avif',
-    imageAlt: 'Wire and electronic waste ready for processing',
-    description: 'B2B electronics recycling with certified data destruction and compliant downstream handling. We pay for gold-bearing and refurbish-quality material and haul the rest for free.',
+    title: 'HVAC Recycling',
+    image: '/images/hvac.avif',
+    imageAlt: 'Commercial HVAC unit staged for removal and recycling',
+    description: 'EPA 608 certified refrigerant recovery and scrap removal for commercial HVAC equipment. One crew handles recovery, removal, and transport in a single visit.',
+    href: '/services/hvac-recycling',
   },
   {
     number: '03',
+    title: 'E-Waste Recycling',
+    image: '/images/wire-ewaste.avif',
+    imageAlt: 'Wire and electronic waste ready for processing',
+    description: 'Certified data destruction and compliant downstream handling for B2B electronics. We pay for gold-bearing material and haul the rest for free.',
+    href: '/services/ewaste',
+  },
+  {
+    number: '04',
     title: 'Industrial Surplus Buying',
     image: '/images/forklift-wire-bin.avif',
     imageAlt: 'Forklift moving industrial surplus material',
-    description: 'We buy surplus equipment, chemicals, raw materials, tooling, and stranded inventory. You send a list, we assess, we pick it up, you get paid. No auction, no vetting buyers, no hauling.',
+    description: 'We buy surplus equipment, chemicals, raw materials, tooling, and stranded inventory. You send a list, we assess, we pick it up, you get paid.',
+    href: '/services/industrial-surplus',
+  },
+  {
+    number: '05',
+    title: 'General Logistics',
+    image: '/images/haynes-industrial-truck-loaded.jpeg',
+    imageAlt: 'Haynes Industrial truck loaded with material at a job site',
+    description: 'Licensed freight brokerage for complex, regulated, or recurring freight throughout Northern California. We source from the full carrier market.',
+    href: '/services/general-logistics',
   },
 ];
 
@@ -150,8 +169,8 @@ const whyUs = [
         </div>
 
         <!-- Cards: gap-px with bg-brand-700 creates the divider lines -->
-        <div class="grid gap-px bg-brand-700 sm:grid-cols-3">
-          {services.map(({ number, title, image, imageAlt, description }) => (
+        <div class="grid gap-px bg-brand-700 sm:grid-cols-2 lg:grid-cols-3">
+          {services.map(({ number, title, image, imageAlt, description, href }) => (
             <div class="bg-brand-800 hover:bg-brand-700/80 transition-colors flex flex-col">
               <div class="overflow-hidden">
                 <img
@@ -165,7 +184,7 @@ const whyUs = [
                 <p class="text-4xl font-bold text-brand-600/70">{number}</p>
                 <h3 class="mt-4 text-xl font-bold text-white leading-snug">{title}</h3>
                 <p class="mt-4 text-sm text-brand-300 leading-relaxed flex-1">{description}</p>
-                <a href="/services" class="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-400 no-underline hover:text-brand-200 transition-colors">
+                <a href={href} class="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-400 no-underline hover:text-brand-200 transition-colors">
                   Learn More
                   <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
