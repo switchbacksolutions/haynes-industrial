@@ -8,7 +8,7 @@ const clients = [
   },
   {
     name: 'Property Managers',
-    detail: 'Aging rooftop units on commercial properties. We handle refrigerant recovery and scrap removal so you don\'t manage a separate hauler on top of the replacement job.',
+    detail: 'Aging rooftop units on commercial properties. We handle refrigerant recovery and material removal so you don\'t manage a separate hauler on top of the replacement job.',
   },
   {
     name: 'Facility Managers',
@@ -71,7 +71,7 @@ const differentiators = [
   'We pay for recovered metal: copper, aluminum, and steel priced against current commodity rates',
   'Same-week scheduling throughout the Sacramento region',
   'Compliance documentation for refrigerant recovery and material disposition',
-  'Licensed freight broker — we arrange any carrier or lifting equipment the job requires',
+  'Crane logistics for rooftop units — we coordinate the lift so you don\'t manage a separate crew',
 ];
 
 const faqs = [
@@ -81,7 +81,7 @@ const faqs = [
   },
   {
     q: 'How do you handle large rooftop units?',
-    a: 'For large RTUs that require crane removal, the crane and rigging is typically arranged by the HVAC contractor as part of the replacement project. Once the unit is accessible — on the ground or reachable from the roof — we handle refrigerant recovery and scrap removal from there. If you need a referral to a crane operator in the Sacramento area, ask us.',
+    a: 'We coordinate crane logistics for large RTUs that require lift-off. For rooftop units that need a crane, we arrange the crane and rigging as part of the removal — you don\'t manage a separate crew. We handle refrigerant recovery, the lift, and material transport in a single mobilization.',
   },
   {
     q: 'Do I get paid for the equipment?',
@@ -128,7 +128,7 @@ const faqs = [
             We Pick Up, Recover the Refrigerant, and Pay You for the Metal.
           </h1>
           <p class="mt-8 max-w-xl text-xl text-brand-200 leading-relaxed">
-            EPA 608 certified HVAC removal and recycling for commercial and industrial jobs across Northern California. Rooftop units, chillers, split systems — we recover the refrigerant on-site and haul the scrap.
+            EPA 608 certified HVAC removal and recycling for commercial and industrial jobs across Northern California. Rooftop units, chillers, split systems — we recover the refrigerant on-site and haul the material.
           </p>
           <div class="mt-10 flex flex-wrap gap-4">
             <a href="/contact" class="btn-primary px-7 py-3.5 text-sm">Schedule a Removal</a>
@@ -145,7 +145,7 @@ const faqs = [
         <h2 class="mt-3 text-4xl font-bold text-gray-900 leading-tight">Who We Work With</h2>
         <div class="mt-3 h-1 w-10 bg-brand-600"></div>
         <p class="mt-6 max-w-2xl text-lg text-gray-600 leading-relaxed">
-          Any commercial or industrial operation replacing or decommissioning HVAC equipment. If units are coming out, we handle the scrap — and the refrigerant.
+          Any commercial or industrial operation replacing or decommissioning HVAC equipment. If units are coming out, we handle the material — and the refrigerant.
         </p>
         <div class="mt-12 grid gap-px bg-gray-200 sm:grid-cols-2 lg:grid-cols-3">
           {clients.map((client) => (
@@ -176,7 +176,7 @@ const faqs = [
               EPA 608 certified and ready to work the day you need us.
             </p>
             <p class="mt-4 text-base text-gray-600 leading-relaxed">
-              Refrigerant recovery, unit removal, and scrap haul in a single visit. You don't coordinate multiple contractors or manage the sequence.
+              Refrigerant recovery, unit removal, and material haul in a single visit. You don't coordinate multiple contractors or manage the sequence.
             </p>
           </div>
         </div>
@@ -190,7 +190,7 @@ const faqs = [
         <h2 class="mt-3 text-4xl font-bold text-white leading-tight">EPA 608 Certified Refrigerant Recovery</h2>
         <div class="mt-3 h-1 w-10 bg-brand-500"></div>
         <p class="mt-6 max-w-2xl text-lg text-brand-300 leading-relaxed">
-          Most scrap yards won't touch a unit with active refrigerant. They tell you to recover it first — which means hiring a separate tech, scheduling another visit, and adding cost before the scrap even moves. We don't work that way.
+          Most recycling yards won't touch a unit with active refrigerant. They tell you to recover it first — which means hiring a separate tech, scheduling another visit, and adding cost before the material even moves. We don't work that way.
         </p>
 
         <div class="mt-14 grid gap-px bg-brand-700 lg:grid-cols-3">
@@ -227,7 +227,7 @@ const faqs = [
             </div>
             <h3 class="text-xl font-bold text-white">One Crew, One Visit</h3>
             <p class="mt-4 text-brand-200 leading-relaxed text-sm">
-              Refrigerant recovery, unit removal, and scrap transport happen in a single mobilization. You don't coordinate multiple contractors or manage the sequence. We show up, we handle it, the space is clear.
+              Refrigerant recovery, unit removal, and material transport happen in a single mobilization. You don't coordinate multiple contractors or manage the sequence. We show up, we handle it, the space is clear.
             </p>
           </div>
 
@@ -276,19 +276,10 @@ const faqs = [
           </div>
         </div>
 
-        <div class="mt-6 border-l-4 border-amber-400 bg-amber-50 p-6">
-          <h3 class="text-sm font-bold text-amber-900">Call First</h3>
-          <ul class="mt-3 space-y-2">
-            {[
-              'Equipment with asbestos-containing insulation — abatement required before removal.',
-              'PCB-containing components (typically pre-1979 equipment) — regulated handling required.',
-            ].map((item) => (
-              <li class="flex items-start gap-3 text-sm text-amber-800">
-                <span class="mt-0.5 flex-shrink-0 font-bold" aria-hidden="true">—</span>
-                {item}
-              </li>
-            ))}
-          </ul>
+        <div class="mt-6 border-l-4 border-brand-500 bg-brand-50 p-6">
+          <p class="text-sm text-brand-800">
+            <span class="font-bold">Not sure if your equipment qualifies?</span> Call us — we'll walk through it with you. <a href="tel:9166729417" class="font-semibold underline hover:text-brand-600">916-672-9417</a>
+          </p>
         </div>
       </div>
     </section>
@@ -310,7 +301,7 @@ const faqs = [
             <h2 class="mt-3 text-4xl font-bold text-gray-900 leading-tight">One Call Handles the Whole Removal</h2>
             <div class="mt-3 h-1 w-10 bg-brand-600"></div>
             <p class="mt-6 text-lg text-gray-600 leading-relaxed">
-              Most contractors have to call a refrigerant tech, then figure out scrap removal separately. We collapse that into a single call — EPA 608 recovery and scrap transport handled together, on your schedule.
+              Most contractors have to call a refrigerant tech, then figure out material removal separately. We collapse that into a single call — EPA 608 recovery and transport handled together, on your schedule.
             </p>
             <ul class="mt-8 space-y-0 list-none m-0 p-0 divide-y divide-gray-100">
               {differentiators.map((item) => (
@@ -344,6 +335,38 @@ const faqs = [
             </div>
           ))}
         </div>
+      </div>
+    </section>
+
+    <!-- ─── Case Study ───────────────────────────────────────────────────── -->
+    <section class="bg-brand-900 py-20">
+      <div class="section-container">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-400">Case Study</p>
+        <h2 class="mt-3 text-3xl font-bold text-white leading-tight max-w-2xl">36 Commercial Units Decommissioned in 48 Hours</h2>
+        <div class="mt-3 h-1 w-10 bg-brand-500"></div>
+        <p class="mt-6 max-w-2xl text-brand-300 leading-relaxed">
+          A commercial HVAC contractor had a 48-hour window to clear 36 units before new equipment could be installed. Every unit needed EPA 608 refrigerant recovery first — which typically means a separate technician visit. We handled recovery and removal in a single mobilization and cleared the space on schedule.
+        </p>
+        <div class="mt-8 grid gap-px bg-brand-700 sm:grid-cols-3">
+          <div class="bg-brand-800 p-6">
+            <p class="text-3xl font-bold text-white">36</p>
+            <p class="mt-1 text-sm text-brand-400">Commercial units removed</p>
+          </div>
+          <div class="bg-brand-800 p-6">
+            <p class="text-3xl font-bold text-white">48 hrs</p>
+            <p class="mt-1 text-sm text-brand-400">From start to space cleared</p>
+          </div>
+          <div class="bg-brand-800 p-6">
+            <p class="text-3xl font-bold text-white">0</p>
+            <p class="mt-1 text-sm text-brand-400">Separate vendors required</p>
+          </div>
+        </div>
+        <a href="/case-studies#hvac-48-hours" class="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-400 no-underline hover:text-brand-200 transition-colors">
+          Read the full case study
+          <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
       </div>
     </section>
 

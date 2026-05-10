@@ -9,7 +9,7 @@ const trades = [
   { name: 'Telecom Contractors', materials: 'Copper cabling, aluminum enclosures' },
   { name: 'Sign Installers & CNC Shops', materials: 'Aluminum sheet offcuts, non-ferrous metals' },
   { name: 'Warehouses & Fleets', materials: 'Forklift batteries, industrial steel' },
-  { name: 'General Industrial', materials: 'Mixed loads, demolition scrap' },
+  { name: 'General Industrial', materials: 'Mixed loads, demolition metal' },
 ];
 
 const materialCategories = [
@@ -30,7 +30,7 @@ const materialCategories = [
 const differentiators = [
   'We pick up at your job site — no hauling, no lost half-days at a drop-off yard',
   'Industrial scale: full truckloads and ongoing contractor account relationships',
-  'EPA 608 certified for refrigerant recovery — most scrap yards aren\'t',
+  'EPA 608 certified for refrigerant recovery — most recycling yards aren\'t',
   'Pricing tied to current commodity spot rates, explained before we load — no surprises',
   'Sacramento regional focus — real local relationships, same-week scheduling',
 ];
@@ -45,7 +45,7 @@ const faqs = [
     a: 'No fixed weight minimum, but the load needs to be worth the trip — a full truck bed, a half-pallet of copper, or equivalent bulk. Not sure? Send us a photo and we\'ll give you a straight answer.',
   },
   {
-    q: 'Do I need to sort the scrap?',
+    q: 'Do I need to sort the material?',
     a: 'No. We take mixed loads. That said, separated copper and aluminum commands better rates because it grades directly to market. If you have the time, sorting pays — we\'ll tell you which metals are worth separating.',
   },
   {
@@ -129,7 +129,7 @@ const faqs = [
               We show up with the truck and do the loading — your crew stays on the job.
             </p>
             <p class="mt-4 text-base text-gray-600 leading-relaxed">
-              Pay is by the pound against current commodity spot rates, confirmed on-site before we load. No surprises.
+              Pricing tied to current commodity spot rates, explained before we load. No surprises.
             </p>
           </div>
         </div>
@@ -162,19 +162,10 @@ const faqs = [
           ))}
         </div>
 
-        <div class="mt-6 border-l-4 border-amber-400 bg-amber-50 p-6">
-          <h3 class="text-sm font-bold text-amber-900">Not Accepted</h3>
-          <ul class="mt-3 space-y-2">
-            {[
-              'Radioactive materials',
-              'Hazardous chemicals — see our universal waste services for regulated material streams.',
-            ].map((item) => (
-              <li class="flex items-start gap-3 text-sm text-amber-800">
-                <span class="mt-0.5 flex-shrink-0 font-bold" aria-hidden="true">—</span>
-                {item}
-              </li>
-            ))}
-          </ul>
+        <div class="mt-6 border-l-4 border-brand-500 bg-brand-50 p-6">
+          <p class="text-sm text-brand-800">
+            <span class="font-bold">Not sure if we take it?</span> Call us — we'll give you a straight answer. <a href="tel:9166729417" class="font-semibold underline hover:text-brand-600">916-672-9417</a>
+          </p>
         </div>
       </div>
     </section>
@@ -253,7 +244,7 @@ const faqs = [
             </div>
             <h3 class="text-xl font-bold text-white">Recurring Account</h3>
             <p class="mt-4 text-brand-200 leading-relaxed">
-              If you generate scrap regularly — weekly, monthly, or job-by-job — we set up an ongoing arrangement. You call when you're ready, we come. No renegotiating rates every visit, no new-vendor hassle each time.
+              If you generate metal regularly — weekly, monthly, or job-by-job — we set up an ongoing arrangement. You call when you're ready, we come. No renegotiating rates every visit, no new-vendor hassle each time.
             </p>
             <ul class="mt-6 space-y-3">
               {['Priority scheduling for active accounts', 'Consistent pricing tied to market rates', 'One local contact who knows your site and materials'].map((item) => (
@@ -292,7 +283,7 @@ const faqs = [
       <div class="section-container">
         <div class="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
           <div>
-            <h2 class="text-3xl font-bold text-white lg:text-4xl">Turn End-of-Job Scrap Into a Check</h2>
+            <h2 class="text-3xl font-bold text-white lg:text-4xl">Turn End-of-Job Metal Into a Check</h2>
             <p class="mt-3 text-lg text-brand-200">
               Call us or send a message — we'll schedule a pickup and let you get back to work.
             </p>

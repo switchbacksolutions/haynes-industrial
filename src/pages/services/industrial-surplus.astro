@@ -292,23 +292,9 @@ const faqs = [
           ))}
         </div>
 
-        <div class="mt-6 border-l-4 border-amber-400 bg-amber-50 p-6">
-          <h3 class="text-sm font-bold text-amber-900">Requires Prior Review — Call First</h3>
-          <ul class="mt-3 space-y-2">
-            {[
-              'Hazardous waste requiring a manifest — we may still be able to help, but it needs a separate conversation.',
-              'PCBs (polychlorinated biphenyls) — regulated handling required, not part of standard surplus buying.',
-              'Asbestos-containing material — abatement required before any other work.',
-              'Anything explosive or radioactive — full stop.',
-            ].map((item) => (
-              <li class="flex items-start gap-3 text-sm text-amber-800">
-                <span class="mt-0.5 flex-shrink-0 font-bold" aria-hidden="true">—</span>
-                {item}
-              </li>
-            ))}
-          </ul>
-          <p class="mt-4 text-xs text-amber-700">
-            Surplus chemicals require Safety Data Sheets (SDS) — have documentation ready when you call.
+        <div class="mt-6 border-l-4 border-brand-500 bg-brand-50 p-6">
+          <p class="text-sm text-brand-800">
+            <span class="font-bold">Have something unusual or complex?</span> Call us and describe what you have — we'll tell you exactly what we can do. <a href="tel:9166729417" class="font-semibold underline hover:text-brand-600">916-672-9417</a>
           </p>
         </div>
       </div>
@@ -433,6 +419,38 @@ const faqs = [
             </div>
           ))}
         </div>
+      </div>
+    </section>
+
+    <!-- ─── Case Study ───────────────────────────────────────────────────── -->
+    <section class="bg-brand-900 py-20">
+      <div class="section-container">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-400">Case Study</p>
+        <h2 class="mt-3 text-3xl font-bold text-white leading-tight max-w-2xl">Salvaging a 40,000 Sq Ft Warehouse for a Fortune 500 Real Estate Developer</h2>
+        <div class="mt-3 h-1 w-10 bg-brand-500"></div>
+        <p class="mt-6 max-w-2xl text-brand-300 leading-relaxed">
+          A Fortune 500 multinational real estate developer had a 40,000-square-foot warehouse of materials earmarked for a canceled 40-story high-rise. The inventory was a complex mix — window aluminum, roofing insulation, HVAC units, chillers, and fire pumps — with each stream requiring different expertise. Haynes Industrial ran a single-partner engagement covering every material category: logistics, warehousing, downstream buyers, and commodity recycling.
+        </p>
+        <div class="mt-8 grid gap-px bg-brand-700 sm:grid-cols-3">
+          <div class="bg-brand-800 p-6">
+            <p class="text-3xl font-bold text-white">40,000</p>
+            <p class="mt-1 text-sm text-brand-400">Square feet of material cleared</p>
+          </div>
+          <div class="bg-brand-800 p-6">
+            <p class="text-3xl font-bold text-white">1</p>
+            <p class="mt-1 text-sm text-brand-400">Partner for every material stream</p>
+          </div>
+          <div class="bg-brand-800 p-6">
+            <p class="text-3xl font-bold text-white">Fortune 500</p>
+            <p class="mt-1 text-sm text-brand-400">Multinational real estate developer</p>
+          </div>
+        </div>
+        <a href="/case-studies#industrial-surplus-real-estate" class="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-400 no-underline hover:text-brand-200 transition-colors">
+          Read the full case study
+          <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
       </div>
     </section>
 

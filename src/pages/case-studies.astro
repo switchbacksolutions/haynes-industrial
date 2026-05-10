@@ -1,0 +1,204 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const caseStudies = [
+  {
+    id: 'industrial-surplus-real-estate',
+    eyebrow: 'Industrial Surplus',
+    title: 'Salvaging a 40,000 Sq Ft Warehouse for a Fortune 500 Real Estate Developer',
+    result: 'Full facility cleared, salvage value split with client',
+    client: 'Fortune 500 multinational real estate developer',
+    tags: ['Industrial Surplus', 'Facility Closure', 'Large Scale'],
+    situation: 'A Fortune 500 multinational real estate developer had a 40,000-square-foot warehouse of building materials earmarked for a canceled 40-story high-rise project. The material — worth significant salvage value — needed to be cleared on a defined timeline. The client needed a single partner who could assess, remove, and monetize the entire lot.',
+    challenge: 'The inventory was a complex mix: high-rise window aluminum, roofing insulation, commercial HVAC units, chillers, and fire pumps. Each material stream required different expertise — commodity pricing for the metals, industrial equipment buyers for the chillers, specialized handling for the HVAC units. No single traditional recycler or liquidator handled all of it.',
+    solution: 'Haynes Industrial conducted a full walk-through assessment and came back with a single engagement covering every material category. We handled all logistics and warehousing, identified downstream buyers for the high-value equipment, and processed the metal and insulation through our recycling network. The salvage value was split with the client — turning a demolition liability into a recovery.',
+    stats: [
+      { label: 'Facility Size', value: '40,000 sq ft' },
+      { label: 'Material Types', value: 'Window aluminum, HVAC, chillers, insulation, fire pumps' },
+      { label: 'Engagement Model', value: 'Single-partner, full site clearance' },
+      { label: 'Outcome', value: 'Salvage value returned to client' },
+    ],
+  },
+  {
+    id: 'hvac-48-hours',
+    eyebrow: 'HVAC Recycling',
+    title: '36 Commercial Units Decommissioned in 48 Hours',
+    result: 'Full decommission on a tight project timeline with zero delays',
+    client: 'Commercial HVAC contractor, large facility decommission',
+    tags: ['HVAC', 'Fast Turnaround', 'EPA 608'],
+    situation: 'A commercial HVAC contractor was replacing the full HVAC system at a large facility. The old equipment — 36 units — needed to be out before the new installation could proceed. The contractor had a tight 48-hour window and couldn\'t afford delays from a slow removal vendor.',
+    challenge: 'Each unit required EPA 608 certified refrigerant recovery before it could be moved. Most recyclers don\'t carry this certification and would have required a separate recovery technician visit first — adding cost, coordination, and at least another day to the timeline.',
+    solution: 'Haynes Industrial mobilized a crew with certified refrigerant recovery equipment. We recovered refrigerant from all 36 units in sequence, removed the equipment, and cleared the space within the 48-hour window. The contractor\'s installation crew had the space they needed, on schedule.',
+    stats: [
+      { label: 'Units Removed', value: '36 commercial HVAC units' },
+      { label: 'Timeline', value: '48 hours' },
+      { label: 'Certification', value: 'EPA 608 refrigerant recovery on-site' },
+      { label: 'Coordination', value: 'Single crew — no separate recovery vendor' },
+    ],
+  },
+  {
+    id: 'ewaste-food-bank',
+    eyebrow: 'E-Waste Recycling',
+    title: '35 Years of Electronics Cleared from a Food Bank Warehouse',
+    result: 'Over 80 units removed on short notice with full documentation',
+    client: 'Regional food bank, facility decommission',
+    tags: ['E-Waste', 'Short Notice', 'Documentation'],
+    situation: 'A regional food bank was decommissioning a warehouse that had accumulated electronics over 35 years of operation — computers, monitors, servers, networking gear, and administrative hardware going back to the early years of IT. The equipment needed to go, and the organization needed documentation for their records.',
+    challenge: 'The sheer volume and age range of the equipment presented a sorting and compliance challenge. Older equipment included CRT monitors with lead-bearing glass and other regulated components that most recyclers turn away. The food bank needed a partner who would take everything — not cherry-pick the easy material and leave the rest.',
+    solution: 'Haynes Industrial sent a crew that inventoried and removed over 80 units in a single visit. We accepted the full mix including CRT monitors and older hardware. Every storage device was documented by serial number, and certificates of destruction were issued for the organization\'s compliance records. The warehouse was cleared in one mobilization.',
+    stats: [
+      { label: 'Units Removed', value: '80+ units' },
+      { label: 'Equipment Age', value: '35 years of accumulation' },
+      { label: 'Notice', value: 'Short-notice scheduling' },
+      { label: 'Documentation', value: 'Full destruction certificates per device' },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Case Studies | Haynes Industrial"
+  description="Real examples of Haynes Industrial handling complex recycling and logistics projects — industrial surplus, HVAC decommissioning, and e-waste at scale."
+>
+  <main>
+
+    <!-- ─── Hero ─────────────────────────────────────────────────────────── -->
+    <section class="relative isolate overflow-hidden min-h-[60vh] flex items-end">
+      <img
+        src="/images/loaded-truck.avif"
+        alt=""
+        aria-hidden="true"
+        class="absolute inset-0 -z-10 h-full w-full object-cover object-center"
+        fetchpriority="high"
+      />
+      <div class="absolute inset-0 -z-10 bg-gradient-to-r from-brand-900 via-brand-900/80 to-brand-900/20"></div>
+      <div class="absolute inset-0 -z-10 bg-gradient-to-t from-brand-900/95 via-brand-900/40 to-transparent"></div>
+      <div class="w-full">
+        <div class="section-container pb-20 pt-48">
+          <p class="text-xs font-bold uppercase tracking-[0.25em] text-brand-300">
+            Proven Results · Northern &amp; Central California
+          </p>
+          <h1 class="mt-5 text-5xl font-bold tracking-tight text-white leading-none md:text-6xl max-w-2xl">
+            Case Studies
+          </h1>
+          <p class="mt-6 max-w-xl text-xl text-brand-200 leading-relaxed">
+            Real projects. Real scale. How Haynes Industrial handles the jobs that require more than a standard pickup.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Case Studies ─────────────────────────────────────────────────── -->
+    {caseStudies.map((study, index) => (
+      <section
+        id={study.id}
+        class:list={[
+          'py-24 lg:py-32',
+          index % 2 === 1 ? 'bg-brand-900' : '',
+        ]}
+      >
+        <div class="section-container">
+
+          <p class:list={[
+            'text-xs font-bold uppercase tracking-[0.2em]',
+            index % 2 === 1 ? 'text-brand-400' : 'text-brand-500',
+          ]}>{study.eyebrow}</p>
+          <h2 class:list={[
+            'mt-3 text-4xl font-bold leading-tight max-w-3xl',
+            index % 2 === 1 ? 'text-white' : 'text-gray-900',
+          ]}>{study.title}</h2>
+          <div class:list={['mt-3 h-1 w-10', index % 2 === 1 ? 'bg-brand-500' : 'bg-brand-600']}></div>
+
+          <div class:list={[
+            'mt-4 inline-flex items-center gap-2 text-sm font-semibold',
+            index % 2 === 1 ? 'text-brand-300' : 'text-brand-600',
+          ]}>
+            <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>
+            {study.result}
+          </div>
+
+          <!-- Stats strip -->
+          <div class:list={[
+            'mt-10 grid gap-px sm:grid-cols-2 lg:grid-cols-4',
+            index % 2 === 1 ? 'bg-brand-700' : 'bg-gray-200',
+          ]}>
+            {study.stats.map((stat) => (
+              <div class:list={[
+                'p-6',
+                index % 2 === 1 ? 'bg-brand-800' : 'bg-white',
+              ]}>
+                <p class:list={[
+                  'text-xs font-bold uppercase tracking-wider',
+                  index % 2 === 1 ? 'text-brand-400' : 'text-brand-500',
+                ]}>{stat.label}</p>
+                <p class:list={[
+                  'mt-2 text-sm font-semibold leading-snug',
+                  index % 2 === 1 ? 'text-white' : 'text-gray-900',
+                ]}>{stat.value}</p>
+              </div>
+            ))}
+          </div>
+
+          <!-- Narrative -->
+          <div class="mt-14 grid gap-8 lg:grid-cols-3">
+
+            <div class:list={['p-8', index % 2 === 1 ? 'bg-brand-800' : 'bg-gray-50']}>
+              <p class:list={[
+                'text-xs font-bold uppercase tracking-widest mb-3',
+                index % 2 === 1 ? 'text-brand-400' : 'text-brand-500',
+              ]}>The Situation</p>
+              <p class:list={[
+                'text-sm leading-relaxed',
+                index % 2 === 1 ? 'text-brand-200' : 'text-gray-600',
+              ]}>{study.situation}</p>
+            </div>
+
+            <div class:list={['p-8', index % 2 === 1 ? 'bg-brand-800' : 'bg-gray-50']}>
+              <p class:list={[
+                'text-xs font-bold uppercase tracking-widest mb-3',
+                index % 2 === 1 ? 'text-brand-400' : 'text-brand-500',
+              ]}>The Challenge</p>
+              <p class:list={[
+                'text-sm leading-relaxed',
+                index % 2 === 1 ? 'text-brand-200' : 'text-gray-600',
+              ]}>{study.challenge}</p>
+            </div>
+
+            <div class:list={['p-8', index % 2 === 1 ? 'bg-brand-800' : 'bg-gray-50']}>
+              <p class:list={[
+                'text-xs font-bold uppercase tracking-widest mb-3',
+                index % 2 === 1 ? 'text-brand-400' : 'text-brand-500',
+              ]}>The Solution</p>
+              <p class:list={[
+                'text-sm leading-relaxed',
+                index % 2 === 1 ? 'text-brand-200' : 'text-gray-600',
+              ]}>{study.solution}</p>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+    ))}
+
+    <!-- ─── CTA ───────────────────────────────────────────────────────────── -->
+    <section class="bg-brand-800 py-20">
+      <div class="section-container">
+        <div class="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <h2 class="text-3xl font-bold text-white lg:text-4xl">Have a Complex Project?</h2>
+            <p class="mt-3 text-lg text-brand-200">
+              Tell us what you have — we'll tell you how we'd handle it and what it's worth.
+            </p>
+          </div>
+          <div class="flex-shrink-0">
+            <a href="/contact" class="btn-white px-8 py-4 text-sm">Get In Touch</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

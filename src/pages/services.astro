@@ -23,55 +23,62 @@ interface ServiceCategory {
 
 const services: ServiceCategory[] = [
   {
-    id: 'universal-waste',
-    eyebrow: 'Service Category 01',
-    title: 'Universal Waste Management',
-    image: '/images/ewaste.avif',
-    imageAlt: 'Electronic waste staged for processing',
-    description: 'Complete solutions for universal waste — safe handling, regulatory compliance, and maximum recovery of reusable materials. Our services reduce environmental risks and make waste management seamless for our clients.',
+    id: 'hvac-recycling',
+    eyebrow: 'Service 01',
+    title: 'HVAC Recycling',
+    href: '/services/hvac-recycling',
+    image: '/images/hvac-crane-removal.avif',
+    imageAlt: 'Commercial HVAC unit being crane-lifted for removal',
+    description: 'Commercial HVAC decommissioning with EPA 608 certified refrigerant recovery on-site. Rooftop units, chillers, and split systems — we recover the refrigerant, handle crane logistics for rooftop lifts, and pay you for the recovered copper, aluminum, and steel.',
     dark: false,
     subservices: [
       {
-        title: 'HVAC Recycling',
-        image: '/images/hvac-crane-removal.avif',
-        imageAlt: 'HVAC unit being crane-lifted for removal',
-        description: 'Commercial unit decommissioning with EPA 608 refrigerant recovery on-site and recovery of copper, aluminum, and steel.',
-        href: '/services/hvac-recycling',
+        title: 'EPA 608 Refrigerant Recovery',
+        description: 'Certified refrigerant recovery on-site before removal — no separate tech needed. R-22, R-410A, R-134a, and all common refrigerants.',
       },
       {
-        title: 'Electronic Waste (E-Waste) Management',
-        image: '/images/wire-ewaste.avif',
-        imageAlt: 'Wire and electronic waste ready for processing',
-        description: 'Secure collection, certified data destruction, hazardous component handling, and material recovery for responsible reintroduction to markets.',
-        href: '/services/ewaste',
+        title: 'Crane Logistics for Rooftop Units',
+        description: 'We coordinate the crane and rigging for large rooftop units that require lift-off. One call handles refrigerant recovery, the lift, and material transport.',
       },
       {
-        title: 'Battery Recycling',
-        image: '/images/batteries.avif',
-        imageAlt: 'Industrial batteries staged for recycling',
-        description: 'Consumer and industrial battery handling with hazardous material containment for lithium, lead, and cadmium batteries, plus metal recovery services.',
+        title: 'Material Recovery & Payment',
+        description: 'Commercial HVAC equipment contains substantial copper, aluminum, and steel. We pay for recovered material at current commodity rates.',
+      },
+    ],
+  },
+  {
+    id: 'ewaste',
+    eyebrow: 'Service 02',
+    title: 'E-Waste / Electronics Recycling',
+    href: '/services/ewaste',
+    image: '/images/wire-ewaste.avif',
+    imageAlt: 'Wire and electronic waste ready for processing',
+    description: 'Certified data destruction and responsible downstream handling for businesses decommissioning electronics. CEW registered with Cal Recycle / DTSC. We pay for gold-bearing components and haul everything else at no charge.',
+    dark: true,
+    subservices: [
+      {
+        title: 'Data Destruction Certificates',
+        description: 'Physical shredding or certified multi-pass wipe — certificate issued per device by serial number. Your compliance team gets the documentation they need.',
       },
       {
-        title: 'Lightbulb & Lamp Recycling',
-        image: '/images/flourescent-tubes.avif',
-        imageAlt: 'Fluorescent tubes bundled for recycling',
-        description: 'Fluorescent, LED, and HID lighting processing with mercury mitigation and bulk collection programs for organizations of all sizes.',
+        title: 'Gold-Bearing Component Buy-Back',
+        description: 'CPUs, RAM, server boards, telecom cards — we buy the high-value material. End-of-life equipment we haul for free.',
       },
       {
-        title: 'Industrial Resale',
-        description: 'Asset valuation and resale coordination to extend the lifecycle of surplus industrial equipment and maximize value recovery.',
+        title: 'B2B Pickup, Sacramento Region',
+        description: 'We come to your facility. IT departments, repair shops, municipalities, schools, and healthcare — any organization with a volume of electronics to move.',
       },
     ],
   },
   {
     id: 'metal-recycling',
-    eyebrow: 'Service Category 02',
+    eyebrow: 'Service 03',
     title: 'Metal Recycling',
     href: '/services/metal-recycling',
     image: '/images/loaded-truck-pipe.avif',
     imageAlt: 'Industrial truck loaded with metal pipe for recycling',
-    description: 'Industrial metal recycling pickup for licensed contractors throughout Northern California. Copper, aluminum, steel, and more — we come to your job site. Same-week scheduling in the Sacramento region.',
-    dark: true,
+    description: 'Industrial metal recycling pickup for licensed contractors throughout Northern California. Copper, aluminum, steel, and more — we come to your job site. Pricing tied to current commodity spot rates, explained before we load. Same-week scheduling.',
+    dark: false,
     subservices: [
       {
         title: 'Ferrous Metals',
@@ -89,13 +96,13 @@ const services: ServiceCategory[] = [
   },
   {
     id: 'industrial-surplus',
-    eyebrow: 'Service Category 03',
+    eyebrow: 'Service 04',
     title: 'Industrial Surplus Buying',
     href: '/services/industrial-surplus',
     image: '/images/forklift-wire-bin.avif',
     imageAlt: 'Forklift moving industrial surplus material',
     description: 'We buy surplus equipment, chemicals, raw materials, tooling, and stranded inventory. You send a list, we assess, we pick it up, you get paid. No auction, no vetting buyers, no hauling.',
-    dark: false,
+    dark: true,
     subservices: [
       {
         title: 'Industrial Equipment',
@@ -113,16 +120,16 @@ const services: ServiceCategory[] = [
   },
   {
     id: 'general-logistics',
-    eyebrow: 'Service Category 04',
+    eyebrow: 'Service 05',
     title: 'General Logistics',
     href: '/services/general-logistics',
     image: '/images/haynes-industrial-truck-loaded.jpeg',
     imageAlt: 'Haynes Industrial truck loaded with material at a job site',
-    description: 'Licensed freight brokerage and logistics coordination for manufacturers, importers, distributors, and facilities throughout Northern California. We arrange the right carrier for every load — complex material, regulated freight, and recurring accounts.',
-    dark: true,
+    description: 'Licensed transportation provider for manufacturers, importers, distributors, and facilities throughout Northern California. We arrange the right carrier for every load — complex material, regulated freight, and recurring accounts.',
+    dark: false,
     subservices: [
       {
-        title: 'Licensed Freight Brokerage',
+        title: 'Transportation Coordination',
         description: 'We source from the full carrier market, not a single fleet — more options, faster scheduling, and the right equipment for every load.',
       },
       {
@@ -280,7 +287,7 @@ const services: ServiceCategory[] = [
           <div>
             <h2 class="text-3xl font-bold text-white lg:text-4xl">Have a Project in Mind?</h2>
             <p class="mt-3 text-lg text-brand-200">
-              Contact us for a consultation and custom quote for your waste management needs.
+              Contact us for a consultation and custom quote for your recycling and logistics needs.
             </p>
           </div>
           <div class="flex-shrink-0">

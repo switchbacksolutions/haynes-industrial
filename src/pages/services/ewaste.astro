@@ -8,7 +8,7 @@ const customers = [
   },
   {
     name: 'IT Departments & ITAD Providers',
-    detail: 'Decommissioned servers, workstations, laptops, and networking gear with documented chain of custody and certificates of destruction for every storage device.',
+    detail: 'Decommissioned servers, workstations, laptops, and networking gear with full documentation and certificates of destruction for every storage device.',
   },
   {
     name: 'Environmental Compliance Companies',
@@ -49,7 +49,7 @@ const materialCategories = [
       'Hard drives (HDD and SSD)',
       'Power supplies',
       'Network cards and expansion cards',
-      'Telecom boards and gold-bearing scrap',
+      'Telecom boards and gold-bearing material',
     ],
   },
   {
@@ -98,13 +98,13 @@ const differentiators = [
   'We pay for material with value: gold-bearing components, working units suitable for refurbishment',
   'Certificates of destruction issued for every storage device — hard drives, SSDs, flash media',
   'Bonded, insured, with real documentation for every transaction',
-  'Chain of custody from your door to downstream — serialized intake, documented handoff',
+  'CEW registered (Cal Recycle / DTSC) — we legally accept e-waste and produce the compliance records you need',
 ];
 
 const faqs = [
   {
     q: 'How is data destroyed?',
-    a: 'We offer two options: physical shredding or DOD 5220.22-M standard multi-pass wipe. Both result in a certificate of destruction issued to you, listing each device by serial number. Physical shredding is appropriate for drives that have held particularly sensitive data — the platters are rendered physically unreadable. Wipe-and-certify is appropriate for most business IT refresh cycles.',
+    a: 'We offer two options: physical shredding or certified multi-pass wipe (NIST SP 800-88 compliant). Both result in a certificate of destruction issued to you, listing each device by serial number. Physical shredding is appropriate for drives that have held particularly sensitive data — the platters are rendered physically unreadable. Wipe-and-certify is appropriate for most business IT refresh cycles.',
   },
   {
     q: 'What documentation do I receive?',
@@ -205,7 +205,7 @@ const faqs = [
             </div>
             <h3 class="text-xl font-bold text-white">Data Destruction</h3>
             <p class="mt-4 text-brand-200 leading-relaxed text-sm">
-              Every storage device — hard drives, SSDs, flash media — is logged by serial number at intake. You choose physical shredding or DOD 5220.22-M standard multi-pass wipe. Either way, you receive a certificate of data destruction listing each device.
+              Every storage device — hard drives, SSDs, flash media — is logged by serial number at intake. You choose physical shredding or certified multi-pass wipe (NIST SP 800-88 compliant). Either way, you receive a certificate of data destruction listing each device.
             </p>
           </div>
 
@@ -229,7 +229,7 @@ const faqs = [
             </div>
             <h3 class="text-xl font-bold text-white">Certifications</h3>
             <p class="mt-4 text-brand-200 leading-relaxed text-sm">
-              We operate under responsible recycling practices aligned with R2v3 and e-Stewards standards (certification in process). Bonded and insured. Real receipts, real documentation — not a handshake and a load ticket.
+              CEW registered with Cal Recycle / DTSC. We operate under responsible recycling practices aligned with R2v3 and e-Stewards standards (certification in process). Bonded and insured. Real receipts, real documentation — not a handshake and a load ticket.
             </p>
           </div>
 
@@ -269,20 +269,10 @@ const faqs = [
           ))}
         </div>
 
-        <div class="mt-6 border-l-4 border-amber-400 bg-amber-50 p-6">
-          <h3 class="text-sm font-bold text-amber-900">Not Accepted</h3>
-          <ul class="mt-3 space-y-2">
-            {[
-              'Residential TVs — we are a B2B operation; we don\'t run a consumer drop-off site.',
-              'Large appliances (refrigerators, washers, HVAC units) — see our Universal Waste services.',
-              'Anything with biological or chemical contamination.',
-            ].map((item) => (
-              <li class="flex items-start gap-3 text-sm text-amber-800">
-                <span class="mt-0.5 flex-shrink-0 font-bold" aria-hidden="true">—</span>
-                {item}
-              </li>
-            ))}
-          </ul>
+        <div class="mt-6 border-l-4 border-brand-500 bg-brand-50 p-6">
+          <p class="text-sm text-brand-800">
+            <span class="font-bold">Not sure if we take it?</span> Call us — we'll give you a straight answer. <a href="tel:9166729417" class="font-semibold underline hover:text-brand-600">916-672-9417</a>
+          </p>
         </div>
       </div>
     </section>
@@ -302,7 +292,7 @@ const faqs = [
             <ul class="mt-8 space-y-0 list-none m-0 p-0 divide-y divide-gray-100">
               {[
                 'Every storage device logged by make, model, and serial number at intake',
-                'Shred or DOD-standard wipe — your choice per device',
+                'Shred or certified multi-pass wipe — your choice per device',
                 'Certificate of data destruction issued per device, not per batch',
                 'Downstream facility documentation available for client audit files',
                 'Scheduled pickups for regular refresh cycles — one account contact, no rescheduling friction',
@@ -328,7 +318,7 @@ const faqs = [
             </p>
             <ul class="mt-8 space-y-0 list-none m-0 p-0 divide-y divide-gray-100">
               {[
-                'We buy gold-bearing scrap: CPU pins, RAM finger strips, telecom boards at commodity rates',
+                'We buy gold-bearing material: CPU pins, RAM finger strips, telecom boards at commodity rates',
                 'Working units suitable for refurbishment — we assess and pay for these separately',
                 'Everything else we haul for free — you don\'t pay to dispose of end-of-life material',
                 'We take the whole pile: no cherry-picking your inventory and leaving the rest',
@@ -401,6 +391,38 @@ const faqs = [
             </div>
           ))}
         </div>
+      </div>
+    </section>
+
+    <!-- ─── Case Study ───────────────────────────────────────────────────── -->
+    <section class="bg-gray-50 py-20">
+      <div class="section-container">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-500">Case Study</p>
+        <h2 class="mt-3 text-3xl font-bold text-gray-900 leading-tight max-w-2xl">35 Years of Electronics Cleared from a Food Bank Warehouse</h2>
+        <div class="mt-3 h-1 w-10 bg-brand-600"></div>
+        <p class="mt-6 max-w-2xl text-gray-600 leading-relaxed">
+          A regional food bank was decommissioning a warehouse with 35 years of accumulated electronics — computers, monitors, servers, and networking gear going back to the early days of IT. They needed everything gone on short notice, with destruction documentation for their records. We cleared over 80 units in a single visit, including CRT monitors most recyclers turn away.
+        </p>
+        <div class="mt-8 grid gap-px bg-gray-200 sm:grid-cols-3">
+          <div class="bg-white p-6">
+            <p class="text-3xl font-bold text-brand-700">80+</p>
+            <p class="mt-1 text-sm text-gray-500">Units removed in one visit</p>
+          </div>
+          <div class="bg-white p-6">
+            <p class="text-3xl font-bold text-brand-700">35 yrs</p>
+            <p class="mt-1 text-sm text-gray-500">Of accumulated equipment</p>
+          </div>
+          <div class="bg-white p-6">
+            <p class="text-3xl font-bold text-brand-700">100%</p>
+            <p class="mt-1 text-sm text-gray-500">Destruction certificates issued</p>
+          </div>
+        </div>
+        <a href="/case-studies#ewaste-food-bank" class="mt-8 inline-flex items-center gap-1.5 text-sm font-semibold text-brand-600 no-underline hover:text-brand-800 transition-colors">
+          Read the full case study
+          <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+          </svg>
+        </a>
       </div>
     </section>
 
