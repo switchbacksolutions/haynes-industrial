@@ -40,7 +40,7 @@
     "keywords": ["general contractor", "testimonial", "client profile"]
   },
   {
-    "path": "images/copper-bin-metal.gif",
+    "path": "images/copper-bin-metal.avif",
     "alt": "Overhead view of a bin overflowing with bare bright copper wire coils",
     "subjects": ["copper wire", "scrap bin", "recycling material"],
     "mood": ["industrial", "abundant"],
@@ -60,7 +60,7 @@
     "keywords": ["metal pipe", "scrap pipe", "ferrous metal", "metal recycling pickup", "contractor scrap"]
   },
   {
-    "path": "images/dump-trailer-haynes-industrial-logo.gif",
+    "path": "images/dump-trailer-haynes-industrial-logo.avif",
     "alt": "Haynes Industrial branded white roll-off dumpster container parked at an industrial facility",
     "subjects": ["roll-off container", "Haynes Industrial logo", "industrial facility"],
     "mood": ["professional", "branded"],
@@ -90,7 +90,7 @@
     "keywords": ["e-waste", "electronics recycling", "computer disposal", "IT asset disposal", "certified recycling"]
   },
   {
-    "path": "images/styrofoam-forklift-surplus.jpeg",
+    "path": "images/styrofoam-forklift-surplus.avif",
     "alt": "Yellow forklift loading large blocks of surplus Styrofoam onto a flatbed trailer at an industrial facility",
     "subjects": ["forklift", "styrofoam blocks", "flatbed trailer", "worker", "industrial facility"],
     "mood": ["industrial", "operational", "active"],
@@ -100,7 +100,7 @@
     "keywords": ["styrofoam surplus", "industrial surplus", "flatbed truck", "forklift loading", "surplus packaging", "bulk material pickup"]
   },
   {
-    "path": "images/styrofoam-surplus.jpeg",
+    "path": "images/styrofoam-surplus.avif",
     "alt": "Semi-truck flatbed trailer fully loaded with large surplus Styrofoam blocks secured with straps at an industrial lot",
     "subjects": ["semi-truck", "flatbed trailer", "styrofoam blocks", "industrial lot"],
     "mood": ["industrial", "logistics", "large-scale"],
@@ -110,7 +110,7 @@
     "keywords": ["styrofoam surplus", "industrial surplus buying", "flatbed logistics", "bulk packaging", "surplus removal", "California recycling logistics"]
   },
   {
-    "path": "images/flatbed-semi-loaded.HEIC",
+    "path": "images/flatbed-semi-loaded.avif",
     "alt": "Haynes Industrial flatbed semi-truck loaded with industrial material at a pickup site",
     "subjects": ["flatbed semi", "Haynes Industrial", "loaded truck", "industrial material"],
     "mood": ["industrial", "logistics", "professional"],
@@ -150,7 +150,7 @@
     "keywords": ["forklift", "wire bin", "industrial surplus", "material handling", "recycling operations"]
   },
   {
-    "path": "images/haynes-industrial-truck-closed.png",
+    "path": "images/haynes-industrial-truck-closed.avif",
     "alt": "Haynes Industrial specialty recycling box truck parked inside a warehouse, showing branding and phone number",
     "subjects": ["box truck", "Haynes Industrial logo", "warehouse", "branding"],
     "mood": ["professional", "branded", "clean"],
@@ -200,7 +200,7 @@
     "keywords": ["HVAC recycling", "commercial HVAC", "rooftop unit", "EPA 608", "refrigerant recovery"]
   },
   {
-    "path": "images/jon_blowtorch.jpg",
+    "path": "images/jon-blowtorch.avif",
     "alt": "Worker wearing a welding visor standing near an industrial lathe and machinery outdoors",
     "subjects": ["worker", "welding visor", "industrial lathe", "machinery"],
     "mood": ["hands-on", "industrial", "authentic"],
@@ -210,7 +210,7 @@
     "keywords": ["industrial worker", "welding", "equipment handling", "recycling operations", "Jon Haynes"]
   },
   {
-    "path": "images/jon-dumpster-profile.gif",
+    "path": "images/jon-dumpster-profile.avif",
     "alt": "Jon Haynes in a navy Haynes Industrial shirt smiling in front of a large white roll-off dumpster",
     "subjects": ["Jon Haynes", "roll-off dumpster", "Haynes Industrial", "founder"],
     "mood": ["approachable", "authentic", "professional"],
@@ -280,7 +280,7 @@
     "keywords": ["project manager", "electrical utilities", "testimonial", "municipal client", "client profile"]
   },
   {
-    "path": "images/tires-logistics.gif",
+    "path": "images/tires-logistics.avif",
     "alt": "Black dump trailer with rear gates open, loaded with a pile of scrap tires at a tire yard",
     "subjects": ["scrap tires", "dump trailer", "tire yard"],
     "mood": ["industrial", "logistics"],
@@ -360,7 +360,7 @@
     "keywords": ["wire recycling", "e-waste", "electronic scrap", "copper recovery", "ITAD"]
   },
   {
-    "path": "images/worker-loading-trailer.gif",
+    "path": "images/worker-loading-trailer.avif",
     "alt": "Worker in an orange shirt standing in a dump trailer bed with copper wire, electrical transmission towers visible in the background",
     "subjects": ["worker", "dump trailer", "copper wire", "power transmission towers"],
     "mood": ["working", "industrial", "authentic"],
