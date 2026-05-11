@@ -1,9 +1,22 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
-  <!-- Astro-style rocket / star mark -->
-  <rect width="128" height="128" rx="24" fill="#0ea5e9"/>
+  <!-- Circular swoosh: ~300° arc with gap at top, mirrors the logo's brushstroke circle -->
+  <!-- Center (64,64), radius 52; start upper-left (38,19), end upper-right (90,19) -->
   <path
-    d="M64 20 L74 54 H108 L80 74 L90 108 L64 88 L38 108 L48 74 L20 54 H54 Z"
-    fill="white"
-    opacity="0.95"
+    d="M 38 19 A 52 52 0 1 1 90 19"
+    stroke="#2b5672"
+    stroke-width="7"
+    fill="none"
+    stroke-linecap="round"
   />
+  <!-- Bold H — condensed sans-serif to match the logo's wordmark weight -->
+  <text
+    x="64"
+    y="68"
+    dominant-baseline="central"
+    text-anchor="middle"
+    font-family="'Arial Black', Impact, 'Helvetica Neue', Arial, sans-serif"
+    font-size="55"
+    font-weight="900"
+    fill="#2b5672"
+  >H</text>
 </svg>
