@@ -9,6 +9,8 @@
  *   <BaseHead title="Page Title" description="Page description." />
  */
 
+import '@/styles/global.css';
+
 interface Props {
   /** Page <title> — appended with the site name */
   title: string;
@@ -77,9 +79,6 @@ const canonical = new URL(canonicalURL, Astro.site ?? Astro.url).href;
   rel="stylesheet"
   href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
 />
-
-<!-- Global stylesheet -->
-<link rel="stylesheet" href="/src/styles/global.css" />
 
 <!-- LocalBusiness structured data -->
 <script type="application/ld+json">
