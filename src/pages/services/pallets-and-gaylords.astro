@@ -1,0 +1,424 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const customers = [
+  {
+    name: 'Warehouses & 3PLs',
+    detail: 'Surplus pallets stacking up between inbound and outbound cycles, or gaylords piling up after bulk shipments. We buy what you can\'t move fast enough.',
+  },
+  {
+    name: 'Manufacturers & Distributors',
+    detail: 'End-of-run packaging you no longer need — odd-sized gaylords, non-standard pallets, discontinued specs. We assess and offer on any volume.',
+  },
+  {
+    name: 'Retailers & E-Commerce Fulfillment',
+    detail: 'High-volume facilities that accumulate pallets and bulk bins faster than they go back into rotation. We schedule recurring pickups to keep the dock clear.',
+  },
+  {
+    name: 'Food & Beverage Facilities',
+    detail: 'ISPM-15 heat-treated pallets from international shipments, corrugate gaylords from inbound product runs. We sort and buy what\'s in usable condition.',
+  },
+  {
+    name: 'Construction & Demo',
+    detail: 'Pallets left over from large material deliveries — roofing, tile, brick, lumber. We pick them up from the job site so you\'re not paying to haul empties.',
+  },
+  {
+    name: 'Facility Closures & Relocations',
+    detail: 'Entire inventories of packaging material that don\'t make sense to move. We assess the whole lot and buy it as part of a broader cleanout.',
+  },
+];
+
+const processSteps = [
+  {
+    step: '01',
+    heading: 'Tell Us What You Have',
+    body: 'Call or email with a rough count and description — pallet type, gaylord size, condition, and approximate quantity. Photos are helpful but not required.',
+  },
+  {
+    step: '02',
+    heading: 'We Give You a Range',
+    body: 'For standard material in known condition we can usually quote a range on the phone. For large or mixed lots we may schedule a quick on-site look — no charge.',
+  },
+  {
+    step: '03',
+    heading: 'You Get an Offer',
+    body: 'A straight number based on material type, condition, and current secondary market rates. The offer we make is the check you get — no adjustment when we show up.',
+  },
+  {
+    step: '04',
+    heading: 'We Schedule Pickup',
+    body: 'We send the right truck and equipment. You don\'t move anything. One visit handles the lot, and we work around your dock availability.',
+  },
+  {
+    step: '05',
+    heading: 'You Get Paid',
+    body: 'Payment on pickup. For recurring accounts, we can set a schedule so the dock stays clear without a phone call every time.',
+  },
+];
+
+const materialCategories = [
+  {
+    category: 'Wood Pallets',
+    items: [
+      'GMA standard 48×40 pallets — stringer and block styles',
+      'Heat-treated (ISPM-15) pallets from international shipments',
+      'Custom and non-standard dimensions',
+      'Used pallets in good repair — no broken boards, no missing blocks',
+      'Broken pallets for wood commodity recovery',
+    ],
+  },
+  {
+    category: 'Plastic Pallets',
+    items: [
+      'Nestable and rackable plastic pallets',
+      'Heavy-duty warehouse and export plastic pallets',
+      'Plastic slip sheets',
+      'Light and medium-duty plastic pallets',
+      'Mixed lots of plastic pallet types',
+    ],
+  },
+  {
+    category: 'Gaylords / Bulk Bins',
+    items: [
+      'Single, double, and triple-wall corrugated gaylords',
+      'Standard 40×48 footprint and non-standard sizes',
+      'One-trip and lightly used gaylord boxes',
+      'Octabins and other specialty bulk container formats',
+      'Gaylords with or without poly liners',
+    ],
+  },
+  {
+    category: 'Corrugated & Packaging Material',
+    items: [
+      'Surplus corrugated sheets and blanks',
+      'Oversized or non-standard corrugated boxes',
+      'Packing material — foam, paper, bubble wrap in quantity',
+      'Stretch film and shrink wrap rolls',
+      'Banding material and strapping',
+    ],
+  },
+  {
+    category: 'IBC Totes & Drums',
+    items: [
+      '275 and 330-gallon IBC totes (food-grade and industrial)',
+      '55-gallon steel and poly drums',
+      '30 and 15-gallon drums',
+      'Open-head and closed-head drum styles',
+      'Tote and drum cages and frames',
+    ],
+  },
+  {
+    category: 'Mixed & Surplus Packaging Lots',
+    items: [
+      'Full warehouse bays of mixed packaging material',
+      'Packaging from facility closures and relocations',
+      'Discontinued or off-spec packaging inventory',
+      'Overstock from production line changes',
+      'Customer-abandoned or unclaimed packaging freight',
+    ],
+  },
+];
+
+const differentiators = [
+  'We buy your packaging surplus — you don\'t pay to have it hauled away',
+  'Same-week scheduling throughout the Sacramento region',
+  'Recurring pickup accounts for high-volume docks — no phone call needed every time',
+  'We assess mixed lots together and give you one number for the whole thing',
+  'Straight pricing: what we quote on the phone is the check at pickup',
+  'Disposition records for every transaction — your accounting has what it needs',
+];
+
+const faqs = [
+  {
+    q: 'What condition do pallets need to be in?',
+    a: 'For resale value, pallets should be structurally sound — no broken deckboards, missing blocks, or protruding nails that make them unusable. Pallets with minor repairs or cosmetic damage still have value. We also accept broken pallets for wood commodity recovery — they just pay less.',
+  },
+  {
+    q: 'Do you buy gaylords that have been used?',
+    a: 'Yes. One-trip gaylords and lightly used boxes in intact condition are the most valuable. Multi-trip gaylords with wear still have secondary market value depending on wall strength and structural integrity. Send photos if you\'re not sure — we\'ll tell you what we can do.',
+  },
+  {
+    q: 'What\'s the minimum quantity?',
+    a: 'We work with partial truckloads when the material has enough value to make the trip worthwhile — typically 50+ pallets or a comparable volume of gaylords. Smaller quantities may not justify a pickup on their own, but they often do as part of a broader cleanout. Call us and we\'ll be straight with you.',
+  },
+  {
+    q: 'Can you set up a recurring pickup?',
+    a: 'Yes. For facilities that accumulate pallets or gaylords on a regular cycle, we set up a recurring schedule so your dock stays clear without a phone call every time. Let us know your approximate volume and frequency and we\'ll work out a schedule.',
+  },
+  {
+    q: 'Do you accept IBC totes and drums that held chemicals?',
+    a: 'Depends on the contents. Food-grade totes and drums that held non-hazardous materials are typically fine. Totes and drums that held hazardous chemicals require documentation and may not be accepted for resale — call us and describe the previous contents. We\'ll tell you exactly what we can do.',
+  },
+  {
+    q: 'How does pricing work?',
+    a: 'Pricing is based on pallet or gaylord type, condition, and current secondary market rates. Plastic pallets pay differently than wood. Heat-treated GMA pallets pay differently than broken wood. We give you a rate per unit or a lump offer for the lot — your choice for how to structure it.',
+  },
+];
+---
+
+<BaseLayout
+  title="Pallet & Gaylord Buying | Haynes Industrial"
+  description="We buy surplus pallets, gaylord bulk bins, IBC totes, and packaging material in Northern & Central California. Same-week pickup. Recurring accounts available."
+>
+  <main>
+
+    <!-- ─── Hero ─────────────────────────────────────────────────────────── -->
+    <section class="relative isolate overflow-hidden min-h-[70vh] flex items-end">
+      <img
+        src="/images/haynes-industrial-truck-loaded.jpeg"
+        alt=""
+        aria-hidden="true"
+        class="absolute inset-0 -z-10 h-full w-full object-cover object-center"
+        fetchpriority="high"
+      />
+      <div class="absolute inset-0 -z-10 bg-gradient-to-r from-brand-900 via-brand-900/80 to-brand-900/20"></div>
+      <div class="absolute inset-0 -z-10 bg-gradient-to-t from-brand-900/95 via-brand-900/40 to-transparent"></div>
+      <div class="w-full">
+        <div class="section-container pb-20 pt-48">
+          <p class="text-xs font-bold uppercase tracking-[0.25em] text-brand-300">
+            Pallets &amp; Packaging · Northern &amp; Central California
+          </p>
+          <h1 class="mt-5 text-5xl font-bold tracking-tight text-white leading-none text-balance md:text-6xl max-w-2xl">
+            Pallets and Gaylords Piling Up?
+          </h1>
+          <p class="mt-8 max-w-xl text-xl text-brand-200 leading-relaxed">
+            We buy surplus pallets, gaylord bulk bins, IBC totes, and packaging material. You describe what you have, we make an offer, we pick it up. Same-week scheduling throughout the Sacramento region.
+          </p>
+          <div class="mt-10 flex flex-wrap gap-4">
+            <a href="/contact" class="btn-primary px-7 py-3.5 text-sm">Get an Offer</a>
+            <a href="#process" class="btn-outline-white px-7 py-3.5 text-sm">How It Works</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Who We Work With ──────────────────────────────────────────────── -->
+    <section class="py-24 lg:py-32">
+      <div class="section-container">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-500">Our Clients</p>
+        <h2 class="mt-3 text-4xl font-bold text-gray-900 leading-tight">Who We Work With</h2>
+        <div class="mt-3 h-1 w-10 bg-brand-600"></div>
+        <p class="mt-6 max-w-2xl text-lg text-gray-600 leading-relaxed">
+          Any facility sitting on packaging it can't move fast enough. If pallets are stacking up and gaylords are taking dock space, we can fix that.
+        </p>
+        <div class="mt-12 grid gap-px bg-gray-200 sm:grid-cols-2 lg:grid-cols-3">
+          {customers.map((customer) => (
+            <div class="bg-white p-8">
+              <h3 class="text-sm font-bold text-brand-700">{customer.name}</h3>
+              <p class="mt-3 text-sm text-gray-600 leading-relaxed">{customer.detail}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── The Process ───────────────────────────────────────────────────── -->
+    <section id="process" class="bg-brand-900 py-24 lg:py-32">
+      <div class="section-container">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-400">No Guesswork</p>
+        <h2 class="mt-3 text-4xl font-bold text-white leading-tight">How It Works</h2>
+        <div class="mt-3 h-1 w-10 bg-brand-500"></div>
+        <p class="mt-6 max-w-2xl text-lg text-brand-300 leading-relaxed">
+          Straightforward process from first call to payment. You don't move anything — we come to you.
+        </p>
+
+        <div class="mt-14 grid gap-px bg-brand-700 sm:grid-cols-2 lg:grid-cols-5">
+          {processSteps.map((step) => (
+            <div class="bg-brand-800 p-8">
+              <span class="text-4xl font-bold text-brand-600/70">{step.step}</span>
+              <h3 class="mt-4 text-base font-bold text-white">{step.heading}</h3>
+              <p class="mt-3 text-sm text-brand-300 leading-relaxed">{step.body}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-8 border-l-4 border-brand-500 bg-brand-800/60 p-6">
+          <p class="text-brand-200 text-sm leading-relaxed">
+            <span class="font-bold text-white">We price before we show up.</span> You get a number on the phone based on what you describe. If something doesn't match when we arrive — condition, quantity, type — we tell you before loading anything. The decision is always yours.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── What We Accept ────────────────────────────────────────────────── -->
+    <section id="materials" class="bg-gray-50 py-24 lg:py-32">
+      <div class="section-container">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-500">Material Reference</p>
+        <h2 class="mt-3 text-4xl font-bold text-gray-900 leading-tight">What We Accept</h2>
+        <div class="mt-3 h-1 w-10 bg-brand-600"></div>
+        <p class="mt-6 text-lg text-gray-600">
+          Wood pallets, plastic pallets, gaylord bins, IBC totes, drums, and surplus packaging material in volume.
+        </p>
+
+        <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {materialCategories.map((cat) => (
+            <div class="service-card">
+              <h3 class="text-sm font-bold text-gray-900">{cat.category}</h3>
+              <ul class="mt-4 space-y-3">
+                {cat.items.map((item) => (
+                  <li class="flex items-start gap-3 text-sm text-gray-600">
+                    <span class="mt-1.5 h-1.5 w-1.5 flex-shrink-0 bg-brand-500" aria-hidden="true"></span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+
+        <div class="mt-6 border-l-4 border-brand-500 bg-brand-50 p-6">
+          <p class="text-sm text-brand-800">
+            <span class="font-bold">Not sure if what you have qualifies?</span> Call us and describe it — we'll tell you exactly what we can do. <a href="tel:9166729417" class="font-semibold underline hover:text-brand-600">916-672-9417</a>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── How We Price ──────────────────────────────────────────────────── -->
+    <section class="py-24 lg:py-32">
+      <div class="section-container">
+        <div class="grid gap-16 lg:grid-cols-2 lg:items-start">
+
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-500">Transparent Valuation</p>
+            <h2 class="mt-3 text-3xl font-bold text-gray-900 leading-tight">How We Price Pallets &amp; Gaylords</h2>
+            <div class="mt-3 h-1 w-10 bg-brand-600"></div>
+            <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+              Pricing depends on type, condition, and what the secondary market will bear at the time of pickup. Here's how we think about each category.
+            </p>
+            <div class="mt-8 space-y-4">
+              <div class="border border-gray-200 p-6">
+                <h3 class="text-sm font-bold text-gray-900">Wood Pallets</h3>
+                <p class="mt-2 text-sm text-gray-600 leading-relaxed">
+                  GMA standard 48×40 pallets in good repair are the most liquid. Heat-treated (ISPM-15) pallets have additional export value. Broken pallets pay at wood commodity rates. We'll tell you the breakdown before we show up.
+                </p>
+              </div>
+              <div class="border border-gray-200 p-6">
+                <h3 class="text-sm font-bold text-gray-900">Plastic Pallets</h3>
+                <p class="mt-2 text-sm text-gray-600 leading-relaxed">
+                  Rackable and nestable plastic pallets in good condition pay well on the secondary market. Light-duty or damaged plastic pallets may go to commodity recycling — still a check, just a different rate.
+                </p>
+              </div>
+              <div class="border border-gray-200 p-6">
+                <h3 class="text-sm font-bold text-gray-900">Gaylords &amp; Bulk Bins</h3>
+                <p class="mt-2 text-sm text-gray-600 leading-relaxed">
+                  One-trip and lightly used double- or triple-wall gaylords have strong resale value. Heavily used or weakened gaylords go to corrugated commodity recovery. Condition drives the rate — send photos for a faster quote.
+                </p>
+              </div>
+              <div class="border border-gray-200 p-6">
+                <h3 class="text-sm font-bold text-gray-900">IBC Totes &amp; Drums</h3>
+                <p class="mt-2 text-sm text-gray-600 leading-relaxed">
+                  Food-grade totes and drums command the best prices. Industrial-use containers are valued based on previous contents, condition, and cleanout status. Describe previous contents when you call — it determines what we can accept and how we price it.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-500">High-Volume Accounts</p>
+            <h2 class="mt-3 text-3xl font-bold text-gray-900 leading-tight">Recurring Pickup for Busy Docks</h2>
+            <div class="mt-3 h-1 w-10 bg-brand-600"></div>
+            <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+              Warehouses and distribution centers that accumulate pallets or gaylords on a predictable cycle shouldn't have to make a phone call every time. We set up recurring accounts with a fixed schedule — we show up, you get paid, the dock stays clear.
+            </p>
+            <p class="mt-4 text-gray-600 leading-relaxed">
+              For recurring accounts, we'll agree on pricing terms upfront so there's no negotiation at every pickup. If market rates shift significantly, we revisit together — no surprises.
+            </p>
+            <ul class="mt-8 space-y-0 list-none m-0 p-0 divide-y divide-gray-100">
+              {[
+                'Fixed schedule — weekly, biweekly, or monthly based on your accumulation rate',
+                'Agreed pricing terms upfront — no renegotiation at every visit',
+                'We work around your dock windows and inbound/outbound schedule',
+                'Single point of contact — call or email your account rep directly',
+                'Volume flexibility — we adjust frequency when your inbound volume changes',
+              ].map((item) => (
+                <li class="flex items-start gap-4 py-4">
+                  <span class="mt-0.5 flex-shrink-0 h-5 w-5 bg-brand-600 flex items-center justify-center" aria-hidden="true">
+                    <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  <span class="text-sm text-gray-700 leading-snug">{item}</span>
+                </li>
+              ))}
+            </ul>
+            <a href="/contact" class="btn-primary mt-10 inline-flex px-7 py-3.5 text-sm">Set Up a Recurring Account</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── Why Haynes ─────────────────────────────────────────────────────── -->
+    <section class="bg-gray-50 py-24 lg:py-32">
+      <div class="section-container">
+        <div class="grid gap-16 lg:grid-cols-2 lg:items-center">
+          <div class="overflow-hidden">
+            <img
+              src="/images/worker-loading-trailer.gif"
+              alt="Worker loading material onto a trailer for pickup"
+              class="w-full h-96 object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div>
+            <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-500">Why Haynes Industrial</p>
+            <h2 class="mt-3 text-4xl font-bold text-gray-900 leading-tight">Turn Excess Packaging Into a Check</h2>
+            <div class="mt-3 h-1 w-10 bg-brand-600"></div>
+            <p class="mt-6 text-lg text-gray-600 leading-relaxed">
+              Surplus pallets and gaylords aren't valuable enough to manage like an auction, but too valuable to just pay someone to haul away. We buy them, pick them up, and handle the resale. You do nothing after the call.
+            </p>
+            <ul class="mt-8 space-y-0 list-none m-0 p-0 divide-y divide-gray-100">
+              {differentiators.map((item) => (
+                <li class="flex items-start gap-4 py-4">
+                  <span class="mt-0.5 flex-shrink-0 h-5 w-5 bg-brand-600 flex items-center justify-center" aria-hidden="true">
+                    <svg class="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  <span class="text-base text-gray-700 leading-snug">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── FAQ ───────────────────────────────────────────────────────────── -->
+    <section class="py-24 lg:py-32">
+      <div class="section-container">
+        <p class="text-xs font-bold uppercase tracking-[0.2em] text-brand-500">Straight Answers</p>
+        <h2 class="mt-3 text-4xl font-bold text-gray-900 leading-tight">Common Questions</h2>
+        <div class="mt-3 h-1 w-10 bg-brand-600"></div>
+        <div class="mt-12 grid gap-6 lg:grid-cols-2">
+          {faqs.map((faq) => (
+            <div class="card">
+              <h3 class="text-base font-bold text-gray-900">{faq.q}</h3>
+              <p class="mt-3 text-sm text-gray-600 leading-relaxed">{faq.a}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- ─── CTA ───────────────────────────────────────────────────────────── -->
+    <section class="bg-brand-800 py-20">
+      <div class="section-container">
+        <div class="flex flex-col gap-8 lg:flex-row lg:items-center lg:justify-between">
+          <div>
+            <h2 class="text-3xl font-bold text-white lg:text-4xl">Pallets and Gaylords Taking Up Space?</h2>
+            <p class="mt-3 text-lg text-brand-200">
+              Tell us what you have — we'll give you a range on the phone and schedule a pickup.
+            </p>
+          </div>
+          <div class="flex flex-shrink-0 flex-wrap gap-4">
+            <a href="/contact" class="btn-white px-7 py-3.5 text-sm">Get an Offer</a>
+            <a href="tel:9166729417" class="btn-outline-white px-7 py-3.5 text-sm">916-672-9417</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>
